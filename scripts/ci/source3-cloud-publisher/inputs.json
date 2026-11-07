@@ -1,0 +1,525 @@
+{
+  "schemaVersion": 1,
+  "repository": "Mohammed-Moniem/embedded-office-suite",
+  "release": "v0.1.0-progress.3",
+  "node": "24.18.0",
+  "code": [
+    {
+      "path": ".github/workflows/windows-static-native.yml",
+      "bytes": 1826,
+      "sha256": "9f93777a40449fa1d6da9d7f9b6de1bc126777d191b6700f59fb4f2ba192a86e",
+      "mode": 420
+    },
+    {
+      "path": "config/ci-engine-pins-macos-progress3.json",
+      "bytes": 3114,
+      "sha256": "caf65a65fe9f8d27a8a8403759751d5c962402bf5a4016ac858fa7f968f25d69",
+      "mode": 420
+    },
+    {
+      "path": "config/ci-engine-pins-windows-progress3.json",
+      "bytes": 1939,
+      "sha256": "23812a0d8ccebc377e6d18c4d68e928cf41873e266ae313b3f341811da78b12e",
+      "mode": 420
+    },
+    {
+      "path": "config/macos-source3-ci-restore-progress3.json",
+      "bytes": 16148,
+      "sha256": "551ab1d97a78f5b2710fec446f2066685b34e97c8c56eea0016d77786bd95a36",
+      "mode": 420
+    },
+    {
+      "path": "config/windows-source3-static-ci-restore-progress3.json",
+      "bytes": 18355,
+      "sha256": "e965789e1ba69f2aa52385afe4a0d370775402dc5ef7089fa567b94ac4d36535",
+      "mode": 420
+    },
+    {
+      "path": "docs/verification/public-download-source3.json",
+      "bytes": 2658,
+      "sha256": "6d3042244086f7b8f37c854e6416283b9c964ca74b3253d84654a55655ab92cb",
+      "mode": 420
+    },
+    {
+      "path": "docs/verification/source3-checks-macos-arm64.json",
+      "bytes": 1963,
+      "sha256": "1ab0a131f67364f010556746483eb54bcc885aeef115ec4e6da035ece44427ad",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/progress-supervisor.mjs",
+      "bytes": 3508,
+      "sha256": "82a0fc9045ad46d1416259a5ddc44696eadb384c38529256a07a43409c9b16d3",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/progress.mjs",
+      "bytes": 8202,
+      "sha256": "a7c0717a835d4ea816291ffdd127c6c680611ff2931463d310c7fd5eb4fd0416",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/verify-frozen-source.mjs",
+      "bytes": 2889,
+      "sha256": "7383d88ecd0d84b4b9080bbdb4bcefe687fe3c52d34f77cdae5a8445722ba106",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/verify-macos-engine-results-progress3.mjs",
+      "bytes": 28750,
+      "sha256": "5b6b5b002896685af69e3f1408b7c94af535441e9c527996a3f74ac63f1dd86c",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/verify-windows-static-results.mjs",
+      "bytes": 40012,
+      "sha256": "19fc1fc58a0f02623ad9d7e7815e44c7f18a4e6d7ef4a58b1664297ec1c855f5",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/windows-static-native.mjs",
+      "bytes": 10370,
+      "sha256": "8a548d6824f4fd9a1cd878e8dfa20e808c084c2020e738eeaf03b4070a5ce62e",
+      "mode": 420
+    },
+    {
+      "path": "scripts/ci/windows-static-pe.mjs",
+      "bytes": 4713,
+      "sha256": "324fae139448fe6b60a8e52764da831d33149999d0d0fc29adca5e7a73c055a3",
+      "mode": 420
+    },
+    {
+      "path": "scripts/lib/artifacts.mjs",
+      "bytes": 8842,
+      "sha256": "652f1d5d5fa68cd96bd5850e4cb5e62a75ed2e68b7b7c4e91359374168c6505a",
+      "mode": 420
+    },
+    {
+      "path": "scripts/lib/component-legal.mjs",
+      "bytes": 1225,
+      "sha256": "534fdcf3cdd590b91e66f44df3ffaa008591fb48f2d4fb78c3eb5e8c1460e4ca",
+      "mode": 420
+    },
+    {
+      "path": "scripts/package-native-macos-source3.mjs",
+      "bytes": 23893,
+      "sha256": "2eb1f210773b57ae9e82534661a2aadc166cd7477ec9841205f223176d74def6",
+      "mode": 420
+    },
+    {
+      "path": "scripts/package-native-windows.mjs",
+      "bytes": 42357,
+      "sha256": "1bcbf356e6cb8f96d46ae530eeca0fcca9c76975b6cd0cdbbaa800dca939a140",
+      "mode": 420
+    }
+  ],
+  "source": {
+    "name": "office-source-progress3-r1.tar.gz",
+    "bytes": 39019135,
+    "sha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-source-progress3-r1.tar.gz",
+    "manifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+    "destination": "build/public-qualification/progress3/source",
+    "archiveDestination": "build/progress3-release/office-source-progress3-r1.tar.gz",
+    "localCache": "build/progress3-release/office-source-progress3-r1.tar.gz"
+  },
+  "support": {
+    "name": "office-build-inputs-support-complete3.tar.gz",
+    "bytes": 87668350,
+    "sha256": "b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/office-build-inputs-support-complete3.tar.gz",
+    "manifestSha256": "9a213c32fde8cfbe505364a0f5381587b79e34c2ee9648d1d22e4cd9c518e269",
+    "destination": "build/engines/support-inputs",
+    "localCache": "build/releases/office-build-inputs-support-complete3.tar.gz"
+  },
+  "captures": [
+    {
+      "name": "macos-source3-ci-42387136103-run.json",
+      "bytes": 14247,
+      "sha256": "17f519cf117b452030f9f336c69cce11a6ef9747db356221109fcca7441b2641",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-run.json",
+      "destination": "build/macos-ci-transfer/run.json",
+      "localCache": "build/macos-ci-transfer/run.json"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-jobs.json",
+      "bytes": 17729,
+      "sha256": "ea583bbb7f68255bc934bd5a87b4fcda903449f08829e5a365f22c05e9885e9d",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-jobs.json",
+      "destination": "build/macos-ci-transfer/jobs.json",
+      "localCache": "build/macos-ci-transfer/jobs.json"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-artifacts.json",
+      "bytes": 13556,
+      "sha256": "04f863395a2f9870d0564217fda2110412d5773852f3d23c4d3c06e4fcbf7964",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-artifacts.json",
+      "destination": "build/macos-ci-transfer/artifacts.json",
+      "localCache": "build/macos-ci-transfer/artifacts.json"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-run.json",
+      "bytes": 14265,
+      "sha256": "d8b1976a63906401778938a76acf8e05173dc53b190344de44753eaa7f910295",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-run.json",
+      "destination": "build/windows-native-progress/static-authority/run.json",
+      "localCache": "build/windows-native-progress/static-authority/run.json"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-jobs.json",
+      "bytes": 10901,
+      "sha256": "22a7b9911f6b4221075b61c702a6c7cd8418e0c15e35e7fb81ff0f6672e8a747",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-jobs.json",
+      "destination": "build/windows-native-progress/static-authority/jobs.json",
+      "localCache": "build/windows-native-progress/static-authority/jobs.json"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-artifacts.json",
+      "bytes": 2945,
+      "sha256": "01bea5bdf0b2fe20869fdcba4dcb53777a663af4a7ab798e46adadb1fea07b36",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-artifacts.json",
+      "destination": "build/windows-native-progress/static-authority/artifacts.json",
+      "localCache": "build/windows-native-progress/static-authority/artifacts.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "app": "wordcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580866069,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 74935746,
+      "sha256": "675137d1553b50d9c89f634f339860a3f19e72315becf8dcc36ce5f1353fbaed",
+      "name": "macos-source3-ci-42387136103-macos-arm64-wordcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-arm64/wordcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-arm64/wordcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-arm64/wordcraft.zip"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13581812152,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 80762886,
+      "sha256": "c6b6d9748ac54d76e5e3360658f335f102bf53f40dc8a2efea1f0498f8a8d7df",
+      "name": "macos-source3-ci-42387136103-macos-arm64-pdfcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-arm64/pdfcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-arm64/pdfcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-arm64/pdfcraft.zip"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580938232,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 63914124,
+      "sha256": "e40c19ce415dbd5e0096dfa40614d1a8125a44dafdd235ff57c934fcb3f9861d",
+      "name": "macos-source3-ci-42387136103-macos-arm64-deckcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-arm64/deckcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-arm64/deckcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-arm64/deckcraft.zip"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580264660,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 26599741,
+      "sha256": "afd227cce9886299cec7d95d97405fe627e3d6dd310513c9aca29bc95eb9dd0b",
+      "name": "macos-source3-ci-42387136103-macos-arm64-gridcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-arm64/gridcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-arm64/gridcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-arm64/gridcraft.zip"
+    },
+    {
+      "app": "wordcraft",
+      "platform": "macos-x64",
+      "artifactId": 13581350926,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 75761651,
+      "sha256": "010c38a008b06079dbca419be3c081f62ad11750f248316658b7aa195c058532",
+      "name": "macos-source3-ci-42387136103-macos-x64-wordcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-x64/wordcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-x64/wordcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-x64/wordcraft.zip"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "macos-x64",
+      "artifactId": 13582346430,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 82180378,
+      "sha256": "197caed44d782965e9d14024ca77d40d9280314640f1923fda1eb1bcd0b86f51",
+      "name": "macos-source3-ci-42387136103-macos-x64-pdfcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-x64/pdfcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-x64/pdfcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-x64/pdfcraft.zip"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "macos-x64",
+      "artifactId": 13581099423,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 64411823,
+      "sha256": "bd2e73658316c8d12062551294c96eb30f838d9f116852fb06f4508955dafaa0",
+      "name": "macos-source3-ci-42387136103-macos-x64-deckcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-x64/deckcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-x64/deckcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-x64/deckcraft.zip"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "macos-x64",
+      "artifactId": 13580832186,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 27138032,
+      "sha256": "f567685c6fa4e0ffa790e635029cb100f653dcee6aad0f5fc9a1307e2d14aee2",
+      "name": "macos-source3-ci-42387136103-macos-x64-gridcraft.zip",
+      "destination": "build/macos-native-source3/downloads/ci/macos-x64/gridcraft.zip",
+      "restored": "build/macos-native-source3/ci-engine-results/macos-x64/gridcraft",
+      "localCache": "build/macos-ci-transfer/downloads/macos-x64/gridcraft.zip"
+    },
+    {
+      "app": "wordcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582525857,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 50800926,
+      "sha256": "5d2bdb72188fb12aec783013d84a76176198d3e496d46b8244e7857885f97f21",
+      "name": "windows-static-source3-ci-42391943016-wordcraft.zip",
+      "destination": "build/windows-native-progress/downloads/ci/windows-x64/wordcraft.zip",
+      "restored": "build/windows-native-progress/ci-engine-results/windows-x64/wordcraft",
+      "localCache": "build/windows-native-progress/downloads/ci/windows-x64/wordcraft.zip",
+      "restoreFileMode": 420
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582497297,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 58145454,
+      "sha256": "b3716486775e935d24ae55095d13fcb13e12dac9e09441a2b9ebb433e0605993",
+      "name": "windows-static-source3-ci-42391943016-pdfcraft.zip",
+      "destination": "build/windows-native-progress/downloads/ci/windows-x64/pdfcraft.zip",
+      "restored": "build/windows-native-progress/ci-engine-results/windows-x64/pdfcraft",
+      "localCache": "build/windows-native-progress/downloads/ci/windows-x64/pdfcraft.zip",
+      "restoreFileMode": 420
+    },
+    {
+      "app": "deckcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582013585,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 46840521,
+      "sha256": "bf9d97f28c124e98490b0d6929c59ea6c4cb43e7a52f3d882e87a614c1f6976c",
+      "name": "windows-static-source3-ci-42391943016-deckcraft.zip",
+      "destination": "build/windows-native-progress/downloads/ci/windows-x64/deckcraft.zip",
+      "restored": "build/windows-native-progress/ci-engine-results/windows-x64/deckcraft",
+      "localCache": "build/windows-native-progress/downloads/ci/windows-x64/deckcraft.zip",
+      "restoreFileMode": 420
+    },
+    {
+      "app": "gridcraft",
+      "platform": "windows-x64",
+      "artifactId": 13581612670,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 8061806,
+      "sha256": "735f64277e72efae197f2e4e986feabf8cb06ae7e4af0a1b5564c2fd4d4c1d9e",
+      "name": "windows-static-source3-ci-42391943016-gridcraft.zip",
+      "destination": "build/windows-native-progress/downloads/ci/windows-x64/gridcraft.zip",
+      "restored": "build/windows-native-progress/ci-engine-results/windows-x64/gridcraft",
+      "localCache": "build/windows-native-progress/downloads/ci/windows-x64/gridcraft.zip",
+      "restoreFileMode": 420
+    }
+  ],
+  "provenance": [
+    {
+      "path": "build/macos-native-source3/ci-artifact-provenance.json",
+      "records": [
+        {
+          "app": "wordcraft",
+          "platform": "macos-arm64",
+          "artifactId": 13580866069,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 74935746,
+          "sha256": "675137d1553b50d9c89f634f339860a3f19e72315becf8dcc36ce5f1353fbaed"
+        },
+        {
+          "app": "pdfcraft",
+          "platform": "macos-arm64",
+          "artifactId": 13581812152,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 80762886,
+          "sha256": "c6b6d9748ac54d76e5e3360658f335f102bf53f40dc8a2efea1f0498f8a8d7df"
+        },
+        {
+          "app": "deckcraft",
+          "platform": "macos-arm64",
+          "artifactId": 13580938232,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 63914124,
+          "sha256": "e40c19ce415dbd5e0096dfa40614d1a8125a44dafdd235ff57c934fcb3f9861d"
+        },
+        {
+          "app": "gridcraft",
+          "platform": "macos-arm64",
+          "artifactId": 13580264660,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 26599741,
+          "sha256": "afd227cce9886299cec7d95d97405fe627e3d6dd310513c9aca29bc95eb9dd0b"
+        },
+        {
+          "app": "wordcraft",
+          "platform": "macos-x64",
+          "artifactId": 13581350926,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 75761651,
+          "sha256": "010c38a008b06079dbca419be3c081f62ad11750f248316658b7aa195c058532"
+        },
+        {
+          "app": "pdfcraft",
+          "platform": "macos-x64",
+          "artifactId": 13582346430,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 82180378,
+          "sha256": "197caed44d782965e9d14024ca77d40d9280314640f1923fda1eb1bcd0b86f51"
+        },
+        {
+          "app": "deckcraft",
+          "platform": "macos-x64",
+          "artifactId": 13581099423,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 64411823,
+          "sha256": "bd2e73658316c8d12062551294c96eb30f838d9f116852fb06f4508955dafaa0"
+        },
+        {
+          "app": "gridcraft",
+          "platform": "macos-x64",
+          "artifactId": 13580832186,
+          "runId": 42387136103,
+          "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+          "bytes": 27138032,
+          "sha256": "f567685c6fa4e0ffa790e635029cb100f653dcee6aad0f5fc9a1307e2d14aee2"
+        }
+      ],
+      "bytes": 2305,
+      "sha256": "2ca727c4299cf864cdf69eec469e9a20442e2bf4697e8899729c85810c1af745",
+      "mode": 420
+    },
+    {
+      "path": "build/windows-native-progress/ci-artifact-provenance.json",
+      "records": [
+        {
+          "app": "wordcraft",
+          "platform": "windows-x64",
+          "artifactId": 13582525857,
+          "runId": 42391943016,
+          "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+          "bytes": 50800926,
+          "sha256": "5d2bdb72188fb12aec783013d84a76176198d3e496d46b8244e7857885f97f21"
+        },
+        {
+          "app": "pdfcraft",
+          "platform": "windows-x64",
+          "artifactId": 13582497297,
+          "runId": 42391943016,
+          "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+          "bytes": 58145454,
+          "sha256": "b3716486775e935d24ae55095d13fcb13e12dac9e09441a2b9ebb433e0605993"
+        },
+        {
+          "app": "deckcraft",
+          "platform": "windows-x64",
+          "artifactId": 13582013585,
+          "runId": 42391943016,
+          "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+          "bytes": 46840521,
+          "sha256": "bf9d97f28c124e98490b0d6929c59ea6c4cb43e7a52f3d882e87a614c1f6976c"
+        },
+        {
+          "app": "gridcraft",
+          "platform": "windows-x64",
+          "artifactId": 13581612670,
+          "runId": 42391943016,
+          "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+          "bytes": 8061806,
+          "sha256": "735f64277e72efae197f2e4e986feabf8cb06ae7e4af0a1b5564c2fd4d4c1d9e"
+        }
+      ],
+      "bytes": 1157,
+      "sha256": "3f78b9bc4ff162e46b852d669767302d4819cd9995a9ba8ffb75ad209229ad9f",
+      "mode": 420
+    }
+  ],
+  "outputs": [
+    {
+      "platform": "macos-arm64",
+      "name": "office-native-source3-r1-macos-arm64.zip",
+      "bytes": 250377148,
+      "sha256": "335d5ab993c01a939feeda8dfd035b856a3281d1fc61f0952d366813638468d2",
+      "aggregate": "docs/verification/public-engine-builds-progress3-macos-arm64.json",
+      "aggregateSha256": "3bf7228928814eb161eb0245e6d30b4e068719cdd2bc9107049a7722b0b62f67",
+      "verifier": "scripts/ci/verify-macos-engine-results-progress3.mjs",
+      "packager": "scripts/package-native-macos-source3.mjs"
+    },
+    {
+      "platform": "macos-x64",
+      "name": "office-native-source3-r1-macos-x64.zip",
+      "bytes": 254390723,
+      "sha256": "a9ad54c1fe26324501e081c9541966771b76f3ed2a4fd35a42910f837ae0074e",
+      "aggregate": "docs/verification/public-engine-builds-progress3-macos-x64.json",
+      "aggregateSha256": "ebe358d2ae71d1c5c94f26da4ff7dfe4cf79a102f6ca2569c6ff48206b67aae8",
+      "verifier": "scripts/ci/verify-macos-engine-results-progress3.mjs",
+      "packager": "scripts/package-native-macos-source3.mjs"
+    },
+    {
+      "platform": "windows-x64",
+      "name": "office-native-windows-x64-progress3-r1.zip",
+      "bytes": 249300942,
+      "sha256": "055a27446f7aab4c6321f41c5a1be69a787384e9352555af964fe129b61f43c0",
+      "aggregate": "build/windows-native-progress/public-static-native-builds-progress3-windows-x64.json",
+      "aggregateSha256": "8879f4c320e952a026744d24b128fac4cfc161d6aea710d19756f74e31beeec0",
+      "verifier": "scripts/ci/verify-windows-static-results.mjs",
+      "packager": "scripts/package-native-windows.mjs"
+    }
+  ],
+  "limits": [
+    "Preparation and local exact-byte reconstruction do not certify hosted execution, public download, target execution, offline network denial, feature completeness or Office/Adobe parity.",
+    "All three archive identities must pass before the first release mutation. No release/asset deletion or overwrite is implemented."
+  ],
+  "maps": [
+    {
+      "path": "config/macos-source3-ci-restore-progress3.json",
+      "name": "macos-source3-ci-restore-progress3.json",
+      "bytes": 16148,
+      "sha256": "551ab1d97a78f5b2710fec446f2066685b34e97c8c56eea0016d77786bd95a36",
+      "mode": 420
+    },
+    {
+      "path": "config/windows-source3-static-ci-restore-progress3.json",
+      "name": "windows-source3-static-ci-restore-progress3.json",
+      "bytes": 18355,
+      "sha256": "e965789e1ba69f2aa52385afe4a0d370775402dc5ef7089fa567b94ac4d36535",
+      "mode": 420
+    }
+  ]
+}
