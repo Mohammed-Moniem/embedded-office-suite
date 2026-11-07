@@ -11,6 +11,7 @@ jobs:
       matrix:
         app: [wordcraft, pdfcraft, deckcraft, gridcraft]
     runs-on: windows-2022
+    timeout-minutes: 180
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -18,13 +19,34 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: 24.18.0
-      - run: node scripts/ci/progress.mjs --app ${{ matrix.app }}
+      - name: Restore and verify exact public inputs
+        timeout-minutes: 20
+        run: node scripts/ci/progress.mjs --app ${{ matrix.app }} --phase restore
+      - name: Preserve input restoration checkpoints before compiling
+        if: always()
+        timeout-minutes: 3
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: priority-windows-${{ matrix.app }}-restore
+          path: |
+            build/progress-ci/RESTORED-INPUTS.json
+            build/progress-ci/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Build native CLI and WASM with frozen source
+        timeout-minutes: 130
+        run: node scripts/ci/progress.mjs --app ${{ matrix.app }} --phase build
+      - name: Qualify actual compiled native worker
+        timeout-minutes: 10
+        run: node scripts/ci/progress.mjs --app ${{ matrix.app }} --phase qualify
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
           name: priority-windows-${{ matrix.app }}
           path: |
             build/progress-ci/PUBLIC-INPUTS.json
+            build/progress-ci/RESTORED-INPUTS.json
+            build/progress-ci/evidence
             build/progress-ci/source/build/engines/offline-builds/**/report.json
             build/progress-ci/source/build/engines/offline-builds/**/*.log
             build/progress-ci/source/build/engines/offline-builds/**/native-qualification.json
