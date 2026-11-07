@@ -1,0 +1,11 @@
+{
+  "name": "@embedded-office/browser",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Host-neutral embedding and durable-save bridge for Craft WASM editors",
+  "exports": { ".": { "types": "./index.d.ts", "import": "./index.mjs" } },
+  "files": ["index.mjs", "index.d.ts", "README.md", "ENGINE-PROTOCOL.md", "VERIFICATION.md"],
+  "scripts": { "test": "node --test test/*.test.mjs" },
+  "license": "MIT",
+  "sideEffects": false
+}
