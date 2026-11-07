@@ -1,0 +1,98 @@
+name: Bounded Windows public input diagnosis
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  diagnose:
+    runs-on: windows-2022
+    timeout-minutes: 65
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Inventory Windows and both tar implementations
+        id: environment
+        timeout-minutes: 5
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase environment
+      - name: Publish environment checkpoints immediately
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-environment
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Restore and verify the exact frozen P1 source
+        id: source
+        if: always() && steps.environment.outcome == 'success'
+        timeout-minutes: 10
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase source
+      - name: Publish source checkpoints immediately
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-source
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Restore and verify the exact Grid vendor archive
+        id: vendor
+        if: always() && steps.source.outcome == 'success'
+        timeout-minutes: 10
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase vendor
+      - name: Publish vendor checkpoints immediately
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-vendor
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Restore and verify the exact support archive
+        id: support
+        if: always() && steps.source.outcome == 'success'
+        timeout-minutes: 10
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase support
+      - name: Publish support checkpoints immediately
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-support
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Restore and verify the exact Windows tool archive
+        id: tools
+        if: always() && steps.source.outcome == 'success'
+        timeout-minutes: 10
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase tools
+      - name: Publish tool checkpoints immediately
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-tools
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Require every diagnostic phase to succeed
+        if: always()
+        timeout-minutes: 1
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase summary
+      - name: Publish final diagnostic summary
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-summary
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
