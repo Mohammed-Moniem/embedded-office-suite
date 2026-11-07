@@ -6,7 +6,7 @@ permissions:
 jobs:
   diagnose:
     runs-on: windows-2022
-    timeout-minutes: 65
+    timeout-minutes: 75
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -80,6 +80,20 @@ jobs:
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-tools
+          path: build/windows-input-diagnostic/evidence
+          if-no-files-found: error
+          retention-days: 14
+      - name: Prepare exact portable tools and diagnose each tool startup
+        id: prepare
+        if: always() && steps.source.outcome == 'success' && steps.tools.outcome == 'success'
+        timeout-minutes: 10
+        run: node scripts/ci/windows-input-diagnostic.mjs --phase prepare
+      - name: Publish tool preparation and version checkpoints immediately
+        if: always()
+        timeout-minutes: 2
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-input-diagnostic-${{ github.run_id }}-${{ github.run_attempt }}-prepare
           path: build/windows-input-diagnostic/evidence
           if-no-files-found: error
           retention-days: 14
