@@ -8,7 +8,7 @@ const browser=await chromium.launch({headless:true,executablePath:process.argv[5
 const external=[];
 try{
  const page=await browser.newPage();await page.route('**/*',route=>{if(new URL(route.request().url()).hostname==='127.0.0.1')return route.continue();external.push(route.request().url());return route.abort()});
- await page.goto(origin+'/__qualification/host?app=deckcraft');await page.waitForFunction(()=>window.conformance?.ready,{timeout:120000});
+ await page.goto(origin+'/__qualification/host?app=deckcraft');await page.waitForFunction(()=>window.conformance?.ready,null,{timeout:120000});
  const result=await page.evaluate(async()=>{
   const require=(v,m)=>{if(!v)throw Error(m)},e=window.conformance.editor;
   const seed=await e.export({format:'pptx'});await e.open({name:'Guard control.pptx',bytes:seed.bytes});
