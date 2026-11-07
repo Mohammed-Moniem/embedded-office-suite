@@ -1,27 +1,11 @@
 # Embedded Office Suite
 
-Rust/WASM document engines and a Node integration layer for an **existing private desktop harness**. No standalone GUI, replacement harness, Electron dependency, or host-specific native WebView binding is included.
+**IN_PROGRESS. Full Word/Excel/PowerPoint/Acrobat equivalence has not been achieved.**
 
-**Status: IN_PROGRESS.** Full Microsoft 365 desktop and Acrobat Pro local-feature/file-behavior equivalence is the acceptance target. It has not been achieved or verified. The four upstream projects are alpha software. Integration tests, a successful build, or a published archive do not establish full parity.
+Download the complete four-engine Rust source, Node/browser SDKs and offline build assets from the [progress prerelease](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.1). Start with the [download guide](docs/DOWNLOADS.md), [offline recipe](docs/engines/OFFLINE-BUILD.md), [integration contract](INTEGRATION-CONTRACT.md) and [acceptance matrix](docs/verification/ACCEPTANCE.md).
 
-The engines are based on [WordCraft](https://github.com/storytold/wordcraft), [PdfCraft](https://github.com/storytold/pdfcraft), [DeckCraft](https://github.com/storytold/deckcraft), and [GridCraft](https://github.com/storytold/gridcraft). Exact source commits are recorded in [config/upstreams.json](config/upstreams.json). This is an independent integration, not an official ArtCraft product.
+This branch is the publication/CI bootstrap. The complete source is the explicit `office-source-progress1.tar.gz` release asset, frozen at local commit `60e8d44a769b998827f308ceb58f5cba5b6a0e17`; GitHub's automatic bootstrap source ZIP is not the four-engine source. Git Data tree import failed independent closure checks, so the checked source archive is used for delivery.
 
-## Contents
+The components mount inside an existing Node/WebView desktop harness. No standalone app or launcher is included. The host provides approved Node/WebView, file grants and storage. Rebuilds use the bundled pinned Rust/WASM tools and vendored Cargo sources plus the approved native linker/OS SDK. Private corporate data, credentials and proprietary SDKs are excluded.
 
-- `packages/node`: dependency-free Node adapter, native stdio/MCP transport, session management, and namespaced tool integration.
-- `packages/browser`: dependency-free module for mounting WASM editors inside the existing WebView and handling the versioned page bridge.
-- `engines`: pinned Rust engine source snapshots, with upstream licences and notices.
-- `scripts/engines`: source/runtime acquisition, qualification and offline build tooling.
-- `scripts`: distribution verification, host probing and archive assembly.
-
-The host supplies Node, WebView, document access grants, storage, and effect permissions. Runtime assets and native workers are selected explicitly; modules never download a compiler, dependency, font, model, or editor at first launch. Rebuilding may use the approved installed native linker and OS SDK. Rust >=1.95 is required by the pinned engines; exact qualified compiler/tool versions belong in the build manifest.
-
-Read [INTEGRATION-CONTRACT.md](INTEGRATION-CONTRACT.md), [the run record](GAUNTLET-UNLAZY-RUN.md), and the package documentation before integration. Run `node scripts/probe-host.mjs` on a candidate host to record its Node/OS/CPU capabilities without reading corporate documents or credentials. The browser package exposes a complementary WebView probe.
-
-## Verification and limits
-
-`node scripts/run-tests.mjs` runs the repository's test suites without installing packages. `node scripts/verify-engines.mjs` exercises actual acquired CLI workers; absent workers fail rather than skip. More expensive offline and OS qualification is recorded separately. Release notes must identify which exact source/archive and platforms were tested.
-
-The actual private harness and licensed Microsoft/Adobe reference applications are not available in this repository. Their required conformance/reference gates remain open until those tests run. No universal claim about historical macOS releases is made; publish the measured OS/WebView compatibility matrix for each release.
-
-Source, runtime, and offline-rebuild bundles are distinct. A runtime-only archive is never presented as the complete offline build kit. Supporting assets and dependencies must be redistributed under their own licence terms; proprietary software, corporate documents, credentials, and restricted vendor SDKs are excluded.
+Measured macOS ARM64 evidence includes four native/WASM offline builds, real native roundtrips, a reviewed Word page bridge and bounded integration tests. Other targets, remaining page bridges, optional features, private-host conformance and full product/file parity require further acceptance. CI downloads and verifies the exact published archives rather than treating this bootstrap as complete source.
