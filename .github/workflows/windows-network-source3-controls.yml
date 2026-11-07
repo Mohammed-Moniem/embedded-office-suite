@@ -1,0 +1,33 @@
+name: Source3 Windows network wrapper no-effects controls
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  powershell-source-controls:
+    runs-on: windows-2022
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Bind exact reviewed PowerShell bytes
+        shell: pwsh
+        run: |
+          $candidate = (Get-FileHash -LiteralPath scripts/ci/windows-runtime-network-source3.ps1 -Algorithm SHA256).Hash.ToLowerInvariant()
+          $harness = (Get-FileHash -LiteralPath scripts/ci/test-windows-runtime-network-source3.ps1 -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($candidate -cne '9e051178fd7d96756da14dc7e9579c3d24c2d1d9c858a26d81f6cb6a589c1cc8') { throw 'Reviewed candidate byte identity differs' }
+          if ($harness -cne '7bb7e49d34622fb2156eb805451b281783540d383ca35691f488d4a179a61991') { throw 'Reviewed control harness byte identity differs' }
+      - name: Execute actual wrapper source under no-effects mocks
+        shell: pwsh
+        run: |
+          New-Item -ItemType Directory -Force build/windows-network-source3-controls | Out-Null
+          & ./scripts/ci/test-windows-runtime-network-source3.ps1 -CandidatePath ./scripts/ci/windows-runtime-network-source3.ps1 -OutputPath build/windows-network-source3-controls/mock-controls.json | Tee-Object -FilePath build/windows-network-source3-controls/controls.log
+      - name: Preserve actual PowerShell control report
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: windows-network-source3-no-effects-controls
+          path: build/windows-network-source3-controls
+          if-no-files-found: error
+          retention-days: 14
