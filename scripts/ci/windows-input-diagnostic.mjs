@@ -23,7 +23,7 @@ const INPUTS=Object.freeze({
   source:{name:'office-source-progress1.tar.gz',sha256:'b069e1a87666791cbbfb2b34601b474d11cb7c465862bce013a9279aab0a5382'},
   vendor:{name:'office-build-inputs-vendor-gridcraft.tar.gz',sha256:'e3a5d7e800bdbe90529783db1381225d9c3f9eb1c42f96fcdbe6383c8997dab5'},
   support:{name:'office-build-inputs-support-complete3.tar.gz',sha256:'b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c'},
-  tools:{name:'office-build-inputs-tools-windows-x64.tar.gz',sha256:'1ee6c953e84ed58580d5dfa65b7c7517a845287f5e5a2c6b68aec87b58d77c9a'}
+  tools:{name:'office-build-inputs-tools-windows-x64-gzip-r1.tar.gz',sha256:'02a82e36f2c9df54908efa3a0aa431fde27e5c776e12cea8464c980217bc0ddd'}
 });
 const PHASES=['environment','source','vendor','support','tools','prepare'];
 const PHASE_LIMIT_MS=8*60*1000;
