@@ -1,0 +1,589 @@
+{
+  "schemaVersion": 1,
+  "kind": "reviewed-web-component-authority",
+  "status": "BUILDER_FROZEN_PENDING_FRESH_INDEPENDENT_REVIEW",
+  "source": "e8e4364c20018abb1222c69b7e50839abfe62644",
+  "sourceArchiveSha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+  "sourceManifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+  "runId": 42386885242,
+  "workflowHead": "9674750d5013cd5c44f52044ec1c944b22b416f6",
+  "componentsSha256": "e351c101a108742a17e5fa24d92a3b5f59fca9d9314057b04cf4ba7e6679c1db",
+  "browserSdkSha256": "ad08c4dbbc9a052f96b1d677dfaa81751d4bd22f17d8527e552abda7f54a84d0",
+  "qualificationSha256": "4f460d94f84e74f5362e571c6a7ab9e2d28b14ba3a641461dbc5891f9026d906",
+  "nodeQualificationSha256": "d5ceeb76b64bb8b8378baf418000cd7723b628438c4c036537d25872e68aa5da",
+  "deckGuardQualificationSha256": "7ec89bcd1b394ffbd19e9f2f2950f9ae2bf37bd084fd9e1377fec94044c84f53",
+  "sdk": {
+    "node": [
+      {
+        "path": "examples/native-smoke.mjs",
+        "bytes": 1206,
+        "mode": 420,
+        "sha256": "d36d143d91914b989babb560abdaf3b36ee328622792542a1e869c74c6785aea"
+      },
+      {
+        "path": "index.d.ts",
+        "bytes": 4373,
+        "mode": 420,
+        "sha256": "e3a48684484cdb5a0a0dee07fee628bffa81bf6d38d36c933089121fe9c7c942"
+      },
+      {
+        "path": "index.mjs",
+        "bytes": 327,
+        "mode": 420,
+        "sha256": "6e20b5eb9a6788de67c2fed353c5d9bfed6c30705fc30b4d20d3c1bbcd1b4070"
+      },
+      {
+        "path": "package.json",
+        "bytes": 452,
+        "mode": 420,
+        "sha256": "ca1d2c37d4edeef304c844eca1acfa01f194ec55613bc08abb4d49842951307e"
+      },
+      {
+        "path": "README.md",
+        "bytes": 11779,
+        "mode": 420,
+        "sha256": "09d509d803bb922b4ab1c20ed03f8214d9a0cdb5390c2b0749b999265244a4bc"
+      },
+      {
+        "path": "src/errors.mjs",
+        "bytes": 1095,
+        "mode": 420,
+        "sha256": "a118f9273c3f49e8eaf329ae9c67c6251053d2e4e24ac83b607f2661dad65783"
+      },
+      {
+        "path": "src/host.mjs",
+        "bytes": 4119,
+        "mode": 420,
+        "sha256": "257d235a13060c332507ff53c85a9733f94cfb126610748b86a919d5806ad7f5"
+      },
+      {
+        "path": "src/integration.mjs",
+        "bytes": 19495,
+        "mode": 420,
+        "sha256": "c352154bcd15a1c78e024cbfffa9d3a2e560f8c0e7ae73fce8f97bf47a0ae58e"
+      },
+      {
+        "path": "src/lifetime.mjs",
+        "bytes": 2536,
+        "mode": 420,
+        "sha256": "07c4946f57e0c63958337f41bb29843cb811526dfeda3a710e3c063b15d3120f"
+      },
+      {
+        "path": "src/native.mjs",
+        "bytes": 11300,
+        "mode": 420,
+        "sha256": "4fabcbe660321f50c6c5b987d66b7dd4889c3956fcf46eb601964bab0883c178"
+      },
+      {
+        "path": "src/stdio.mjs",
+        "bytes": 8719,
+        "mode": 420,
+        "sha256": "b52a4f36f67e2634957d0c9f77ffcf50e371545d889e1bbfd4853fc0da606d60"
+      },
+      {
+        "path": "VERIFICATION.md",
+        "bytes": 5707,
+        "mode": 420,
+        "sha256": "7fd51591afea8889520a013fe1eff5173f7b20084132c89ec9dbf0e3a4c16da5"
+      }
+    ],
+    "browser": [
+      {
+        "path": "ENGINE-PROTOCOL.md",
+        "bytes": 6558,
+        "mode": 420,
+        "sha256": "f231a5fc8b76ac552902fa3b943214b650db082fc274b92bd6714001788e6ed0"
+      },
+      {
+        "path": "index.d.ts",
+        "bytes": 3575,
+        "mode": 420,
+        "sha256": "7e054edc5661bfeab83646eed53d8f9f935265a5b289d8983f8b25daf338f241"
+      },
+      {
+        "path": "index.mjs",
+        "bytes": 29494,
+        "mode": 420,
+        "sha256": "ad08c4dbbc9a052f96b1d677dfaa81751d4bd22f17d8527e552abda7f54a84d0"
+      },
+      {
+        "path": "package.json",
+        "bytes": 443,
+        "mode": 420,
+        "sha256": "d8e638f2cf3d830b46716f8fbbff09914318560094cd39762525666499af5c3a"
+      },
+      {
+        "path": "README.md",
+        "bytes": 5217,
+        "mode": 420,
+        "sha256": "30861e59cd41cc85f7099afc873f0df31010edee8be6485f9738d16f57f9ffa6"
+      },
+      {
+        "path": "VERIFICATION.md",
+        "bytes": 5235,
+        "mode": 420,
+        "sha256": "d7801dcaf2476810a2bcc81afb8da54d060f94cf832b13ac5ef46fc5f170271f"
+      }
+    ]
+  },
+  "assetHandlerSha256": "02fe9451a560ecca79884536badf8b554d9f4f6b5e2877abb05cbbe4c0433419",
+  "artifactHelperSha256": "652f1d5d5fa68cd96bd5850e4cb5e62a75ed2e68b7b7c4e91359374168c6505a",
+  "integrationLicenseSha256": "ae65b978795767d611b372be6d8cf9f3fb674ba16c4b84645cc51a2ef539cfa9",
+  "components": [
+    {
+      "app": "wordcraft",
+      "patchSha256": "0f2b0cd11b8ee84fb68c601b13c8491634dde4375ace52c31ee0e266896bdb70",
+      "reviewSha256": "809c413d413e8130867bfe55a61cd33fb26d44d29a4e303051b5c1f23dd0fd87",
+      "wasmSha256": "41a4d6b61da794cab5dd4fbe1499e2b2c32b4e23f8d8b1308fbf5542a13a92db",
+      "indexSha256": "20bdb1d575d27ddfe1d9554cc6852ceee3a65902566b95abfb9543b4d78eaba7",
+      "sourceIdentity": {
+        "app": "wordcraft",
+        "patchSha256": "0f2b0cd11b8ee84fb68c601b13c8491634dde4375ace52c31ee0e266896bdb70",
+        "sourceSha256": "6b81e533c81eaf9158aef2db8b7c1250e61eaa7f81232f2be9421f9cfdbf9a25",
+        "files": 1051,
+        "review": "docs/verification/integration-review4.json",
+        "reviewSha256": "809c413d413e8130867bfe55a61cd33fb26d44d29a4e303051b5c1f23dd0fd87"
+      },
+      "reviewScope": "Accepted bounded page source review; fresh source3 CI runtime qualification is separate",
+      "ci": {
+        "app": "wordcraft",
+        "platform": "windows-x64",
+        "artifactId": 13580986112,
+        "runId": 42386885242,
+        "workflowHead": "9674750d5013cd5c44f52044ec1c944b22b416f6",
+        "bytes": 73891614,
+        "sha256": "e33ce9f76f2287c0781309adc6e09ead77dd4a9851eb0c9d221e6f2bdd9bf76f",
+        "artifactZipSha256": "e33ce9f76f2287c0781309adc6e09ead77dd4a9851eb0c9d221e6f2bdd9bf76f",
+        "reportSha256": "eb3a5691a25b1ecb606df5956c26a944be7a6fd1f7aa9765d84087d4ebcfde1f",
+        "nativeQualificationSha256": "2b30a75289f6deb705918085af7ecf06b25b74e51562718c7232dbf2665d79e1",
+        "sourceSha256": "c9e4b4bc37333588ab99913ac776d6c9de476346a28b5d8b4ed8d1e77fd840f9",
+        "lockSha256": "b106949503fdbe0272e62c7e23064e34d0da0d5c0e2848f6c754f57a4bcc7524",
+        "networkDenial": {
+          "established": false,
+          "enforcement": "Cargo and Trunk offline flags only"
+        },
+        "artifacts": [
+          {
+            "kind": "cli",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/wordcraft/source/build/engines/offline-builds/wordcraft/windows-x64-jIbIjF/runtime/bin/wordcraft-cli.exe",
+            "sha256": "10c35ad7dc2ae3f733cf27d28b3e696a71a2f4c54a92808e978c019fe46e8f8f"
+          },
+          {
+            "kind": "wasm",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/wordcraft/source/build/engines/offline-builds/wordcraft/windows-x64-jIbIjF/web/wordcraft-web-303ee82d689e8717_bg.wasm",
+            "sha256": "41a4d6b61da794cab5dd4fbe1499e2b2c32b4e23f8d8b1308fbf5542a13a92db"
+          }
+        ],
+        "build": "build/windows-ci-transfer/restored/wordcraft/source/build/engines/offline-builds/wordcraft/windows-x64-jIbIjF",
+        "webOriginalPath": "build/windows-ci-transfer/restored/wordcraft/source/build/engines/offline-builds/wordcraft/windows-x64-jIbIjF/web"
+      },
+      "sourceSha256": "6b81e533c81eaf9158aef2db8b7c1250e61eaa7f81232f2be9421f9cfdbf9a25",
+      "webInventorySha256": "63d291af8936c49579393e94f109508d53da1784f9c7f5707678ecdd02765254",
+      "evidence": [
+        {
+          "destination": "bridge-candidate-manifest.json",
+          "sha256": "78ab9b2bec5f56ba831b2cdb4f95f8702aa9737411cc84a5605f708add28448e"
+        },
+        {
+          "destination": "source3-windows-build-report.json",
+          "sha256": "eb3a5691a25b1ecb606df5956c26a944be7a6fd1f7aa9765d84087d4ebcfde1f"
+        },
+        {
+          "destination": "source3-windows-wasm-build.log",
+          "sha256": "2f70b3ba54272b617d357c18d43b2afb4bcd4b14337c38311927ed859ee0c9b7"
+        },
+        {
+          "destination": "github-artifact-verified.json",
+          "sha256": "e9ae97f8a6bbfb6dfcef13002ca1e06e156edeafb389e92a84ca5bbd81030f91"
+        }
+      ],
+      "assetNotices": [
+        {
+          "path": "assets/fonts/OFL-Inter.txt",
+          "bytes": 4380,
+          "mode": 420,
+          "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+        },
+        {
+          "path": "assets/fonts/OFL-JetBrainsMono.txt",
+          "bytes": 4399,
+          "mode": 420,
+          "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697"
+        },
+        {
+          "path": "assets/fonts/OFL-SourceSans3.txt",
+          "bytes": 4486,
+          "mode": 420,
+          "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328"
+        },
+        {
+          "path": "assets/fonts/OFL-SourceSerif4.txt",
+          "bytes": 4491,
+          "mode": 420,
+          "sha256": "c21d7293d87b6d7ab1d0229a2f55b77f33a7613a6a4e66f6693d68d7d8d09464"
+        }
+      ]
+    },
+    {
+      "app": "pdfcraft",
+      "patchSha256": "8c8aceb98e48f59b0330afdfa5ea7515646804cbbef625da86ecce4b2f0b7199",
+      "reviewSha256": "ec205706cec59941f1492030a4d052baf0598a69258145fd242d71717622a5c0",
+      "wasmSha256": "32be49fd117e0c524399a5aede073947e4198ff4ccf390c4baf9617c03150211",
+      "indexSha256": "4b75cba22b28645801204e47827ef683cd6383c4f8e5437b6045994bd3cc5afe",
+      "sourceIdentity": {
+        "app": "pdfcraft",
+        "patchSha256": "8c8aceb98e48f59b0330afdfa5ea7515646804cbbef625da86ecce4b2f0b7199",
+        "sourceSha256": "c8d5a83a152f91da0e4867a64c22bc8cafe3237bcd53039c3b4fcab30a4e1649",
+        "files": 2011,
+        "review": "docs/verification/pdf-bridge-review2.json",
+        "reviewSha256": "ec205706cec59941f1492030a4d052baf0598a69258145fd242d71717622a5c0"
+      },
+      "reviewScope": "Accepted bounded page source review; fresh source3 CI runtime qualification is separate",
+      "ci": {
+        "app": "pdfcraft",
+        "platform": "windows-x64",
+        "artifactId": 13580443739,
+        "runId": 42386885242,
+        "workflowHead": "9674750d5013cd5c44f52044ec1c944b22b416f6",
+        "bytes": 81159174,
+        "sha256": "5f6148bb9a22dac97d80294f1ef46212e5d1264af377850340afa17cf0971e19",
+        "artifactZipSha256": "5f6148bb9a22dac97d80294f1ef46212e5d1264af377850340afa17cf0971e19",
+        "reportSha256": "914d20b002c4a08d443de2865f5c00b8dbbe53d39b9ae07fcc4b3f34cc414300",
+        "nativeQualificationSha256": "b3c8685f15135d5529c77fc0bef1e20013b587e6f86b6212c763c10bcd9b1eb7",
+        "sourceSha256": "dfbbf9d7e97d8eb6b967e458c0ba696321745aebd6dda37a9f5c0d51a6238780",
+        "lockSha256": "e77d5af343c832775d99cf1a21382dab2989f68d54ff718a832668d813940451",
+        "networkDenial": {
+          "established": false,
+          "enforcement": "Cargo and Trunk offline flags only"
+        },
+        "artifacts": [
+          {
+            "kind": "cli",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/pdfcraft/source/build/engines/offline-builds/pdfcraft/windows-x64-jMwBZ3/runtime/bin/pdfcraft-cli.exe",
+            "sha256": "e88fbb71c048069071961f7ad73769fee03f5d7f1158ec05cb56d2088f9b62da"
+          },
+          {
+            "kind": "wasm",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/pdfcraft/source/build/engines/offline-builds/pdfcraft/windows-x64-jMwBZ3/web/pdfcraft-web-732785d6b54a2510_bg.wasm",
+            "sha256": "32be49fd117e0c524399a5aede073947e4198ff4ccf390c4baf9617c03150211"
+          }
+        ],
+        "build": "build/windows-ci-transfer/restored/pdfcraft/source/build/engines/offline-builds/pdfcraft/windows-x64-jMwBZ3",
+        "webOriginalPath": "build/windows-ci-transfer/restored/pdfcraft/source/build/engines/offline-builds/pdfcraft/windows-x64-jMwBZ3/web"
+      },
+      "sourceSha256": "c8d5a83a152f91da0e4867a64c22bc8cafe3237bcd53039c3b4fcab30a4e1649",
+      "webInventorySha256": "5aa84731f91002101c7d92f26e86e68733467eeb017c983c8ae56ac52e07e551",
+      "evidence": [
+        {
+          "destination": "bridge-candidate-manifest.json",
+          "sha256": "cc70cdef2b288810585cae911ec4fedf7f51ea9b5242e3589fefe30f34477d45"
+        },
+        {
+          "destination": "source3-windows-build-report.json",
+          "sha256": "914d20b002c4a08d443de2865f5c00b8dbbe53d39b9ae07fcc4b3f34cc414300"
+        },
+        {
+          "destination": "source3-windows-wasm-build.log",
+          "sha256": "226383db6db6f52873595f6bacfb91ebb9b06c07f0d3663b32ad5e70d4003b6f"
+        },
+        {
+          "destination": "github-artifact-verified.json",
+          "sha256": "d576ddd802fb619e6f74d8ffab222032674502ee01bf0ca2e91913f4fcffa998"
+        }
+      ],
+      "assetNotices": [
+        {
+          "path": "assets/app-icon/LICENSE-document.txt",
+          "bytes": 1580,
+          "mode": 420,
+          "sha256": "64a3137e3d5cc41e5b78d2ad8dd9ddddd6588283f9f7b3128aa6a8a50852fb9a"
+        },
+        {
+          "path": "assets/app-icon/LICENSE.txt",
+          "bytes": 555,
+          "mode": 420,
+          "sha256": "b768acafe6cbad8247eedf86b5b5381feefcd4ee0f8c7808b86811bc687cf37b"
+        },
+        {
+          "path": "assets/fonts/OFL-DancingScript.txt",
+          "bytes": 4443,
+          "mode": 420,
+          "sha256": "6f090277c00af96651ce6dbcc38ff1591047a3bffef486e80b6a32e8276a8201"
+        },
+        {
+          "path": "assets/fonts/OFL-Inter.txt",
+          "bytes": 4380,
+          "mode": 420,
+          "sha256": "262481e844521b326f5ecd053e59b98c8b2da78c8ee1bdbb6e8174305e54935a"
+        },
+        {
+          "path": "assets/fonts/OFL-JetBrainsMono.txt",
+          "bytes": 4399,
+          "mode": 420,
+          "sha256": "a76abf002c49097d146e86740a3105a5d00450b1592e820a1109a8c5680cd697"
+        },
+        {
+          "path": "assets/icons/LICENSE-lucide.txt",
+          "bytes": 3208,
+          "mode": 420,
+          "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+        }
+      ]
+    },
+    {
+      "app": "deckcraft",
+      "patchSha256": "d3d1c4405efd58774ce865c525b98aab6915a6f7f32be47a0e8753d3225d72b2",
+      "reviewSha256": "acbeb3957c2c8118f49e5fb7dc4474c92e307b8fcdf4bf7ab2edeae79a9b7d50",
+      "wasmSha256": "c3c7e667c624f83c3f8a731a67f8e4cb537c05fb7328fd75e15ba8807cbfc5f7",
+      "indexSha256": "e8696d8291f3e9f63c4ad4d866f9cc84e9845d5823c2481e0dbb879104dca602",
+      "sourceIdentity": {
+        "app": "deckcraft",
+        "patchSha256": "85d246bc942a675c3c307513e59df0d3f0312bd06289fdf9008d1b9f6dc1b1b0",
+        "sourceSha256": "9c88aee518e927422c8db393593280a4a5261a041042f7a3c4c45f5284019ee3",
+        "files": 759,
+        "review": "docs/verification/deck-format-review2.json",
+        "reviewSha256": "7ebedc6753a5a23ac88b73b08fbca7162b023fd2d9ffe7a5a631e5a84f12c52a"
+      },
+      "reviewScope": "Historical bounded page-bridge review plus separately accepted current format-guard source review; fresh runtime qualification is separate",
+      "ci": {
+        "app": "deckcraft",
+        "platform": "windows-x64",
+        "artifactId": 13580013812,
+        "runId": 42386885242,
+        "workflowHead": "9674750d5013cd5c44f52044ec1c944b22b416f6",
+        "bytes": 63410102,
+        "sha256": "ef699b357c9b64997ee08b235c6ea9f62d8908f463f5404fc58baeb93ea4859c",
+        "artifactZipSha256": "ef699b357c9b64997ee08b235c6ea9f62d8908f463f5404fc58baeb93ea4859c",
+        "reportSha256": "0966a6068b7df5a0dcfb6e045d030f47ff2a22a8cc935fc2b478272aad4e4cfe",
+        "nativeQualificationSha256": "fb7a108c007185186d2eb5ebb3563894d14c67312ef84209689398e891641134",
+        "sourceSha256": "e9fd6c106c1bd44e64462d899e6560097da45efa71c6c1bc2836d0fd3661b697",
+        "lockSha256": "e13b6dadeff43d30009caf9ba8d2b1d3e5305dc0915b234224b373cefe4439eb",
+        "networkDenial": {
+          "established": false,
+          "enforcement": "Cargo and Trunk offline flags only"
+        },
+        "artifacts": [
+          {
+            "kind": "cli",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/deckcraft/source/build/engines/offline-builds/deckcraft/windows-x64-JzETQC/runtime/bin/deckcraft-cli.exe",
+            "sha256": "e85d0c32f2a00761c1633d50ba603474da3b62fc74a25f5ec12adfdcf228f209"
+          },
+          {
+            "kind": "wasm",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/deckcraft/source/build/engines/offline-builds/deckcraft/windows-x64-JzETQC/web/deckcraft-web-77f6c7c3426f5744_bg.wasm",
+            "sha256": "c3c7e667c624f83c3f8a731a67f8e4cb537c05fb7328fd75e15ba8807cbfc5f7"
+          }
+        ],
+        "build": "build/windows-ci-transfer/restored/deckcraft/source/build/engines/offline-builds/deckcraft/windows-x64-JzETQC",
+        "webOriginalPath": "build/windows-ci-transfer/restored/deckcraft/source/build/engines/offline-builds/deckcraft/windows-x64-JzETQC/web"
+      },
+      "sourceSha256": "9c88aee518e927422c8db393593280a4a5261a041042f7a3c4c45f5284019ee3",
+      "webInventorySha256": "a151b19158f92254d5a398d014223a112b18e5efec0597c67c67f0f41b1da270",
+      "evidence": [
+        {
+          "destination": "bridge-candidate-manifest.json",
+          "sha256": "57e82180f31d877facd271dbcea2edc02609bee510c79d66a2aaafd0fb2ef0d0"
+        },
+        {
+          "destination": "source3-windows-build-report.json",
+          "sha256": "0966a6068b7df5a0dcfb6e045d030f47ff2a22a8cc935fc2b478272aad4e4cfe"
+        },
+        {
+          "destination": "source3-windows-wasm-build.log",
+          "sha256": "da06cb0dc21fe0a15aec0543bf492843a3532bec2838d6254d1111437054a612"
+        },
+        {
+          "destination": "github-artifact-verified.json",
+          "sha256": "e2664a91f767d27b62c832d9bccf68935d7d5f30a15483388e6b15b859fa4eee"
+        },
+        {
+          "destination": "format-guard.patch",
+          "sha256": "85d246bc942a675c3c307513e59df0d3f0312bd06289fdf9008d1b9f6dc1b1b0"
+        },
+        {
+          "destination": "format-guard-candidate-manifest.json",
+          "sha256": "19e114357cb4290709ef2d0be3e5e463b6b3f0ab9c9ed6719fb5790b10b4b841"
+        },
+        {
+          "destination": "format-guard-independent-review.json",
+          "sha256": "7ebedc6753a5a23ac88b73b08fbca7162b023fd2d9ffe7a5a631e5a84f12c52a"
+        },
+        {
+          "destination": "format-guard-prior-wasm-qualification.json",
+          "sha256": "a7d2ba149b2f1255aef7b3392087fcab78739356d9fe128857656fe49261e3fe"
+        },
+        {
+          "destination": "format-guard-prior-native-qualification.json",
+          "sha256": "fd3002d5ba62e00324413b409dca4b6444e595af23314a644c9bc09d535f580e"
+        }
+      ],
+      "assetNotices": []
+    },
+    {
+      "app": "gridcraft",
+      "patchSha256": "171eed5dded36d84e34855002e828ed636b7f59ecac9bcffdf0ef64373291f0e",
+      "reviewSha256": "8a44135e075a71fdde9bc849b9dcc8aec985893c0fbf0f99aaeae27a43ab745c",
+      "wasmSha256": "c487a0deee1cfefe497630af59f362614ad2085634fcd3fd795d7829f1d126a8",
+      "indexSha256": "a95b50e7bcda220799e2f1de05247927ae91e724f3fe69369d552d3b9fe10f78",
+      "sourceIdentity": {
+        "app": "gridcraft",
+        "patchSha256": "171eed5dded36d84e34855002e828ed636b7f59ecac9bcffdf0ef64373291f0e",
+        "sourceSha256": "61b6a1708e9b6c69b153785e9521db1752ff210b63b6f75b3058be02b75e2feb",
+        "files": 786,
+        "review": "docs/verification/grid-bridge-review2.json",
+        "reviewSha256": "8a44135e075a71fdde9bc849b9dcc8aec985893c0fbf0f99aaeae27a43ab745c"
+      },
+      "reviewScope": "Accepted bounded page source review; fresh source3 CI runtime qualification is separate",
+      "ci": {
+        "app": "gridcraft",
+        "platform": "windows-x64",
+        "artifactId": 13580765553,
+        "runId": 42386885242,
+        "workflowHead": "9674750d5013cd5c44f52044ec1c944b22b416f6",
+        "bytes": 26333946,
+        "sha256": "c6fbede127b3ccd294a0eae5c72bb71b4c2be073e7b8985891ea5676a3469775",
+        "artifactZipSha256": "c6fbede127b3ccd294a0eae5c72bb71b4c2be073e7b8985891ea5676a3469775",
+        "reportSha256": "95c1ce116f34040192c5f018896590e0868cb7e3c9184f584de81e825d44e0fc",
+        "nativeQualificationSha256": "cfa9dcf5f887c1c372c206e992cdf273d33ff7a8f2f2ad58dccc154aeea4b491",
+        "sourceSha256": "3968b5f5ff9a7a74c52569df39fc4bffd9116d323c5fef5db286bcea1aa8ced8",
+        "lockSha256": "bb9f15e76728fea6cbf9470b31fbb499a462f4d0a90080a62f549a0defdf52f1",
+        "networkDenial": {
+          "established": false,
+          "enforcement": "Cargo and Trunk offline flags only"
+        },
+        "artifacts": [
+          {
+            "kind": "cli",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/gridcraft/source/build/engines/offline-builds/gridcraft/windows-x64-luuYf1/runtime/bin/gridcraft-cli.exe",
+            "sha256": "61688b17346bf67fc8f9d1f3b435c876edf70ff890084d6567b3b2915c19b2b4"
+          },
+          {
+            "kind": "wasm",
+            "path": "build/windows-native-progress/ci-engine-results/windows-x64/gridcraft/source/build/engines/offline-builds/gridcraft/windows-x64-luuYf1/web/gridcraft-web-bcba8191cc98c6b0_bg.wasm",
+            "sha256": "c487a0deee1cfefe497630af59f362614ad2085634fcd3fd795d7829f1d126a8"
+          }
+        ],
+        "build": "build/windows-ci-transfer/restored/gridcraft/source/build/engines/offline-builds/gridcraft/windows-x64-luuYf1",
+        "webOriginalPath": "build/windows-ci-transfer/restored/gridcraft/source/build/engines/offline-builds/gridcraft/windows-x64-luuYf1/web"
+      },
+      "sourceSha256": "61b6a1708e9b6c69b153785e9521db1752ff210b63b6f75b3058be02b75e2feb",
+      "webInventorySha256": "9714215c7fe3fcff6a2d75955d1f7357623a1df8009f3f5c6c8e031c24db997c",
+      "evidence": [
+        {
+          "destination": "bridge-candidate-manifest.json",
+          "sha256": "dec9aee19493a197d298a9ed97aa2e087a7a87d25e3bc83d8a067f9719117e43"
+        },
+        {
+          "destination": "source3-windows-build-report.json",
+          "sha256": "95c1ce116f34040192c5f018896590e0868cb7e3c9184f584de81e825d44e0fc"
+        },
+        {
+          "destination": "source3-windows-wasm-build.log",
+          "sha256": "2388b35a94528af516001015760a9f3d0957980e5bfbf41fb69f54c9f58232ed"
+        },
+        {
+          "destination": "github-artifact-verified.json",
+          "sha256": "175d857ca1de2186d6ee3daee0a4e5c6a01a2711a96bbbdcf7cb7b929ed92e2c"
+        }
+      ],
+      "assetNotices": [
+        {
+          "path": "assets/app-icon/LICENSE.txt",
+          "bytes": 577,
+          "mode": 420,
+          "sha256": "9596de48b5e42fbf727c924bb3863f0e28fcd9e38c47cca284e1174bd06481ce"
+        }
+      ]
+    }
+  ],
+  "globalEvidence": [
+    {
+      "path": "build/windows-ci-verifier/public-engine-builds-progress3-windows-x64.json",
+      "destination": "source3-windows-full-builds.json",
+      "sha256": "e6f0d19bf6f1d8f9178377a6a9bcdce7d87089b648f8707a48d4cfe07c4cc837"
+    },
+    {
+      "path": "build/windows-ci-verifier/authority/ci-engine-pins-windows-progress3.json",
+      "destination": "source3-windows-api-authority.json",
+      "sha256": "e608c6d71cb3fd69f14f8f33846760bf7d1a595a1e52342cffd5835cee7b571d"
+    },
+    {
+      "path": "build/windows-ci-verifier/verify-windows-engine-results.mjs",
+      "destination": "source3-windows-verifier-reference.mjs",
+      "sha256": "fb20294a84d6891da39ce5d8500934cf19a69bedda22b127747cc0097f82b89a"
+    },
+    {
+      "path": "build/windows-ci-transfer/run.json",
+      "destination": "github-run.json",
+      "sha256": "c09e4617ddbb01cd30bceb8225f8bffe7c6ff4d31fa1cd392f9e5d33b0febe9d"
+    },
+    {
+      "path": "build/windows-ci-transfer/jobs.json",
+      "destination": "github-jobs.json",
+      "sha256": "80d3b1f7a6479acb28c8805da4fb471d811d3c6f1ff5a4a854361c50ac0d9d49"
+    },
+    {
+      "path": "build/windows-ci-transfer/artifacts.json",
+      "destination": "github-artifacts.json",
+      "sha256": "2077839ebeb890ddea15df96fd94ba080cde127391a156f262c7ce2fff18fcc6"
+    },
+    {
+      "path": "docs/verification/public-download-source3.json",
+      "destination": "source3-public-source-verification.json",
+      "sha256": "6d3042244086f7b8f37c854e6416283b9c964ca74b3253d84654a55655ab92cb"
+    },
+    {
+      "path": "build/public-qualification/progress3/source/MANIFEST.json",
+      "destination": "source3-full-source-manifest.json",
+      "sha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa"
+    },
+    {
+      "path": "docs/engines/APPLIED-PATCHES.json",
+      "destination": "applied-source-patches.json",
+      "sha256": "f05594721ccd6f4de588f2f01504b10a7a6d441d689fd7b2006e1ea3e493cf8d"
+    },
+    {
+      "path": "docs/verification/deck-format-review2.json",
+      "destination": "deck-current-format-source-review.json",
+      "sha256": "7ebedc6753a5a23ac88b73b08fbca7162b023fd2d9ffe7a5a631e5a84f12c52a"
+    },
+    {
+      "path": "build/engines/support-inputs/MANIFEST.json",
+      "destination": "support-full-input-manifest.json",
+      "sha256": "9a213c32fde8cfbe505364a0f5381587b79e34c2ee9648d1d22e4cd9c518e269"
+    },
+    {
+      "path": "build/engines/support-inputs/SUPPORT-PROVENANCE.json",
+      "destination": "SUPPORT-PROVENANCE.json",
+      "sha256": "3a79ce6608275e7123804862bab0d82331271f6c3a762b0755be0d31a3d1f814"
+    }
+  ],
+  "preservedProgress2": [
+    {
+      "path": "scripts/package-web-integration.mjs",
+      "sha256": "f1d4f9eed34ed10abedc8f09b80a9cc1d78866670f0d5959e64aca93948eb2f4"
+    },
+    {
+      "path": "config/web-component-pins-progress2.json",
+      "sha256": "1342d1848bf4134be21b5daf4b18f12167731ba2018a5a8afde5718bda47392f"
+    },
+    {
+      "path": "build/web-progress-releases/office-wasm-integration-progress2-r1.zip",
+      "sha256": "c9f910319af14cdc2c884caaaa20f49e7f6f1cc6b4d3c0520a05ba7468959146"
+    },
+    {
+      "path": "build/web-progress-releases/office-wasm-integration-progress2-r1.zip.json",
+      "sha256": "e7dd9487bbb620b25e19c870ea1f73338c0dfe80361dae7bfb08b660b19db116"
+    },
+    {
+      "path": "build/web-progress-releases/office-wasm-integration-progress2-r1.zip.sha256",
+      "sha256": "01108c27b08be7c1c2cda45b849f015951c8026304af1a1e58adb1117dfb8099"
+    }
+  ],
+  "limits": [
+    "Accepted source reviews are scoped and not a fresh review of this assembled runtime",
+    "Deck bridge review is historical; current guard source/review and current CI source are bound separately",
+    "Windows CI offline flags are not OS network denial",
+    "Actual local Chromium/Node checks are not private WebView or full Microsoft/Adobe parity"
+  ]
+}
