@@ -1,0 +1,89 @@
+{
+  "schemaVersion": 1,
+  "kind": "exact-public-source3-native-runtime-authority",
+  "status": "ADMITTED_REVIEWED_ARCHIVES",
+  "sourceCommit": "e8e4364c20018abb1222c69b7e50839abfe62644",
+  "sourceArchiveSha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+  "sourceManifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+  "sdkAuthoritySha256": "1342d1848bf4134be21b5daf4b18f12167731ba2018a5a8afde5718bda47392f",
+  "files": [
+    {
+      "platform": "macos-arm64",
+      "name": "office-native-source3-r1-macos-arm64.zip",
+      "bytes": 250377148,
+      "sha256": "335d5ab993c01a939feeda8dfd035b856a3281d1fc61f0952d366813638468d2",
+      "manifestSha256": "87c93bb2a40eb36035d3a51347b73252c5212efb434b9a6b352934a09ab6253a",
+      "manifestFiles": 399,
+      "workers": [
+        {
+          "app": "wordcraft",
+          "sha256": "1ce092a78fd40f98877ace2f552a4868dc782d09df1be5d4c13d4e4fa70f4277"
+        },
+        {
+          "app": "pdfcraft",
+          "sha256": "635c63a1e4e89219fa4807b04bd994b65ca3b6119bb9411b2381305f0cc8cb1a"
+        },
+        {
+          "app": "deckcraft",
+          "sha256": "adff3002d39e840c4f50bb438e01e445cdfa8ecea30cbdccad0f868611b92f09"
+        },
+        {
+          "app": "gridcraft",
+          "sha256": "1bdb7071b759b04598e9a94c7f1f7a6a4f7fb2b4458fc5fd939170168fe6c29f"
+        }
+      ]
+    },
+    {
+      "platform": "macos-x64",
+      "name": "office-native-source3-r1-macos-x64.zip",
+      "bytes": 254390723,
+      "sha256": "a9ad54c1fe26324501e081c9541966771b76f3ed2a4fd35a42910f837ae0074e",
+      "manifestSha256": "e4360e9f4136c77ea40cd308638370db2e62f864436314605a83aa182b8d7932",
+      "manifestFiles": 399,
+      "workers": [
+        {
+          "app": "wordcraft",
+          "sha256": "1bff02a41ef6ace03ef405b54d22264bacd71fb1c6ad9e67c0f0d488e2d27946"
+        },
+        {
+          "app": "pdfcraft",
+          "sha256": "0bea706a1d0d58609df0d01ec5efef56b8efb03c2efe22f1987130b2dcda6aa4"
+        },
+        {
+          "app": "deckcraft",
+          "sha256": "a684deb4ce2f4032d1095ab8a2102a7b74cd54e89e034e647ee8b2900f74ab9e"
+        },
+        {
+          "app": "gridcraft",
+          "sha256": "14b6a3fcefe0e5a6d81be1a863632c9456beec5d133449a8fc27e2472f8b464c"
+        }
+      ]
+    },
+    {
+      "platform": "windows-x64",
+      "name": "office-native-windows-x64-progress3-r1.zip",
+      "bytes": 249300942,
+      "sha256": "055a27446f7aab4c6321f41c5a1be69a787384e9352555af964fe129b61f43c0",
+      "manifestSha256": "b7d033564f8b0e52959b007d144b6d22b371a5df3eaa15bd43668d656ff123de",
+      "manifestFiles": 400,
+      "workers": [
+        {
+          "app": "wordcraft",
+          "sha256": "8994b1f6fb249938b97f3adf0a421cbc3025b55128c83b85ecc6d43f84a2d29f"
+        },
+        {
+          "app": "pdfcraft",
+          "sha256": "b6081cdd8fa1d2002a9ba969d4182d2cc451e2b8206f2ca2472b4da8b82cff55"
+        },
+        {
+          "app": "deckcraft",
+          "sha256": "5625c47a65037a2f1e646ffb5e984b33bae2af17fa419175831835f4e564d5f1"
+        },
+        {
+          "app": "gridcraft",
+          "sha256": "005da41e4523c7c4c73f4ebd58cf7ff7800a552e39bf48b52205b7515eb2f486"
+        }
+      ]
+    }
+  ]
+}
