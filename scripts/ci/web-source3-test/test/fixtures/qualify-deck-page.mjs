@@ -4,7 +4,7 @@ async page=>{
  await page.route('**/*',route);
  try{
   await page.goto('http://127.0.0.1:8930/__qualification/host?app=deckcraft');
-  await page.waitForFunction(()=>window.conformance?.ready,{timeout:90000});
+  await page.waitForFunction(()=>window.conformance?.ready,null,{timeout:90000});
   const first=await page.evaluate(async()=>{
    const assert=(v,m)=>{if(!v)throw Error(m);},e=window.conformance.editor,caps=e.capabilities();
    assert(caps.pageCommands&&caps.durableSave&&caps.confirmedOpen&&caps.revisions,'Live Deck capabilities missing');
