@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "scope": "ACTUAL_PUBLIC_SOURCE3_NATIVE_AND_DATA",
+  "evidenceAdequate": "YES",
+  "objectiveGates": "PASS",
+  "thresholdResult": "PASS",
+  "head": "685bcf064c47c5601a4c10b14e016a458d6cc988",
+  "nativeRun": 42402906309,
+  "dataRun": 42402918764,
+  "nativeTargets": [
+    "macos-arm64",
+    "macos-x64",
+    "windows-x64"
+  ],
+  "nativeWorkerOperations": 12,
+  "anonymousDataAssets": 44,
+  "anonymousDataBytes": 1193757176,
+  "negativeControls": 53,
+  "inputIdentitySha256": "39a51e8f4f532e31da9dee5fcc0ee588884a9b5e67833606194addc2860028a6",
+  "wholeProductAcceptance": false,
+  "windows11Acceptance": false,
+  "privateHostAcceptance": false,
+  "offlineRebuildAcceptance": false,
+  "decisiveFindings": [
+    "Both runs are completed success at the exact immutable public head with all four jobs and all eight steps per job successful.",
+    "All four original report ZIPs exactly match independently fetched GitHub API artifact IDs, sizes and SHA256 digests; central/local framing, CRCs, unique regular safe members and cross-report identities pass.",
+    "Each native report binds the exact public runtime archive, manifest, own SDK and all four exact worker hashes to successful open-edit-save-reopen, preserved content, stale revision rejection, dirty state after failed save, retry and Unicode/space paths under empty PATH.",
+    "The macOS and Windows reports contain their separately scoped real OS network controls. Windows exact-path identity and cleanup/restoration/service state pass rather than merely asserting cleanupVerified.",
+    "All 44 exact fixed public reconstruction data records match individual anonymous full-readback results, including original source archive identity."
+  ],
+  "highestLeverageRemainingGap": "No material gap in this component threshold. Complete-source packaging, durable CI-receipt publication and independent whole-artifact integration acceptance remain root responsibilities.",
+  "confidence": "High for the declared component threshold, bounded by the public CI evidence trust boundary and stated targets.",
+  "limitations": [
+    "This is a component evidence review of actual public GitHub Actions runs, not a new local rerun of foreign target binaries.",
+    "The observed targets are macos-15 arm64, macos-15-intel x64 and windows-2022 x64. Windows Server 2022 is not Windows 11 client acceptance.",
+    "Windows Defender Firewall proof is scoped to Node and four exact worker executable paths; arbitrary descendants and OS-wide isolation are not admitted. The inner NOT_ENFORCED field is explicitly supplied by the validated outer driver.",
+    "macOS positive TCP and EPERM probes validate the same inherited sandbox-exec deny network* profile used by actual worker qualification.",
+    "Grid rendering is explicitly UNSUPPORTED and correctly reported false; the other three workers return valid PNGs. This does not accept every optional engine feature.",
+    "The forty-four reconstruction data assets passed complete anonymous size and SHA256 readback during run 42402918764; this admits byte availability and identity at that run, not their runtime behavior.",
+    "The admitted original source archive has 4889 manifest files. Final complete-source packaging, durable publication of these CI receipts and whole-artifact integration review remain separate root work.",
+    "No offline source rebuild, private WebView/host integration, Microsoft/Adobe parity, whole-product/file parity or production acceptance is granted.",
+    "Independent source and API reads used the GitHub connector. GitHub-hosted job execution and original artifact SHA256 metadata are the evidence trust boundary; the critic did not build the candidate."
+  ],
+  "passes": [
+    {
+      "pass": 1,
+      "focus": "Complete identity and operation admission",
+      "result": "Both successful actual run/head/jobs/artifacts sets and all native/data report semantics admitted. Source TAR normalization and expected corrupt-deflate rejection were corrected in the critic harness.",
+      "materialIssuesRemaining": 0
+    },
+    {
+      "pass": 2,
+      "focus": "Domain reread of immutable public driver and source closure",
+      "result": "Read all eight public source files independently at the actual head, plus archived manifest helper, extracted-runtime verifier, and worker qualification driver. Exact archive, own SDK, all-four operations, empty PATH, real OS network controls and cleanup code support the scoped report fields.",
+      "materialIssuesRemaining": 0
+    },
+    {
+      "pass": 3,
+      "focus": "Defect hunt with adversarial evidence",
+      "result": "Rejected forged-only pass, wrong archive/worker, partial operations, lost save retry, populated PATH, no permission denial, bad cleanup, duplicate removed rules, profile/service changes, malformed/link ZIPs, missing/duplicate/changed data, wrong source authority and wrong actual run/head/failed step.",
+      "materialIssuesRemaining": 0
+    },
+    {
+      "pass": 4,
+      "focus": "Final scope and low-cost polish",
+      "result": "All positive captures still pass; final reread found no material remaining issue within the exact three-native and forty-four-data threshold. Preserved Windows Server/per-executable, byte-only reconstruction and non-parity limits. Removed expected fixture warning from successful checker output.",
+      "materialIssuesRemaining": 0
+    }
+  ]
+}
