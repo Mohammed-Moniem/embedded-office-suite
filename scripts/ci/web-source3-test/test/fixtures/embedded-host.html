@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><title>Embedded Office integration qualification</title>
+<style>html,body{margin:0;height:100%;font:14px system-ui}header{height:42px;box-sizing:border-box;padding:10px 16px;background:#172c38;color:white}#editor{height:calc(100% - 42px)}iframe{width:100%;height:100%;border:0}#status{margin-left:20px;color:#bce8cf}</style>
+<header>Integration qualification fixture <span id="status">Loading</span></header><main id="editor"></main>
+<script type="module">
+import {mountOfficeEditor} from '/office/sdk/index.mjs';
+const apps=['wordcraft','pdfcraft','deckcraft','gridcraft'];
+window.conformance={editor:null,events:[],saves:[],errors:[],ready:false};
+window.conformance.load=async function(app){
+  if(!apps.includes(app))throw Error('Unknown app');
+  window.conformance.editor?.dispose();
+  document.querySelector('#editor').replaceChildren();
+  window.conformance.ready=false;
+  const editor=mountOfficeEditor({container:document.querySelector('#editor'),app,assetBaseUrl:location.origin+'/office/apps',readyTimeoutMs:120000,host:{
+    async writeFileAtomic({name,bytes,revision,saveAs}){
+      const response=await fetch('/__qualification/save?app='+app+'&name='+encodeURIComponent(name),{method:'POST',body:bytes});
+      if(!response.ok)throw Error('Qualification storage failed');
+      const receipt=await response.json();window.conformance.saves.push({...receipt,revision,saveAs});return receipt;
+    },
+    onDirty(state){window.conformance.events.push({type:'dirty',...state});},
+    onError(error){window.conformance.errors.push({code:error.code,message:error.message});}
+  }});
+  window.conformance.editor=editor;
+  const caps=await editor.ready;
+  window.conformance.ready=true;
+  document.querySelector('#status').textContent=app+' ready; '+(caps.pageCommands?'page commands':'legacy bridge');
+  return caps;
+};
+try{await window.conformance.load(new URLSearchParams(location.search).get('app')||'wordcraft');}catch(error){window.conformance.errors.push({code:error.code,message:error.message});document.querySelector('#status').textContent=error.message;}
+</script></html>
