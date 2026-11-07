@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "scope": "actual-three-platform-standalone-transfer-helper",
+  "run": 42406484290,
+  "head": "f4a02a1ab895361965c893cf32ad514b0a52367d",
+  "evidenceAdequate": "YES",
+  "objectiveGates": "PASS",
+  "thresholdResult": "PASS",
+  "freezeSha256": "0ae574e9af099ce5bb60273929696e74beb72edca972666f043946d7a3c0c15b",
+  "identitySha256": "2feb5ce755d753291266c77b26e759763c8f20e9ca690d8e05d0b154375a0b6f",
+  "controlsSha256": "0246b6f48edb12b2489f14738285c57e156b7fc0378a2fb268d896fa3c9cdf15",
+  "blockingFindings": [],
+  "originalFailuresPreserved": true,
+  "transport": "independent read-only GitHub CLI REST API captures; connector unavailable",
+  "decisiveEvidence": [
+    "Independent GitHub REST API captures agree with all original run/jobs/artifact metadata; exact run42406484290/headf4a02a1, three matching successful jobs and eight successful steps each.",
+    "Eight source files fetched independently at the immutable head agree byte for byte with the local helper/config/guide/review/proof/driver/workflow/attributes closure; helper and config pins remain unchanged.",
+    "All three original report ZIPs match GitHub artifact size and SHA256. All18 JSON members pass local/central header, bounded deflate, CRC and original-stage SHA256 checks.",
+    "Fifteen original CLI stages have exact exits0/0/0/1/1 and matching raw stdout/stderr; each target independently hashes its entire native archive and WASM archive after download and again during offline reuse.",
+    "Unicode and space paths contain only the exact standalone script/config; build authorities absent. Plan leaves destination absent, wrong existing58-byte operator file remains unchanged, missing offline destination remains absent, and poisoned-fetch audits observe zero calls.",
+    "49 mutation controls reject partial artifacts, wrong run/head, failed steps, bad CRC/hash, missing stages, forged rehashed receipts, bad exits/errors, fetch attempts and changed operator files.",
+    "Original Windows line-ending failure and subsequent preloader failure remain byte-exact. The latter preserves an actual330770684-byte successful download before the test preloader failure; it is not relabeled a successful run.",
+    "Current driver differs from preserved original driver only by converting the poison preloader path to a file URL; the original prepared freeze is historical and is not re-run as if it described this new driver."
+  ],
+  "highestLeverageRemainingGap": "No blocking gap within actual standalone runtime archive transfer qualification. Native runtime execution and Windows11/private-host integration require their own evidence.",
+  "fourPasses": [
+    "Read inherited gates/security and inspect exact CLI, driver, workflow, attributes and original child outputs.",
+    "Reread archive transfer versus runtime/product acceptance boundary and platform-specific offline preloader behavior.",
+    "Independently capture immutable API/source data, validate raw ZIP members and run semantic mutation controls.",
+    "Check packet stability, original-failure preservation and platform/effect wording; freeze receipts and scoped verdict."
+  ],
+  "limitations": [
+    "The three hosted environments are macOS15 ARM64, macOS15 Intel x64 and Windows Server2022 x64 with Node24.18.0.",
+    "Evidence establishes transfer availability and full archive byte integrity, existing-file offline reuse with poisoned fetch, read-only plan, operator-file preservation and missing-offline rejection.",
+    "Report and original stage JSON are retained; this review decodes report ZIPs in memory only. No native/WASM archive extraction, installation, runtime execution or source compilation occurs.",
+    "No Windows11, private-host integration, Office/Adobe parity, whole-product completion or Windows console/signal cleanup acceptance.",
+    "The driver observes zero calls to global fetch for offline/plan/negative stages; this is a fetch poison/audit result, not an OS network sandbox claim.",
+    "The two original failed Windows runs remain failures. Historical preparation is retained separately from this actual run; the sole driver repair is pathToFileURL(poison).href."
+  ],
+  "independence": "Fresh critic authored review oracles and verdict; independent API/source captures use GitHub CLI after advertised connector tools returned unavailable. No requested verdict was supplied."
+}
