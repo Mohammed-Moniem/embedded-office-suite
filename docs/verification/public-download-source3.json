@@ -1,0 +1,60 @@
+{
+  "schemaVersion": 1,
+  "tag": "v0.1.0-progress.3",
+  "sourceCommit": "e8e4364c20018abb1222c69b7e50839abfe62644",
+  "sourceTree": "612a5b209d30f24bae6acc1e930cdeeab5125c12",
+  "passed": true,
+  "anonymousPublicFetch": true,
+  "fullSourceGitBlobsAndModesVerified": 4889,
+  "files": [
+    {
+      "role": "source",
+      "name": "office-source-progress3-r1.tar.gz",
+      "bytes": 39019135,
+      "sha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+      "manifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-source-progress3-r1.tar.gz",
+      "anonymousDownloadVerified": true,
+      "manifestFiles": 4889
+    }
+  ],
+  "applied": [
+    {
+      "app": "wordcraft",
+      "patchSha256": "0f2b0cd11b8ee84fb68c601b13c8491634dde4375ace52c31ee0e266896bdb70",
+      "sourceSha256": "6b81e533c81eaf9158aef2db8b7c1250e61eaa7f81232f2be9421f9cfdbf9a25",
+      "files": 1051,
+      "review": "docs/verification/integration-review4.json",
+      "reviewSha256": "809c413d413e8130867bfe55a61cd33fb26d44d29a4e303051b5c1f23dd0fd87"
+    },
+    {
+      "app": "pdfcraft",
+      "patchSha256": "8c8aceb98e48f59b0330afdfa5ea7515646804cbbef625da86ecce4b2f0b7199",
+      "sourceSha256": "c8d5a83a152f91da0e4867a64c22bc8cafe3237bcd53039c3b4fcab30a4e1649",
+      "files": 2011,
+      "review": "docs/verification/pdf-bridge-review2.json",
+      "reviewSha256": "ec205706cec59941f1492030a4d052baf0598a69258145fd242d71717622a5c0"
+    },
+    {
+      "app": "deckcraft",
+      "patchSha256": "85d246bc942a675c3c307513e59df0d3f0312bd06289fdf9008d1b9f6dc1b1b0",
+      "sourceSha256": "9c88aee518e927422c8db393593280a4a5261a041042f7a3c4c45f5284019ee3",
+      "files": 759,
+      "review": "docs/verification/deck-format-review2.json",
+      "reviewSha256": "7ebedc6753a5a23ac88b73b08fbca7162b023fd2d9ffe7a5a631e5a84f12c52a"
+    },
+    {
+      "app": "gridcraft",
+      "patchSha256": "171eed5dded36d84e34855002e828ed636b7f59ecac9bcffdf0ef64373291f0e",
+      "sourceSha256": "61b6a1708e9b6c69b153785e9521db1752ff210b63b6f75b3058be02b75e2feb",
+      "files": 786,
+      "review": "docs/verification/grid-bridge-review2.json",
+      "reviewSha256": "8a44135e075a71fdde9bc849b9dcc8aec985893c0fbf0f99aaeae27a43ab745c"
+    }
+  ],
+  "limits": [
+    "Exact source integrity only; SDK/helper checks, Windows tools startup, compiles and runtime acceptance are separately qualified",
+    "Earlier native/WASM components retain their own frozen source identities",
+    "Not Windows11/privatehost or Microsoft/Adobe parity"
+  ]
+}
