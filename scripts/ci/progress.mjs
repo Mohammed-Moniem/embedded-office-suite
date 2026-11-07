@@ -1,4 +1,4 @@
-// Exact published P1 input qualification. Stages preserve failure evidence; no npm install.
+// Exact published source3-r1 with P1 vendor/support and platform tools. Stages preserve failure evidence; no npm install.
 import assert from 'node:assert/strict';
 import {readFile,mkdir,rename,readdir,writeFile} from 'node:fs/promises';
 import {createWriteStream,createReadStream} from 'node:fs';
@@ -16,8 +16,8 @@ assert(Object.hasOwn(vendors,app)&&Object.hasOwn(tools,platform),'Unsupported qu
 assert(['all','restore','build','qualify'].includes(phase),'Unknown qualification phase');
 const base=resolve('build/progress-ci'),downloads=join(base,'downloads'),source=join(base,'source');
 await mkdir(base,{recursive:true});
-const sourceCommit='60e8d44a769b998827f308ceb58f5cba5b6a0e17',sourceManifestSha='a5272fd9b84e920567e3817fbe545c84acbc077538346bdfbed937d0cf2f1309';
-const sourceName='office-source-progress1.tar.gz',sourceSha='b069e1a87666791cbbfb2b34601b474d11cb7c465862bce013a9279aab0a5382';
+const sourceCommit='e8e4364c20018abb1222c69b7e50839abfe62644',sourceManifestSha='566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa';
+const sourceName='office-source-progress3-r1.tar.gz',sourceSha='ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c';
 const assets=[{name:sourceName,sha256:sourceSha},{name:'office-build-inputs-vendor-'+app+'.tar.gz',sha256:vendors[app]},{name:'office-build-inputs-support-complete3.tar.gz',sha256:'b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c'},{name:'office-build-inputs-tools-'+platform+(platform==='windows-x64'?'-gzip-r1':'')+'.tar.gz',sha256:tools[platform]}];
 const supervisor=createSupervisor(join(base,'evidence',phase));
 async function hash(path){const h=createHash('sha256');for await(const bytes of createReadStream(path))h.update(bytes);return h.digest('hex');}
@@ -49,7 +49,7 @@ async function restore(){
  await mkdir(downloads,{recursive:true});await mkdir(source,{recursive:true});
  for(const asset of assets)await supervisor.stage('download-'+asset.name.replaceAll('.','-'),async()=>{
   const file=join(downloads,asset.name),signal=AbortSignal.timeout(300000);
-  const response=await fetch('https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/'+asset.name,{signal});
+  const response=await fetch('https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/'+(asset.name===sourceName?'v0.1.0-progress.3':'v0.1.0-progress.1')+'/'+asset.name,{signal});
   assert(response.ok&&response.body,'Cannot download '+asset.name+': '+response.status);
   await pipeline(Readable.fromWeb(response.body),createWriteStream(file+'.partial',{flags:'wx'}),{signal});
   assert.equal(await hash(file+'.partial'),asset.sha256,'Published archive checksum mismatch');
