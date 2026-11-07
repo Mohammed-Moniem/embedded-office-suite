@@ -1,0 +1,11 @@
+{
+  "name": "@embedded-office/node",
+  "version": "0.1.0",
+  "description": "Host-controlled Node integration for Rust office engines and embedded WASM sessions",
+  "type": "module",
+  "engines": {"node": ">=22"},
+  "exports": {".": {"types": "./index.d.ts", "import": "./index.mjs"}},
+  "files": ["index.mjs", "index.d.ts", "src", "examples", "README.md", "VERIFICATION.md"],
+  "license": "MIT",
+  "scripts": {"test": "node --test test/*.test.mjs"}
+}
