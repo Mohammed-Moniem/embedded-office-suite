@@ -1,0 +1,37 @@
+name: Exact public progress input qualification
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rebuild:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        os: [macos-15, macos-15-intel, windows-2022]
+        app: [wordcraft, pdfcraft, deckcraft, gridcraft]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Verify, extract, compile and qualify exact public archives
+        run: node scripts/ci/progress.mjs --app ${{ matrix.app }}
+      - name: Retain actual build evidence and runtime outputs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: progress-${{ matrix.os }}-${{ matrix.app }}
+          path: |
+            build/progress-ci/PUBLIC-INPUTS.json
+            build/progress-ci/source/build/engines/offline-builds/**/report.json
+            build/progress-ci/source/build/engines/offline-builds/**/*.log
+            build/progress-ci/source/build/engines/offline-builds/**/native-qualification.json
+            build/progress-ci/source/build/engines/offline-builds/**/runtime
+            build/progress-ci/source/build/engines/offline-builds/**/web
+          if-no-files-found: error
+          retention-days: 14
