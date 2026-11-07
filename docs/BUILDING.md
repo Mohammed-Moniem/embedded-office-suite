@@ -1,0 +1,15 @@
+# Building integration components
+
+Use the [download guide](DOWNLOADS.md) and [offline recipe](engines/OFFLINE-BUILD.md). The explicit source archive contains the full four-engine code; the public main branch is a CI/publication bootstrap. GitHub's automatic bootstrap source ZIP is incomplete.
+
+No Cargo registry access is needed with the captured kit. Download the source, the four per-engine vendor archives, support-complete3 and the tool archive matching the target. Their published SHA-256 values and per-file manifests identify exact inputs. The recipes use bundled Rust/Cargo 1.95.0, Trunk 0.22.1, wasm-bindgen 0.2.129 and Binaryen 131. They leave the global Rust installation alone. The existing approved Node runtime, system tar and native linker/OS SDK are prerequisites.
+
+From the extracted source, unpack each input with scripts/unpack-build-inputs.mjs, as shown in the offline recipe. Then run `node scripts/engines/offline-build.mjs wordcraft all` and repeat for pdfcraft, deckcraft and gridcraft. Each run uses a fresh Cargo home and compilation target, original lockfiles, --offline --frozen and the inventoried support assets. Missing inputs fail. An offline flag alone does not prove OS-enforced network denial.
+
+The Exact public progress input qualification workflow downloads and verifies the published source/input archives and compiles native CLI plus WASM for all four engines. All four macOS ARM64 jobs passed with OS network denial; Intel and Windows results are tracked separately. CI evidence is bound to progress1 source commit 60e8d44a769b998827f308ceb58f5cba5b6a0e17, not later working candidates. Windows Server 2022 execution does not establish Windows 11 client acceptance. WASM compilation does not establish browser or private WebView acceptance.
+
+The Exact public SDK progress qualification workflow runs the exact archived SDK/helper tests on Windows Server 2022, macOS ARM64 and Intel. All three passed. Intel used serial test-file scheduling after a synthetic startup deadline failed under contention; test assertions and product deadlines are unchanged. Reports are attached to the [progress release](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.1).
+
+Run `node scripts/run-tests.mjs` for local SDK/helper checks. Run `node scripts/verify-engines.mjs` against actual workers; absent workers fail. On macOS, `node scripts/verify-extracted-runtime.mjs --directory <exact-extracted-runtime> --deny-network` verifies the packaged SDK and all four native workers with an empty PATH and inherited OS network denial. Derived Grid workers require automation-roots; there is no implicit unconfined fallback.
+
+Artifacts are IN_PROGRESS integration components for an existing Node/WebView desktop host. No standalone GUI or launcher is built. Default-feature builds, a passing regression suite and successful extraction do not establish optional-feature completeness, full Microsoft/Adobe behavior, all historical OS support or private-harness acceptance. See the [acceptance matrix](verification/ACCEPTANCE.md).
