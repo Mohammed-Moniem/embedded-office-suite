@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "kind": "windows-source3-static-native-ci-authority",
+  "status": "ADMITTED_ACTUAL_SUCCESSFUL_CI",
+  "repository": "Mohammed-Moniem/embedded-office-suite",
+  "sourceCommit": "e8e4364c20018abb1222c69b7e50839abfe62644",
+  "sourceManifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+  "sourceArchiveSha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+  "authority": "Reviewed actual successful single-run GitHub API captures plus exact downloaded ZIP, profile, source, report, log, runtime member and native-operation verification for all four apps; pin bytes are anchored in the public verifier and assembler.",
+  "records": [
+    {
+      "app": "wordcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582525857,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 50800926,
+      "sha256": "5d2bdb72188fb12aec783013d84a76176198d3e496d46b8244e7857885f97f21"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582497297,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 58145454,
+      "sha256": "b3716486775e935d24ae55095d13fcb13e12dac9e09441a2b9ebb433e0605993"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582013585,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 46840521,
+      "sha256": "bf9d97f28c124e98490b0d6929c59ea6c4cb43e7a52f3d882e87a614c1f6976c"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "windows-x64",
+      "artifactId": 13581612670,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 8061806,
+      "sha256": "735f64277e72efae197f2e4e986feabf8cb06ae7e4af0a1b5564c2fd4d4c1d9e"
+    }
+  ]
+}
