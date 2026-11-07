@@ -44,7 +44,10 @@ export async function inspectPE(path) {
     for (const byte of b.subarray(start, start + count)) {
       assert((byte >= 65 && byte <= 90) || (byte >= 97 && byte <= 122) || (byte >= 48 && byte <= 57) || byte === 95 || byte === 46 || byte === 45, 'Invalid raw byte in PE import DLL name');
     }
-    const name = b.toString('ascii', start, start + count); assert(/^[a-zA-Z0-9_.-]+\.dll$/i.test(name), `Invalid import DLL name ${name}`); return name;
+    const name = b.toString('ascii', start, start + count);
+    // Windows exposes its documented print spooler imports from winspool.drv.
+    // Keep this named OS module exception narrower than arbitrary suffixes.
+    assert(/^[a-zA-Z0-9_.-]+\.dll$/i.test(name) || /^winspool\.drv$/i.test(name), `Invalid import DLL name ${name}`); return name;
   };
   const imports = (index, stride, delayed = false) => {
     if (numberOfDirs <= index) return [];
