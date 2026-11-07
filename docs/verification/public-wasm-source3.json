@@ -1,0 +1,106 @@
+{
+  "schemaVersion": 1,
+  "status": "PUBLIC_DOWNLOAD_AND_OWN_SDK_QUALIFIED",
+  "passed": true,
+  "scope": "Exact hosted public99c own-SDK acceptance on recorded macOS ARM64 environment",
+  "archiveSha256": "99c25048df8b3562b5cfbac86fc463ad9b0682d9fd2b5d8da5c06a1acbe0c5af",
+  "archiveBytes": 81469742,
+  "manifestSha256": "558993c7cdd2b8a242d0e45894462b905a508c83acbe41d06e6d5c765581687b",
+  "anonymousPublicArchive": true,
+  "ownPackagedBrowserAndNodeSdk": true,
+  "actualAllFourWasm": true,
+  "actualPersistedHostBytesReopened": true,
+  "acknowledgementAndNewerEditCases": true,
+  "staleAndFailedSaveRetryCases": true,
+  "sixPreciseUnsupportedGuards": true,
+  "zeroExternalRuntimeRequests": true,
+  "freshLocalDataRestorationReproducedArchive": true,
+  "remoteRun": {
+    "id": 42399772857,
+    "headSha": "63df706472128386366d0cb45d3b0408645d0c59",
+    "workflowPath": ".github/workflows/public-wasm-source3.yml",
+    "jobId": 128484829604,
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/actions/runs/42399772857"
+  },
+  "remoteArtifact": {
+    "id": 13585306383,
+    "name": "public-wasm-source3-own-sdk-macos-15",
+    "bytes": 8386,
+    "sha256": "17e342c3c4d4f085f11d61432671b953547e67c55c0e5afc973546fa03e460ce",
+    "members": [
+      {
+        "path": "run-NGVHsE/PUBLIC-ARCHIVE.json",
+        "bytes": 2586,
+        "sha256": "b3bdd3a8c4bd0945437ddef2f0bf20f48dafc4ff312ba93de5147b7fc62ee9b7"
+      },
+      {
+        "path": "run-NGVHsE/RESULT.json",
+        "bytes": 1466,
+        "sha256": "2c033cdcbed5ba0b1360f7426a07d60689fe46fcfc0ca6ec6359d4c93c886e4c"
+      },
+      {
+        "path": "run-NGVHsE/browser.json",
+        "bytes": 18647,
+        "sha256": "94cf623e2dd49ddb70bf57ab8b892d6d7a580fca0278a0bfcfe7f5ee9abf8dd0"
+      },
+      {
+        "path": "run-NGVHsE/deck-guard.json",
+        "bytes": 1031,
+        "sha256": "7ec89bcd1b394ffbd19e9f2f2950f9ae2bf37bd084fd9e1377fec94044c84f53"
+      },
+      {
+        "path": "run-NGVHsE/node.json",
+        "bytes": 3393,
+        "sha256": "a399b0aeb42b5a83340b3ae7c91e1f20252871efe10351bc0ba6c8845fbea33c"
+      }
+    ]
+  },
+  "remoteProofPath": "build/web-source3-restoration/public-admission3/extracted/run-NGVHsE/RESULT.json",
+  "remoteProofSha256": "2c033cdcbed5ba0b1360f7426a07d60689fe46fcfc0ca6ec6359d4c93c886e4c",
+  "linkedReports": [
+    {
+      "path": "PUBLIC-ARCHIVE.json",
+      "sha256": "b3bdd3a8c4bd0945437ddef2f0bf20f48dafc4ff312ba93de5147b7fc62ee9b7"
+    },
+    {
+      "path": "browser.json",
+      "sha256": "94cf623e2dd49ddb70bf57ab8b892d6d7a580fca0278a0bfcfe7f5ee9abf8dd0"
+    },
+    {
+      "path": "node.json",
+      "sha256": "a399b0aeb42b5a83340b3ae7c91e1f20252871efe10351bc0ba6c8845fbea33c"
+    },
+    {
+      "path": "deck-guard.json",
+      "sha256": "7ec89bcd1b394ffbd19e9f2f2950f9ae2bf37bd084fd9e1377fec94044c84f53"
+    }
+  ],
+  "admissionPacket": {
+    "path": "build/web-source3-restoration/public-admission3/ADMISSION.json",
+    "sha256": "d71039a720b737c2b86bc4ea061092df609312513796ebae6f283e2330913997"
+  },
+  "environment": {
+    "platform": "darwin",
+    "architecture": "arm64",
+    "node": "24.18.0",
+    "chromium": "/Users/runner/work/_temp/office-web-browsers/chromium-1247/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing",
+    "runnerImage": "macos-15-arm64",
+    "chromiumVersion": "155.0.8059.12",
+    "chromiumRevision": 1247
+  },
+  "officialParitySourceFilesUnchanged": 53,
+  "failedRunsPreserved": [
+    42397170257,
+    42397632142
+  ],
+  "durableReceiptPublication": "PENDING_PARENT",
+  "limits": [
+    "Synthetic bounded documents/commands in Chromium and a Node qualification proxy on GitHub-hosted macOS15 ARM64 only",
+    "Persisted-byte verification executed in the hosted source-qualified Node fixture; files themselves are not included in this small report ZIP",
+    "No private corporate Node/WebView or Windows11 client acceptance",
+    "No whole-product/file-format Microsoft/Adobe parity, security certification or power-loss durability claim",
+    "Artifact retention is limited; durable receipt publication remains parent work"
+  ]
+}
