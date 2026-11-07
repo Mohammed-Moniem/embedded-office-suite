@@ -1,0 +1,66 @@
+name: Exact source3 native reconstruction and immutable publication
+on:
+  workflow_dispatch:
+    inputs:
+      publish:
+        description: Publish the exact reviewed native and reconstruction assets to progress.3
+        type: boolean
+        required: true
+        default: false
+permissions:
+  actions: read
+  contents: write
+concurrency:
+  group: exact-source3-native-progress3-publication
+  cancel-in-progress: false
+jobs:
+  reconstruct:
+    runs-on: macos-15
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Verify the reviewed publisher files before exposing the job token
+        run: |
+          shasum -a 256 -c <<'SOURCE3_SHA256'
+          73ffa3670f847a2f73f84ab933e997cdaf0a8d495c9ed80fbba1944d0b320f0e  scripts/ci/source3-cloud-publisher/driver.mjs
+          3a538dd44e269c91e50494d13cf48fd3e83439b6698b90bbae1de72f511e32c4  scripts/ci/source3-cloud-publisher/safe-extract.py
+          ed02d3ae3917947965e3b1824f97379f1d4e62bf56bf276f63dcc0ad6532fa2e  scripts/ci/source3-cloud-publisher/inputs.json
+          SOURCE3_SHA256
+      - name: Restore original CI data and reconstruct all three exact native ZIPs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          PUBLISH_NATIVE: ${{ inputs.publish }}
+        run: |
+          if [ "$PUBLISH_NATIVE" = true ]; then
+            node scripts/ci/source3-cloud-publisher/driver.mjs --publish
+          else
+            node scripts/ci/source3-cloud-publisher/driver.mjs
+          fi
+      - name: Preserve bounded success or failure evidence
+        if: always()
+        env:
+          JOB_STATUS: ${{ job.status }}
+        run: |
+          node --input-type=module <<'SOURCE3_EVIDENCE'
+          import {readFile, mkdir, writeFile} from 'node:fs/promises';
+          await mkdir('build/source3-cloud-evidence', {recursive:true});
+          let result;
+          try { result=await readFile('build/source3-cloud-publication/RESULT.json'); if(result.length>1048576) throw Error('result bound'); }
+          catch { result=Buffer.from(JSON.stringify({schemaVersion:1,status:'FAILED_BEFORE_DRIVER_RESULT',jobStatus:process.env.JOB_STATUS,published:false})+'\n'); }
+          await writeFile('build/source3-cloud-evidence/RESULT.json',result,{flag:'wx'});
+          SOURCE3_EVIDENCE
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: exact-source3-native-publication-${{ github.run_id }}
+          path: |
+            build/source3-cloud-evidence/RESULT.json
+            build/source3-cloud-publication/logs/*.log
+          if-no-files-found: error
+          retention-days: 14
