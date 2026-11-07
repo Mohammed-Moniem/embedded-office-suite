@@ -5,7 +5,7 @@
 <script type="module">
 import {mountOfficeEditor} from '/office/sdk/index.mjs';
 const apps=['wordcraft','pdfcraft','deckcraft','gridcraft'];
-window.conformance={editor:null,events:[],saves:[],errors:[],ready:false};
+window.conformance={editor:null,events:[],saves:[],errors:[],ready:false,initialCapabilities:null,liveCapabilities:null};
 window.conformance.load=async function(app){
   if(!apps.includes(app))throw Error('Unknown app');
   window.conformance.editor?.dispose();
@@ -21,7 +21,22 @@ window.conformance.load=async function(app){
     onError(error){window.conformance.errors.push({code:error.code,message:error.message});}
   }});
   window.conformance.editor=editor;
-  const caps=await editor.ready;
+  // ready may resolve with legacy support after the SDK's 100ms negotiation
+  // window. Real Office-ready can follow a later egui frame; wait for its actual
+  // declaration before admitting this durable-editor qualification fixture.
+  window.conformance.initialCapabilities=await editor.ready;
+  const timeoutMs=Number(new URLSearchParams(location.search).get('capabilityTimeoutMs')??90000);
+  if(!Number.isInteger(timeoutMs)||timeoutMs<1||timeoutMs>90000)throw Error('Invalid capability deadline');
+  const started=performance.now(),required=['office.open','office.commands','office.execute','office.inspect','office.export','office.save','office.close'];
+  let caps;
+  for(;;){
+    caps=editor.capabilities();
+    if(caps.ready&&caps.pageCommands&&caps.confirmedOpen&&caps.revisions&&caps.durableSave&&required.every(method=>caps.methods.includes(method)))break;
+    if(editor.state().closed){const error=Error('Editor closed before live capabilities arrived');error.code='LIVE_EDITOR_DISPOSED';throw error;}
+    if(performance.now()-started>=timeoutMs){const error=Error('Live Office capabilities did not arrive: '+JSON.stringify(caps));error.code='LIVE_CAPABILITIES_TIMEOUT';throw error;}
+    await new Promise(resolve=>setTimeout(resolve,25));
+  }
+  window.conformance.liveCapabilities=caps;
   window.conformance.ready=true;
   document.querySelector('#status').textContent=app+' ready; '+(caps.pageCommands?'page commands':'legacy bridge');
   return caps;
