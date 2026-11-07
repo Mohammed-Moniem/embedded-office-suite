@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "status": "PUBLIC_DURABLE_RECEIPTS_VERIFIED",
+  "passed": true,
+  "hostedRun": 42399772857,
+  "head": "63df706472128386366d0cb45d3b0408645d0c59",
+  "assets": [
+    {
+      "name": "public-wasm-source3.json",
+      "bytes": 4185,
+      "sha256": "a82c53ea42f14b7e1dae52c6eb2066a704bdf24933af8a1a51f9180e7baa0bdb",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/public-wasm-source3.json",
+      "anonymousFullReadback": true,
+      "authorizationSent": false
+    },
+    {
+      "name": "wasm-source3-ci-42399772857-reports.zip",
+      "bytes": 8386,
+      "sha256": "17e342c3c4d4f085f11d61432671b953547e67c55c0e5afc973546fa03e460ce",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42399772857-reports.zip",
+      "anonymousFullReadback": true,
+      "authorizationSent": false
+    },
+    {
+      "name": "wasm-source3-public-qualification-42399772857.tar.gz",
+      "bytes": 76264,
+      "sha256": "74b9f12b7e009d76ffc2b75aeb947db74f90808c06b3bd74561c61ec0f8d7574",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-public-qualification-42399772857.tar.gz",
+      "anonymousFullReadback": true,
+      "authorizationSent": false
+    },
+    {
+      "name": "wasm-source3-public-qualification-42399772857.tar.gz.sha256",
+      "bytes": 119,
+      "sha256": "db5b0905eb39e1bff76e13b9620215b177d98acaa74c8b82fe3eee99f4e2dc07",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-public-qualification-42399772857.tar.gz.sha256",
+      "anonymousFullReadback": true,
+      "authorizationSent": false
+    }
+  ],
+  "parent": {
+    "schemaVersion": 1,
+    "passed": true,
+    "scope": "Parent exact returned leaf re-verification",
+    "ledger": ".unlazy/web-source3-restoration/GATES.md",
+    "gates": [
+      "P1",
+      "P2",
+      "P3",
+      "P4",
+      "P5"
+    ],
+    "exactReturnedLedgerReverified": true,
+    "result": "ALL MET (5 met, reran: 5, previously met reverified: 5)",
+    "hostedRun": 42399772857,
+    "head": "63df706472128386366d0cb45d3b0408645d0c59",
+    "artifactSha256": "17e342c3c4d4f085f11d61432671b953547e67c55c0e5afc973546fa03e460ce",
+    "admissionFreezeSha256": "a752b86ed74c6c0afa91d0bfac3d3ac4f10b7f37df282f081d012a60dbca1401",
+    "limits": [
+      "macOS15 ARM64 Chromium1247 own-SDK synthetic operation scope",
+      "No private-host Windows11 or full product/file parity acceptance"
+    ]
+  },
+  "immutableAdmissionRecord": "public-wasm-source3.json",
+  "immutableAdmissionRecordSha256": "a82c53ea42f14b7e1dae52c6eb2066a704bdf24933af8a1a51f9180e7baa0bdb",
+  "notes": [
+    "The frozen initial admission record retains its original PENDING_PARENT publication field; this later exact anonymous readback attests completion of that publication.",
+    "The durable bundle includes captured APIs, exact original reports ZIP, all linked reports, source closure, validation scripts and a per-file inventory."
+  ],
+  "limits": [
+    "macOS15 ARM64 Chromium1247 own-SDK synthetic operation scope",
+    "No private-host Windows11 or full product/file parity acceptance"
+  ]
+}
