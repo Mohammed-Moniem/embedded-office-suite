@@ -1,0 +1,40 @@
+name: Observe source3 ZIP compression identity
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  observe:
+    runs-on: macos-15
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Record builtin and existing system compression identities
+        run: |
+          node --input-type=module <<'OBSERVE'
+          import {mkdir,writeFile} from 'node:fs/promises';
+          import {execFileSync} from 'node:child_process';
+          import {createHash} from 'node:crypto';
+          import {deflateRawSync} from 'node:zlib';
+          const python='import ctypes,json,sys; z=ctypes.CDLL("/usr/lib/libz.1.dylib"); z.zlibVersion.restype=ctypes.c_char_p; print(json.dumps({"systemZlib":z.zlibVersion().decode(),"python":sys.version.split()[0]}))';
+          const system=JSON.parse(execFileSync('/usr/bin/python3',['-c',python],{encoding:'utf8',timeout:10000,maxBuffer:4096}));
+          let seed=123456789;const fixture=Buffer.alloc(1048576);
+          for(let i=0;i<fixture.length;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;fixture[i]=i%7?((i>>>5)%251):seed>>>24;}
+          const compressed=deflateRawSync(fixture,{level:9});
+          const sha=b=>createHash('sha256').update(b).digest('hex');
+          const report={schemaVersion:1,scope:'OBSERVATION_ONLY_NO_NATIVE_ASSEMBLY_OR_PUBLICATION',head:process.env.GITHUB_SHA,platform:process.platform,architecture:process.arch,node:process.versions.node,builtinZlib:process.versions.zlib,...system,probe:{inputBytes:fixture.length,inputSha256:sha(fixture),compressedBytes:compressed.length,compressedSha256:sha(compressed)},runtimeAccepted:false};
+          await mkdir('build/compression-identity',{recursive:true});
+          await writeFile('build/compression-identity/RESULT.json',JSON.stringify(report,null,2)+'\n');
+          console.log(JSON.stringify(report));
+          OBSERVE
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: source3-compression-identity
+          path: build/compression-identity/RESULT.json
+          if-no-files-found: error
+          retention-days: 14
