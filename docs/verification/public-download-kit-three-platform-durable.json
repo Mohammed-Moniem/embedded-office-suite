@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "PUBLIC_THREE_PLATFORM_HELPER_EVIDENCE_REPLAYED",
+  "passed": true,
+  "runId": 42406484290,
+  "head": "f4a02a1ab895361965c893cf32ad514b0a52367d",
+  "assets": [
+    {
+      "name": "download-kit-three-platform-42406484290-evidence.tar.gz",
+      "bytes": 87672,
+      "sha256": "dcbc0e6f3f3adc77efef5388f8c40a8896e271ded4f355c7b60239c81762b9b3",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/download-kit-three-platform-42406484290-evidence.tar.gz",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "download-kit-three-platform-42406484290-evidence.tar.gz.sha256",
+      "bytes": 122,
+      "sha256": "23c9edf6eaa0da51087f4627bc0901532744dd9b13542ecf8ff1597ac64f5d04",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/download-kit-three-platform-42406484290-evidence.tar.gz.sha256",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "public-download-kit-three-platform.json",
+      "bytes": 5784,
+      "sha256": "c8bea53288994b80582a340588ff40aa9a9901eaa30bc3a8a00ee30753b81c21",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/public-download-kit-three-platform.json",
+      "anonymousFullReadback": true
+    }
+  ],
+  "exactPublicBundleFiles": 42,
+  "exactPublicReplayChecks": [
+    "identity",
+    "controls",
+    "verdict"
+  ],
+  "limits": [
+    "Evidence replay only; no new runtime or source-build execution",
+    "No Windows11/private-host/Office parity or Windows signal acceptance"
+  ]
+}
