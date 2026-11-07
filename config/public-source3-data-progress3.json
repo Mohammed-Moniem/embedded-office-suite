@@ -222,8 +222,8 @@
     {
       "name": "windows-source3-static-ci-restore-progress3.json",
       "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-source3-static-ci-restore-progress3.json",
-      "bytes": 15867,
-      "sha256": "cd00a159c973e069ff6a4ee8406edb31d1a397016077af73b6088ccdd84d6764"
+      "bytes": 18355,
+      "sha256": "e965789e1ba69f2aa52385afe4a0d370775402dc5ef7089fa567b94ac4d36535"
     },
     {
       "name": "windows-static-source3-ci-42391943016-artifacts.json",
