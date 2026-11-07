@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "status": "ACTUAL_HOSTED_EXACT_RECONSTRUCTION_VERIFIED",
+  "passed": true,
+  "runId": 42404965866,
+  "head": "a7012610da0e226b35f39b8ed17b5ef982e46da6",
+  "outputs": [
+    {
+      "name": "office-native-source3-r1-macos-arm64.zip",
+      "bytes": 250377148,
+      "sha256": "335d5ab993c01a939feeda8dfd035b856a3281d1fc61f0952d366813638468d2"
+    },
+    {
+      "name": "office-native-source3-r1-macos-x64.zip",
+      "bytes": 254390723,
+      "sha256": "a9ad54c1fe26324501e081c9541966771b76f3ed2a4fd35a42910f837ae0074e"
+    },
+    {
+      "name": "office-native-windows-x64-progress3-r1.zip",
+      "bytes": 249300942,
+      "sha256": "055a27446f7aab4c6321f41c5a1be69a787384e9352555af964fe129b61f43c0"
+    }
+  ],
+  "artifact": {
+    "id": 13587541469,
+    "bytes": 12472,
+    "sha256": "2e95d6a0b735e9e0a657f30ac9ffd239df85bd121c0207fc7f2ba848bc31ca30"
+  },
+  "parent": {
+    "schemaVersion": 1,
+    "passed": true,
+    "ledger": ".unlazy/review-compression-hosted/GATES.md",
+    "gates": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "exactReturnedLedgerReverified": true,
+    "result": "ALL MET (3 met, reran: 3, previously met reverified: 3)",
+    "reviewFreezeSha256": "50d2835ee40f7ced7e051ff17e8e6ae2c507c50e74e0e48a17dba839bf33a273"
+  },
+  "bundle": {
+    "name": "source3-native-reconstruction-42404965866-evidence.tar.gz",
+    "bytes": 221782,
+    "sha256": "2fce02404743b98e0b84510d33d4f8baa07ed2fb26567a23d2a49d2b6b309760",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/source3-native-reconstruction-42404965866-evidence.tar.gz",
+    "files": 57
+  },
+  "publicationPerformed": false,
+  "fullHostedNativeReconstructionEstablished": true,
+  "newRuntimeQualificationEstablished": false,
+  "fullSourceCompilationEstablished": false,
+  "limits": [
+    "Exact compiled-CI-data reconstruction only; original byte and source/provenance gates retained.",
+    "All three current archives were already public and separately runtime-qualified; this run did not publish them.",
+    "No new Windows11/private-host/optional-feature or Microsoft Office/Adobe parity acceptance."
+  ]
+}
