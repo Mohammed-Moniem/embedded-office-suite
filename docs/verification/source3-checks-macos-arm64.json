@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "sourceCommit": "e8e4364c20018abb1222c69b7e50839abfe62644",
+  "sourceArchiveSha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+  "sourceManifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+  "publicDownloadReportSha256": "6d3042244086f7b8f37c854e6416283b9c964ca74b3253d84654a55655ab92cb",
+  "exactSourceManifestStillUnchanged": true,
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "v24.18.0"
+  },
+  "checks": [
+    {
+      "name": "sdk",
+      "args": [
+        "scripts/run-tests.mjs"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "c9fcdd05c92d71daa9e2f6611cc5a21a18773c3a0b6a5f1b7ec763218ff1a8fb",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 9961,
+      "stderrBytes": 0
+    },
+    {
+      "name": "portable-tools",
+      "args": [
+        "--test",
+        "scripts/engines/portable-tools.test.mjs"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "8d6236f2333b33d2e6013cbee3bfcf7a277ff6c7ef8e126ffd66cd21e0942071",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 1741,
+      "stderrBytes": 0
+    },
+    {
+      "name": "feature-audit",
+      "args": [
+        "docs/parity/verify-audit.mjs"
+      ],
+      "exitCode": 0,
+      "stdoutSha256": "5e629e4c8ce5ecbb8b8da14c863d3181e8e647004bea1752710959827f5e051b",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdoutBytes": 137,
+      "stderrBytes": 0
+    }
+  ],
+  "counts": {
+    "sdk": 106,
+    "portableTools": 22,
+    "featureRows": 52,
+    "evidenceFiles": 53
+  },
+  "limits": [
+    "Node SDK/helper/documentation checks only; no engine compilation or runtime acceptance",
+    "Actual Windows tool startup is separate",
+    "Not Windows11/privatehost or Microsoft/Adobe parity"
+  ]
+}
