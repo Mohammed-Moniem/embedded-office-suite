@@ -1,10 +1,10 @@
 // Diagnostic only: restore exact public P1 inputs using their frozen helpers.
 // No engine compilation, runtime acceptance, dependency install, or security changes.
 import {createReadStream,createWriteStream,appendFileSync,writeFileSync,renameSync,mkdirSync,existsSync} from 'node:fs';
-import {mkdir,readFile,rename,writeFile,mkdtemp} from 'node:fs/promises';
+import {mkdir,readFile,rename,writeFile,mkdtemp,lstat} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {spawn} from 'node:child_process';
-import {join,resolve} from 'node:path';
+import {join,resolve,sep,delimiter} from 'node:path';
 import {platform,release,arch} from 'node:os';
 import {Readable} from 'node:stream';
 import {pipeline} from 'node:stream/promises';
@@ -25,7 +25,7 @@ const INPUTS=Object.freeze({
   support:{name:'office-build-inputs-support-complete3.tar.gz',sha256:'b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c'},
   tools:{name:'office-build-inputs-tools-windows-x64.tar.gz',sha256:'1ee6c953e84ed58580d5dfa65b7c7517a845287f5e5a2c6b68aec87b58d77c9a'}
 });
-const PHASES=['environment','source','vendor','support','tools'];
+const PHASES=['environment','source','vendor','support','tools','prepare'];
 const PHASE_LIMIT_MS=8*60*1000;
 const COMMAND_LIMIT_MS=6*60*1000;
 
@@ -81,10 +81,10 @@ async function verifyDigest(path,expected,signal){
 
 // Keep the supervisor alive while a frozen helper blocks in spawnSync or hashes
 // thousands of files. Only this supervisor's own child tree can be terminated.
-async function runCommand(ctx,label,command,args,cwd,{timeoutMs=COMMAND_LIMIT_MS,allowFailure=false}={}){
+async function runCommand(ctx,label,command,args,cwd,{timeoutMs=COMMAND_LIMIT_MS,allowFailure=false,env=process.env}={}){
   ctx.signal.throwIfAborted();
   const log=join(ctx.directory,`${ctx.phase}-${label}.log`);
-  const child=spawn(command,args,{cwd,stdio:['ignore','pipe','pipe'],shell:false,windowsHide:true});
+  const child=spawn(command,args,{cwd,env,stdio:['ignore','pipe','pipe'],shell:false,windowsHide:true});
   ctx.checkpoint(label,'child-started',{command,args,cwd,pid:child.pid??null,timeoutMs});
   let output='',failure,killRequested=false,streamFailure;
   const stream=createWriteStream(log,{flags:'wx'});
@@ -121,8 +121,8 @@ async function runCommand(ctx,label,command,args,cwd,{timeoutMs=COMMAND_LIMIT_MS
   ctx.checkpoint(label,failure||result.code!==0?'child-failed':'child-succeeded',{
     code:result.code,signal:result.signal,log,error:failure?.message??null
   });
-  if(failure)throw failure;
-  if(result.code!==0&&!allowFailure)throw Error(`${label} exited ${result.code}`);
+  if(failure){failure.diagnosticResult={...result,output,log};throw failure;}
+  if(result.code!==0&&!allowFailure){const error=Error(`${label} exited ${result.code}`);error.diagnosticResult={...result,output,log};throw error;}
   return {...result,output};
 }
 
@@ -180,6 +180,12 @@ try{
     const manifest=await verifyManifest(spec.source,{expectedKind:'office-source-progress'});
     if(manifest.sourceCommit!==spec.sourceCommit)throw Error('Wrong frozen source commit');
     event('frozen-source-verification','succeeded',{sourceCommit:manifest.sourceCommit,files:manifest.files.length});
+  }else if(spec.phase==='prepare'){
+    event('frozen-portable-tool-preparation','started',{source:spec.source,platform:'windows-x64'});
+    const {preparePortableTools}=await import(pathToFileURL(join(spec.source,'scripts/engines/portable-tools.mjs')));
+    const tools=await preparePortableTools(spec.source,'windows-x64');
+    writeFileSync(spec.result,JSON.stringify(tools,null,2)+'\n');
+    event('frozen-portable-tool-preparation','succeeded',{tools,result:spec.result});
   }else{
     const {unpackBuildArchive}=await import(pathToFileURL(join(spec.source,'scripts/unpack-build-inputs.mjs')));
     const result=await unpackBuildArchive({archive:spec.archive,expectedSha256:spec.sha256,
@@ -196,6 +202,77 @@ async function frozenHelper(ctx,spec){
   await writeFile(specFile,JSON.stringify({...spec,phase:ctx.phase,source:SOURCE,sourceCommit:SOURCE_COMMIT,
     events:join(ctx.directory,ctx.phase+'-frozen.events.jsonl'),state:join(ctx.directory,ctx.phase+'-frozen-state.json')},null,2)+'\n');
   await runCommand(ctx,'frozen-helper',process.execPath,[driver,specFile],SOURCE);
+}
+
+const TOOL_KEYS=['cargo','rustc','trunk','wasmBindgen','wasmOpt'];
+const EXPECTED_VERSIONS={cargo:'1.95.0',rustc:'1.95.0',trunk:'0.22.1',wasmBindgen:'0.2.129',wasmOpt:'131'};
+
+async function probeTools(ctx,tools,{source=SOURCE,keys=TOOL_KEYS,expected=EXPECTED_VERSIONS}={}){
+  const buildPath=[tools.rustBin,tools.toolBin,join(tools.toolPrefix,'lib'),process.env.PATH??''].join(delimiter);
+  const environments={original:process.env,buildPath:{...process.env,RUSTC:tools.rustc,
+    CARGO_NET_OFFLINE:'true',TRUNK_OFFLINE:'true',TRUNK_SKIP_VERSION_CHECK:'true',PATH:buildPath}};
+  const report={schemaVersion:1,tools,passed:false,compilationAttempted:false,
+    environments:{original:{path:process.env.PATH??''},buildPath:{path:buildPath,RUSTC:tools.rustc,
+      CARGO_NET_OFFLINE:'true',TRUNK_OFFLINE:'true',TRUNK_SKIP_VERSION_CHECK:'true'}},
+    probes:keys.map(key=>({tool:key,path:tools[key],sha256:null,hashStatus:'pending',
+      versions:Object.fromEntries(Object.keys(environments).map(environment=>[environment,{status:'pending',args:['--version'],expectedVersion:expected[key],timeoutMs:20000}]))}))};
+  const reportPath=join(ctx.directory,'prepare-tool-versions.json');
+  const persist=()=>atomicJSON(reportPath,report);
+  persist();let failures=0,finished=false;
+  try{for(const probe of report.probes){
+    const key=probe.tool;probe.hashStatus='started';persist();
+    try{
+      await ctx.stage(`hash-prepared-${key}`,async()=>{
+        const info=await lstat(probe.path);
+        if(!info.isFile()||info.isSymbolicLink())throw Error('Prepared tool must be a regular file');
+        probe.sha256=await digest(probe.path,ctx.signal);probe.bytes=info.size;probe.hashStatus='succeeded';persist();
+        return {tool:key,path:probe.path,sha256:probe.sha256,bytes:info.size};
+      });
+    }catch(error){probe.hashStatus='failed';probe.error=error.message;failures++;persist();if(ctx.signal.aborted)throw error;continue;}
+    for(const [environment,env]of Object.entries(environments)){
+      const version={status:'started',args:['--version'],expectedVersion:expected[key],timeoutMs:20000};
+      probe.versions[environment]=version;persist();
+      try{
+        await ctx.stage(`version-${key}-${environment}`,async()=>{
+          const result=await runCommand(ctx,`version-${key}-${environment}`,probe.path,['--version'],source,{timeoutMs:20000,env});
+          Object.assign(version,{output:result.output,code:result.code,signal:result.signal,
+            matchesExpectedVersion:result.output.includes(expected[key])});
+          if(!version.matchesExpectedVersion)throw Error(`Unexpected ${key} --version output`);
+          version.status='succeeded';persist();return {tool:key,environment,...version};
+        });
+      }catch(error){Object.assign(version,{status:'failed',error:error.message,...error.diagnosticResult});failures++;persist();if(ctx.signal.aborted)throw error;}
+    }
+  }finished=true;}finally{
+    for(const probe of report.probes){
+      if(probe.hashStatus==='pending')probe.hashStatus='not-run';
+      for(const version of Object.values(probe.versions))if(version.status==='pending'){
+        version.status='not-run';version.reason=ctx.signal.aborted?'Phase deadline/abort':'Prepared tool hash failed';
+      }
+    }
+    report.passed=finished&&failures===0;report.completedAt=new Date().toISOString();persist();
+  }
+  if(failures)throw Error(`${failures} prepared-tool hash/version probes failed; inspect prepare-tool-versions.json`);
+  return report;
+}
+
+async function prepare(ctx){
+  for(const phase of ['source','tools']){
+    const state=JSON.parse(await readFile(join(EVIDENCE,phase+'.json'),'utf8'));
+    if(state.status!=='succeeded')throw Error(`Preparation requires successful ${phase} phase`);
+  }
+  await ctx.stage('recheck-source-manifest-sha256',()=>verifyDigest(join(SOURCE,'MANIFEST.json'),SOURCE_MANIFEST,ctx.signal));
+  const result=join(ctx.directory,'prepare-returned-tools.json');
+  await ctx.stage('prepare-portable-tools-with-frozen-helper',async()=>{await frozenHelper(ctx,{result});});
+  const tools=JSON.parse(await readFile(result,'utf8'));
+  await ctx.stage('validate-returned-tool-paths',async()=>{
+    const allowed=resolve(SOURCE,'.toolchains/portable/windows-x64')+sep;
+    if(tools.platform!=='windows-x64')throw Error('Wrong prepared tool platform');
+    for(const key of ['rustPrefix','rustBin','toolPrefix','toolBin',...TOOL_KEYS]){
+      if(typeof tools[key]!=='string'||!resolve(tools[key]).startsWith(allowed))throw Error(`Prepared path escapes isolated public source: ${key}`);
+    }
+    return {tools};
+  });
+  await ctx.stage('probe-prepared-tool-startup',async()=>{const result=await probeTools(ctx,tools);return {passed:result.passed,tools:result.probes.length,environments:2};});
 }
 
 async function environment(ctx){
@@ -261,7 +338,7 @@ async function summary(){
   const result={schemaVersion:1,createdAt:new Date().toISOString(),passed,phases,assets:INPUTS,
     sourceCommit:SOURCE_COMMIT,sourceManifestSha256:SOURCE_MANIFEST,diagnosticOnly:true,
     compilationAttempted:false,nativeRuntimeAcceptance:false,
-    limits:['Windows Server 2022 input restore diagnosis only','Grid vendor is one representative public vendor archive','No engine build, Windows 11, browser, private WebView or feature/file parity acceptance']};
+    limits:['Windows Server 2022 input restore and tool-preparation/startup diagnosis only','Grid vendor is one representative public vendor archive','No engine build, Windows 11, browser, private WebView or feature/file parity acceptance']};
   atomicJSON(join(EVIDENCE,'SUMMARY.json'),result);console.log(JSON.stringify(result,null,2));
   if(!passed)throw Error('Input diagnostic incomplete or failed; inspect per-phase evidence');
 }
@@ -303,7 +380,37 @@ async function selfTest(){
     assert.equal(traces.filter(event=>event.operation==='frozen-helper-tar'&&event.status==='started').length,4);
     assert.equal(traces.filter(event=>event.operation==='frozen-helper-tar'&&event.status==='succeeded').length,4);
     assert(traces.some(event=>event.operation==='frozen-input-restore'&&event.status==='succeeded'&&event.verified===true));
-    assert.equal(PHASES.length,5);assert.equal(Object.keys(INPUTS).length,4);
+    // A separate fixture proves the prepare branch delegates and persists its
+    // returned paths. The real unchanged P1 preparation is a Windows-run gate.
+    const prepareSource=join(directory,'prepare-source');await mkdir(join(prepareSource,'scripts/engines'),{recursive:true});
+    await writeFile(join(prepareSource,'scripts/engines/portable-tools.mjs'),
+      "import {spawnSync} from 'node:child_process'; export async function preparePortableTools(root,platform){const result=spawnSync('tar',['--version'],{encoding:'utf8'}); if(result.status!==0)throw Error('fixture tar failed');return {platform,rustBin:root,toolBin:root,toolPrefix:root,cargo:process.execPath,rustc:process.execPath};}\n");
+    const prepareResult=join(directory,'prepare-returned-tools.json'),prepareEvents=join(directory,'prepare-frozen.events.jsonl');
+    const prepareSpec=join(directory,'prepare-spec.json');
+    await writeFile(prepareSpec,JSON.stringify({phase:'prepare',source:prepareSource,result:prepareResult,
+      events:prepareEvents,state:join(directory,'prepare-frozen-state.json')}));
+    await runCommand(ctx,'prepare-driver-fixture',process.execPath,[join(directory,'driver.mjs'),prepareSpec],prepareSource,{timeoutMs:3000});
+    const prepared=JSON.parse(await readFile(prepareResult,'utf8'));assert.equal(prepared.platform,'windows-x64');
+    const prepareTrace=(await readFile(prepareEvents,'utf8')).trim().split('\n').map(line=>JSON.parse(line));
+    assert(prepareTrace.some(event=>event.operation==='frozen-portable-tool-preparation'&&event.status==='succeeded'));
+    assert(prepareTrace.some(event=>event.operation==='frozen-helper-tar'&&event.status==='started'));
+    const probeReport=await probeTools(ctx,prepared,{source:prepareSource,keys:['cargo'],expected:{cargo:process.version}});
+    assert.equal(probeReport.probes[0].versions.original.status,'succeeded');
+    assert.equal(probeReport.probes[0].versions.buildPath.status,'succeeded');
+    assert(probeReport.probes[0].sha256?.length===64);
+    assert(probeReport.environments.buildPath.path.startsWith([prepared.rustBin,prepared.toolBin,join(prepared.toolPrefix,'lib')].join(delimiter)));
+    const controls=phaseContext('version-controls',join(directory,'version-controls'),10000);let controlFailure;
+    try{
+      await assert.rejects(()=>probeTools(controls,prepared,{source:prepareSource,keys:['cargo','rustc'],
+        expected:{cargo:'impossible-version-positive-control',rustc:process.version}}),/2 prepared-tool hash\/version probes failed/);
+      const failedProbe=JSON.parse(await readFile(join(controls.directory,'prepare-tool-versions.json'),'utf8'));
+      assert.equal(failedProbe.passed,false);
+      assert.equal(failedProbe.probes[0].versions.original.status,'failed');
+      assert.equal(failedProbe.probes[0].versions.buildPath.status,'failed');
+      assert.equal(failedProbe.probes[1].versions.original.status,'succeeded');
+      assert.equal(failedProbe.probes[1].versions.buildPath.status,'succeeded');
+    }catch(error){controlFailure=error;throw error;}finally{controls.finish(controlFailure);}
+    assert.equal(PHASES.length,6);assert.equal(Object.keys(INPUTS).length,4);
   }catch(error){failure=error;throw error;}finally{ctx.finish(failure);}
   assert.equal(JSON.parse(await readFile(join(directory,'supervisor.json'),'utf8')).status,'succeeded');
   console.log('Windows input diagnostic local supervisor checks passed');
@@ -317,7 +424,7 @@ async function main(){
   if(values.phase==='summary')return summary();
   if(!PHASES.includes(values.phase))throw Error(`Choose --phase ${PHASES.join('|')}|summary`);
   const ctx=phaseContext(values.phase);let failure;
-  try{if(values.phase==='environment')await environment(ctx);else await restore(ctx);}
+  try{if(values.phase==='environment')await environment(ctx);else if(values.phase==='prepare')await prepare(ctx);else await restore(ctx);}
   catch(error){failure=error;throw error;}finally{ctx.finish(failure);}
 }
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
