@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "passed": true,
+  "scope": "Component guide, source inventory and adjacent checksums only; full source archive verification is separate",
+  "files": [
+    {
+      "name": "office-source-progress4-r1.tar.gz.sha256",
+      "bytes": 100,
+      "sha256": "196b7c2e04635e1abdff06dce6b61acf34658ca658699b54c8359ea39002efe8",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.4/office-source-progress4-r1.tar.gz.sha256",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "SOURCE4-DELIVERY.json",
+      "bytes": 6899,
+      "sha256": "8f6141e2870058246b2991735ef92ad29b84721eb32bb9508a475427e024b310",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.4/SOURCE4-DELIVERY.json",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "COMPONENT-DOWNLOADS.md",
+      "bytes": 14031,
+      "sha256": "dd42c5b3082abe96471a19e1b9dff8b0c2ac9921b90855beb9827ed9c3b0c391",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.4/COMPONENT-DOWNLOADS.md",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "COMPONENT-DOWNLOADS.md.sha256",
+      "bytes": 89,
+      "sha256": "a6b27fc19f657cf306b0e28d5df2a1c8fd4472154ddcc081e222aaadb931a8b4",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.4/COMPONENT-DOWNLOADS.md.sha256",
+      "anonymousFullReadback": true
+    }
+  ]
+}
