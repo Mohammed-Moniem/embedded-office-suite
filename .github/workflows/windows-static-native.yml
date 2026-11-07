@@ -1,0 +1,44 @@
+# CANDIDATE: parent reviews and publishes this under .github/workflows.
+name: Windows source3 static CRT native candidates
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  rebuild:
+    strategy:
+      fail-fast: false
+      max-parallel: 4
+      matrix:
+        app: [wordcraft, pdfcraft, deckcraft, gridcraft]
+    runs-on: windows-2022
+    timeout-minutes: 180
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Restore exact public source3 and three build input archives
+        timeout-minutes: 20
+        run: node scripts/ci/progress.mjs --app ${{ matrix.app }} --phase restore
+      - name: Build and qualify new native-only static CRT profile
+        timeout-minutes: 135
+        run: node scripts/ci/windows-static-native.mjs --app ${{ matrix.app }}
+      - name: Preserve static profile evidence and exact runtime bytes
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: static-windows-${{ matrix.app }}
+          path: |
+            build/progress-ci/RESTORED-INPUTS.json
+            build/progress-ci/PUBLIC-INPUTS.json
+            build/progress-ci/STATIC-CRT-PROFILE.json
+            build/progress-ci/evidence
+            build/progress-ci/source/build/engines/offline-builds/**/report.json
+            build/progress-ci/source/build/engines/offline-builds/**/*.log
+            build/progress-ci/source/build/engines/offline-builds/**/native-qualification.json
+            build/progress-ci/source/build/engines/offline-builds/**/runtime
+          if-no-files-found: error
+          retention-days: 14
