@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "scope": "actual-hosted-three-native-reconstruction",
+  "evidenceAdequate": true,
+  "objectiveGates": "PASS",
+  "thresholdResult": "PASS",
+  "head": "a7012610da0e226b35f39b8ed17b5ef982e46da6",
+  "runId": 42404965866,
+  "fullHostedNativeReconstructionEstablished": true,
+  "publicationPerformed": false,
+  "newRuntimeQualificationEstablished": false,
+  "fullSourceCompilationEstablished": false,
+  "windows11AcceptanceEstablished": false,
+  "privateHostIntegrationEstablished": false,
+  "wholeProductParityEstablished": false,
+  "priorFailureRunIds": [
+    42399477869,
+    42401138354
+  ],
+  "decisiveEvidence": "Original GitHub artifact digest, run/jobs/log and immutable public source independently observed; original result and three assembly logs agree on all original native archive byte identities after explicit compressor admission.",
+  "highestLeverageRemainingGap": "Release publication was not run in this execution. Any publication needs separate authorized scope and remote readback. Existing target/public qualifications remain their own evidence.",
+  "limitations": [
+    "Hosted GitHub macOS ARM64 reconstruction only; twelve earlier CI artifacts and frozen source/support inputs were restored. No full source compile occurred.",
+    "Original outputs were verified by the reviewed driver and three assembly logs; the uploaded report ZIP contains reports and logs, not the three large native ZIPs.",
+    "The original local reports.zip is authenticated by the independently observed GitHub digest and upload log. Connector artifact retrieval returned a file handle; a redundant direct local fetch was unavailable.",
+    "Compression probes alone are not full archive proof. The completed run and unchanged full archive SHA-256 identities supply that additional evidence."
+  ]
+}
