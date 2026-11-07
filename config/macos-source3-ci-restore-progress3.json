@@ -1,0 +1,288 @@
+{
+  "schemaVersion": 1,
+  "kind": "macos-source3-public-ci-restoration",
+  "status": "ACTUAL_IDENTITIES_ADMITTED_PUBLIC_DOWNLOAD_QUALIFICATION_SEPARATE",
+  "repository": "Mohammed-Moniem/embedded-office-suite",
+  "release": "v0.1.0-progress.3",
+  "workflow": {
+    "runId": 42387136103,
+    "head": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+    "path": ".github/workflows/macos-source3-progress.yml"
+  },
+  "pinAuthority": {
+    "installedPath": "config/ci-engine-pins-macos-progress3.json",
+    "sha256": "caf65a65fe9f8d27a8a8403759751d5c962402bf5a4016ac858fa7f968f25d69"
+  },
+  "source": {
+    "sourceCommit": "e8e4364c20018abb1222c69b7e50839abfe62644",
+    "archiveName": "office-source-progress3-r1.tar.gz",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-source-progress3-r1.tar.gz",
+    "archiveSha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+    "manifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+    "manifestFiles": 4889,
+    "installedSourcePath": "build/public-qualification/progress3/source"
+  },
+  "integrationSdk": {
+    "origin": "Current complete project source, separately reviewed from source3 workers; SDK is also included in each native component",
+    "authorityPath": "config/web-component-pins-progress2.json",
+    "authoritySha256": "1342d1848bf4134be21b5daf4b18f12167731ba2018a5a8afde5718bda47392f",
+    "files": 12
+  },
+  "support": {
+    "manifestSha256": "9a213c32fde8cfbe505364a0f5381587b79e34c2ee9648d1d22e4cd9c518e269",
+    "manifestFiles": 303,
+    "archiveName": "office-build-inputs-support-complete3.tar.gz",
+    "archiveSha256": "b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/office-build-inputs-support-complete3.tar.gz",
+    "installedPath": "build/engines/support-inputs"
+  },
+  "captures": [
+    {
+      "role": "run",
+      "name": "macos-source3-ci-42387136103-run.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-run.json",
+      "bytes": 14247,
+      "sha256": "17f519cf117b452030f9f336c69cce11a6ef9747db356221109fcca7441b2641",
+      "parentTransferPath": "build/macos-ci-transfer/run.json",
+      "installedVerifierPath": "build/macos-ci-transfer/run.json",
+      "preserveExactDownloadedBytes": true
+    },
+    {
+      "role": "jobs",
+      "name": "macos-source3-ci-42387136103-jobs.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-jobs.json",
+      "bytes": 17729,
+      "sha256": "ea583bbb7f68255bc934bd5a87b4fcda903449f08829e5a365f22c05e9885e9d",
+      "parentTransferPath": "build/macos-ci-transfer/jobs.json",
+      "installedVerifierPath": "build/macos-ci-transfer/jobs.json",
+      "preserveExactDownloadedBytes": true
+    },
+    {
+      "role": "artifacts",
+      "name": "macos-source3-ci-42387136103-artifacts.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-artifacts.json",
+      "bytes": 13556,
+      "sha256": "04f863395a2f9870d0564217fda2110412d5773852f3d23c4d3c06e4fcbf7964",
+      "parentTransferPath": "build/macos-ci-transfer/artifacts.json",
+      "installedVerifierPath": "build/macos-ci-transfer/artifacts.json",
+      "preserveExactDownloadedBytes": true
+    }
+  ],
+  "artifacts": [
+    {
+      "app": "wordcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580866069,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 74935746,
+      "sha256": "675137d1553b50d9c89f634f339860a3f19e72315becf8dcc36ce5f1353fbaed",
+      "name": "macos-source3-ci-42387136103-macos-arm64-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-wordcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-arm64/wordcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-arm64/wordcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-arm64/wordcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-arm64/wordcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-arm64/wordcraft"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13581812152,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 80762886,
+      "sha256": "c6b6d9748ac54d76e5e3360658f335f102bf53f40dc8a2efea1f0498f8a8d7df",
+      "name": "macos-source3-ci-42387136103-macos-arm64-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-pdfcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-arm64/pdfcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-arm64/pdfcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-arm64/pdfcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-arm64/pdfcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-arm64/pdfcraft"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580938232,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 63914124,
+      "sha256": "e40c19ce415dbd5e0096dfa40614d1a8125a44dafdd235ff57c934fcb3f9861d",
+      "name": "macos-source3-ci-42387136103-macos-arm64-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-deckcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-arm64/deckcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-arm64/deckcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-arm64/deckcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-arm64/deckcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-arm64/deckcraft"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580264660,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 26599741,
+      "sha256": "afd227cce9886299cec7d95d97405fe627e3d6dd310513c9aca29bc95eb9dd0b",
+      "name": "macos-source3-ci-42387136103-macos-arm64-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-gridcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-arm64/gridcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-arm64/gridcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-arm64/gridcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-arm64/gridcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-arm64/gridcraft"
+    },
+    {
+      "app": "wordcraft",
+      "platform": "macos-x64",
+      "artifactId": 13581350926,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 75761651,
+      "sha256": "010c38a008b06079dbca419be3c081f62ad11750f248316658b7aa195c058532",
+      "name": "macos-source3-ci-42387136103-macos-x64-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-wordcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-x64/wordcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-x64/wordcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-x64/wordcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-x64/wordcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-x64/wordcraft"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "macos-x64",
+      "artifactId": 13582346430,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 82180378,
+      "sha256": "197caed44d782965e9d14024ca77d40d9280314640f1923fda1eb1bcd0b86f51",
+      "name": "macos-source3-ci-42387136103-macos-x64-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-pdfcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-x64/pdfcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-x64/pdfcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-x64/pdfcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-x64/pdfcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-x64/pdfcraft"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "macos-x64",
+      "artifactId": 13581099423,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 64411823,
+      "sha256": "bd2e73658316c8d12062551294c96eb30f838d9f116852fb06f4508955dafaa0",
+      "name": "macos-source3-ci-42387136103-macos-x64-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-deckcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-x64/deckcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-x64/deckcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-x64/deckcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-x64/deckcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-x64/deckcraft"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "macos-x64",
+      "artifactId": 13580832186,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 27138032,
+      "sha256": "f567685c6fa4e0ffa790e635029cb100f653dcee6aad0f5fc9a1307e2d14aee2",
+      "name": "macos-source3-ci-42387136103-macos-x64-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-gridcraft.zip",
+      "parentTransferZipPath": "build/macos-ci-transfer/downloads/macos-x64/gridcraft.zip",
+      "parentVerifiedReceiptPath": "build/macos-ci-transfer/downloads/macos-x64/gridcraft-verified.json",
+      "parentTransferRestoredPath": "build/macos-ci-transfer/restored/macos-x64/gridcraft",
+      "installedVerifierZipPath": "build/macos-native-source3/downloads/ci/macos-x64/gridcraft.zip",
+      "installedVerifierRestoredPath": "build/macos-native-source3/ci-engine-results/macos-x64/gridcraft"
+    }
+  ],
+  "provenance": {
+    "installedPath": "build/macos-native-source3/ci-artifact-provenance.json",
+    "exactRecords": [
+      {
+        "app": "wordcraft",
+        "platform": "macos-arm64",
+        "artifactId": 13580866069,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 74935746,
+        "sha256": "675137d1553b50d9c89f634f339860a3f19e72315becf8dcc36ce5f1353fbaed"
+      },
+      {
+        "app": "pdfcraft",
+        "platform": "macos-arm64",
+        "artifactId": 13581812152,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 80762886,
+        "sha256": "c6b6d9748ac54d76e5e3360658f335f102bf53f40dc8a2efea1f0498f8a8d7df"
+      },
+      {
+        "app": "deckcraft",
+        "platform": "macos-arm64",
+        "artifactId": 13580938232,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 63914124,
+        "sha256": "e40c19ce415dbd5e0096dfa40614d1a8125a44dafdd235ff57c934fcb3f9861d"
+      },
+      {
+        "app": "gridcraft",
+        "platform": "macos-arm64",
+        "artifactId": 13580264660,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 26599741,
+        "sha256": "afd227cce9886299cec7d95d97405fe627e3d6dd310513c9aca29bc95eb9dd0b"
+      },
+      {
+        "app": "wordcraft",
+        "platform": "macos-x64",
+        "artifactId": 13581350926,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 75761651,
+        "sha256": "010c38a008b06079dbca419be3c081f62ad11750f248316658b7aa195c058532"
+      },
+      {
+        "app": "pdfcraft",
+        "platform": "macos-x64",
+        "artifactId": 13582346430,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 82180378,
+        "sha256": "197caed44d782965e9d14024ca77d40d9280314640f1923fda1eb1bcd0b86f51"
+      },
+      {
+        "app": "deckcraft",
+        "platform": "macos-x64",
+        "artifactId": 13581099423,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 64411823,
+        "sha256": "bd2e73658316c8d12062551294c96eb30f838d9f116852fb06f4508955dafaa0"
+      },
+      {
+        "app": "gridcraft",
+        "platform": "macos-x64",
+        "artifactId": 13580832186,
+        "runId": 42387136103,
+        "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+        "bytes": 27138032,
+        "sha256": "f567685c6fa4e0ffa790e635029cb100f653dcee6aad0f5fc9a1307e2d14aee2"
+      }
+    ]
+  },
+  "restoreInstructions": [
+    "Download every source/API/ZIP asset from its durable release URL, verify its exact SHA-256 and byte count before extraction or use, and preserve the downloaded API bytes without JSON reserialization.",
+    "Restore the frozen source3 archive with manifest modes into source.installedSourcePath. The complete source3 manifest must contain exactly 4889 verified entries. Restore the captured support input archive into support.installedPath for assembly.",
+    "For each artifact, put the verified ZIP at installedVerifierZipPath and safely extract regular members into installedVerifierRestoredPath. Reject traversal, symlinks, nonregular entries, duplicate/case/Unicode aliases and unsafe member patterns. Never execute archive code during restoration.",
+    "Write provenance.exactRecords as the array at provenance.installedPath. Put API capture bytes at their installedVerifierPath. The parentTransfer paths are optional developer-side staging locations; production verification reads the installedVerifier paths.",
+    "Use the additive installed scripts/ci/verify-macos-engine-results-progress3.mjs with --platform macos-arm64 or --platform macos-x64. Public installed code depends on scripts/ci and scripts/lib, never candidate-owned build code.",
+    "Aggregate verification and candidate native assembly do not establish exact target runtime or exact public-download qualification."
+  ],
+  "publicDownloadQualified": false,
+  "exactTargetArchiveQualified": false
+}
