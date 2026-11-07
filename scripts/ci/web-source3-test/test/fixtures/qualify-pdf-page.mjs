@@ -4,7 +4,7 @@ async page => {
   await page.route('**/*',route);
   try {
     await page.goto('http://127.0.0.1:8922/__qualification/host?app=pdfcraft');
-    await page.waitForFunction(()=>window.conformance?.ready,{timeout:90000});
+    await page.waitForFunction(()=>window.conformance?.ready,null,{timeout:90000});
     const initial=await page.evaluate(async data=>{
       const assert=(value,message)=>{if(!value)throw Error(message);},e=window.conformance.editor;
       const bytes=Uint8Array.from(atob(data),c=>c.charCodeAt(0)).buffer;
