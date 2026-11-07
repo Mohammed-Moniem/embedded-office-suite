@@ -1,0 +1,41 @@
+name: Exact standalone Office transfer helper on three platforms
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qualify:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: macos-15
+            platform: macos-arm64
+          - os: macos-15-intel
+            platform: macos-x64
+          - os: windows-2022
+            platform: windows-x64
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Verify pinned standalone helper and actual runtime archive transfers
+        timeout-minutes: 42
+        env:
+          OFFICE_KIT_EXPECT_PLATFORM: ${{ matrix.platform }}
+        run: node scripts/ci/office-kit-source3.mjs
+      - name: Retain original child results and exact archive identities
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: office-kit-source3-${{ matrix.platform }}
+          path: |
+            build/kit-hosted/actual/**/RESULT.json
+            build/kit-hosted/actual/**/stages/*.json
+          if-no-files-found: error
+          retention-days: 14
