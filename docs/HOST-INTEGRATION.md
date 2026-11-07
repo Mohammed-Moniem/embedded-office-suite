@@ -30,9 +30,23 @@ const editor=mountOfficeEditor({
     onError:error=>existingNotifications.show(error.code),
   },
 });
-const capabilities=await editor.ready;
+await editor.ready;
+// Wait for the live page declaration before using command/durable-save APIs.
+const required=['office.open','office.commands','office.execute','office.inspect',
+  'office.export','office.save','office.close'];
+const deadline=performance.now()+90_000;
+for(;;){
+  const caps=editor.capabilities();
+  if(caps.ready&&caps.pageCommands&&caps.confirmedOpen&&caps.revisions&&
+    caps.durableSave&&required.every(method=>caps.methods.includes(method)))break;
+  if(editor.state().closed)throw Error('Editor closed during initialization');
+  if(performance.now()>=deadline)throw Error('Live editor capabilities unavailable');
+  await new Promise(resolve=>setTimeout(resolve,25));
+}
 await editor.open({name:approvedDisplayName,bytes:approvedDocumentBytes});
 ```
+
+The initial `ready` promise may describe legacy messaging support after the SDK's compatibility window. A compiled page can announce its live capabilities later. The bounded check above uses the actual page declaration before enabling document tools; a timeout must remain an initialization failure. Delayed, absent and incomplete declarations are exercised by the source3 qualification fixture.
 
 The renderer and iframe must share the same HTTP(S) origin; opaque file URLs do not qualify. Serve the exact generated files and preserve the handler's WASM MIME and script policy. A storage callback must resolve only after the approved destination accepts the bytes, reject on failure, and honor its signal. The host owns path grants, Save As destination selection, effect permissions and IPC. Do not grant arbitrary renderer filesystem access.
 
