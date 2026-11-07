@@ -1,0 +1,41 @@
+name: Exact public source3 native component qualification
+on:
+  workflow_dispatch:
+    inputs:
+      runner:
+        description: Target runner for the reviewed public source3 archive
+        required: true
+        default: all
+        type: choice
+        options: [all, macos-15, macos-15-intel, windows-2022]
+permissions:
+  contents: read
+jobs:
+  qualify:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: ${{ fromJSON(inputs.runner == 'all' && '["macos-15","macos-15-intel","windows-2022"]' || format('["{0}"]', inputs.runner)) }}
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 24.18.0
+      - name: Verify exact public archive and run all4 workers with own SDK and OS network restriction
+        timeout-minutes: 35
+        run: node scripts/ci/native-runtime-source3.mjs
+      - name: Retain exact public archive and operation evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: native-source3-public-${{ matrix.os }}
+          path: |
+            build/native-source3-runtime-ci/PUBLIC-ARCHIVE.json
+            build/native-source3-runtime-ci/RESULT.json
+            build/native-source3-runtime-ci/RESULT.json.network.json
+          if-no-files-found: error
+          retention-days: 14
