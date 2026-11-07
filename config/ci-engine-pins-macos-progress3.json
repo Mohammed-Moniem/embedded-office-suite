@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "kind": "macos-source3-ci-authority",
+  "status": "ADMITTED_ACTUAL_SUCCESSFUL_CI",
+  "repository": "Mohammed-Moniem/embedded-office-suite",
+  "sourceCommit": "e8e4364c20018abb1222c69b7e50839abfe62644",
+  "sourceManifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+  "sourceArchiveSha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+  "authority": "Exact final completed-success eight-job GitHub Actions API bytes independently supplied and SHA-256 checked by the parent; executable admission separately anchors this exact pin file and all three raw API captures.",
+  "records": [
+    {
+      "app": "wordcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580866069,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 74935746,
+      "sha256": "675137d1553b50d9c89f634f339860a3f19e72315becf8dcc36ce5f1353fbaed"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13581812152,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 80762886,
+      "sha256": "c6b6d9748ac54d76e5e3360658f335f102bf53f40dc8a2efea1f0498f8a8d7df"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580938232,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 63914124,
+      "sha256": "e40c19ce415dbd5e0096dfa40614d1a8125a44dafdd235ff57c934fcb3f9861d"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "macos-arm64",
+      "artifactId": 13580264660,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 26599741,
+      "sha256": "afd227cce9886299cec7d95d97405fe627e3d6dd310513c9aca29bc95eb9dd0b"
+    },
+    {
+      "app": "wordcraft",
+      "platform": "macos-x64",
+      "artifactId": 13581350926,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 75761651,
+      "sha256": "010c38a008b06079dbca419be3c081f62ad11750f248316658b7aa195c058532"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "macos-x64",
+      "artifactId": 13582346430,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 82180378,
+      "sha256": "197caed44d782965e9d14024ca77d40d9280314640f1923fda1eb1bcd0b86f51"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "macos-x64",
+      "artifactId": 13581099423,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 64411823,
+      "sha256": "bd2e73658316c8d12062551294c96eb30f838d9f116852fb06f4508955dafaa0"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "macos-x64",
+      "artifactId": 13580832186,
+      "runId": 42387136103,
+      "workflowHead": "6143dedf0eeb83cdfe65a96e4bbded7c51190035",
+      "bytes": 27138032,
+      "sha256": "f567685c6fa4e0ffa790e635029cb100f653dcee6aad0f5fc9a1307e2d14aee2"
+    }
+  ]
+}
