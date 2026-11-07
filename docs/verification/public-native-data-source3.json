@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "status": "PARENT_REVERIFIED_DURABLE_RECEIPTS_PREPARED",
+  "passed": true,
+  "head": "685bcf064c47c5601a4c10b14e016a458d6cc988",
+  "nativeRun": 42402906309,
+  "dataRun": 42402918764,
+  "nativeTargets": [
+    "macos-arm64",
+    "macos-x64",
+    "windows-x64"
+  ],
+  "nativeWorkerOperations": 12,
+  "anonymousDataAssets": 44,
+  "anonymousDataBytes": 1193757176,
+  "wholeProductAcceptance": false,
+  "windows11Acceptance": false,
+  "privateHostAcceptance": false,
+  "parent": {
+    "schemaVersion": 1,
+    "passed": true,
+    "scope": "Parent exact returned leaf re-verification",
+    "ledger": ".unlazy/review-public-source3/GATES.md",
+    "gates": [
+      "R1",
+      "R2",
+      "R3",
+      "R4"
+    ],
+    "exactReturnedLedgerReverified": true,
+    "result": "ALL MET (4 met, reran: 4, previously met reverified: 4)",
+    "reviewManifestSha256": "1ee579edca5b027462cbf73b9179f132b3a7eaee2b2bd951e145e408bb26c9bf",
+    "inputIdentitySha256": "39a51e8f4f532e31da9dee5fcc0ee588884a9b5e67833606194addc2860028a6",
+    "verdictSha256": "db813b84b06e00f08ba092fa9eeb6c55a6decc08472b52ebe77da89525d22776"
+  },
+  "bundle": {
+    "name": "native-data-source3-public-qualification-42402906309-42402918764.tar.gz",
+    "bytes": 39355386,
+    "sha256": "480f0b983a0ea6250bc0a5a4c0deb2482e8c7e21940af5eda927a5e0c36c75a5",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/native-data-source3-public-qualification-42402906309-42402918764.tar.gz",
+    "files": 59
+  },
+  "replayIncludesAllInputs": true,
+  "limits": [
+    "This is a component evidence review of actual public GitHub Actions runs, not a new local rerun of foreign target binaries.",
+    "The observed targets are macos-15 arm64, macos-15-intel x64 and windows-2022 x64. Windows Server 2022 is not Windows 11 client acceptance.",
+    "Windows Defender Firewall proof is scoped to Node and four exact worker executable paths; arbitrary descendants and OS-wide isolation are not admitted. The inner NOT_ENFORCED field is explicitly supplied by the validated outer driver.",
+    "macOS positive TCP and EPERM probes validate the same inherited sandbox-exec deny network* profile used by actual worker qualification.",
+    "Grid rendering is explicitly UNSUPPORTED and correctly reported false; the other three workers return valid PNGs. This does not accept every optional engine feature.",
+    "The forty-four reconstruction data assets passed complete anonymous size and SHA256 readback during run 42402918764; this admits byte availability and identity at that run, not their runtime behavior.",
+    "The admitted original source archive has 4889 manifest files. Final complete-source packaging, durable publication of these CI receipts and whole-artifact integration review remain separate root work.",
+    "No offline source rebuild, private WebView/host integration, Microsoft/Adobe parity, whole-product/file parity or production acceptance is granted.",
+    "Independent source and API reads used the GitHub connector. GitHub-hosted job execution and original artifact SHA256 metadata are the evidence trust boundary; the critic did not build the candidate."
+  ]
+}
