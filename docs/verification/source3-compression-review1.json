@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "scope": "EXPLICIT_SYSTEM_COMPRESSOR_ADOPTION_CANDIDATE_ONLY",
+  "evidenceAdequate": true,
+  "objectiveGates": "PASS",
+  "thresholdResult": "PASS",
+  "candidateFreezeSha256": "51af7419c9414ffd971ce256db3170e64997074ea26d9d9c44b06d4474763fdb",
+  "adoptionSha256": "3a81b54d55ff47a887d4a04e29c46e3526803356f94fa5d9047b05e749ea4c65",
+  "identityReportSha256": "27af60ed49919ba7f0ead02a1cd9671a9dc26623400a86edbe0ca725c0d12048",
+  "controlsReportSha256": "bbaabae10dd7b52c66fa8442f28b14b06965732b9ae865ad7db5e704ac2f7104",
+  "independentNamedControls": 40,
+  "realStreamCases": 11,
+  "blockingFindings": [],
+  "highestLeverageRemainingGap": "Actual hosted reconstruction of all three full native ZIPs with the frozen bridge and unchanged archive SHA gates; parent integration scope.",
+  "fullHostedNativeReproductionEstablished": false,
+  "releaseAcceptance": false,
+  "remoteWritesOrDispatches": false,
+  "independence": {
+    "candidateBuilder": false,
+    "separateOracle": true,
+    "blinded": false
+  }
+}
