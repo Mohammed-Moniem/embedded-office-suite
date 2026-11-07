@@ -101,7 +101,7 @@ export async function qualifyKit() {
     report.download=await verifyRuntimeResult({stdout:download.stdout,platform,destination,mode:'download-verified'});
     const poison=join(runRoot,'forbid-fetch.mjs'),audit=join(runRoot,'forbidden-fetch-attempts.log');
     await writeFile(poison,`import {appendFileSync} from 'node:fs';\nglobalThis.fetch=()=>{appendFileSync(${JSON.stringify(audit)},'forbidden fetch attempted\\n');throw new Error('Hosted offline fetch forbidden');};\n`,{flag:'wx'});
-    const offlineArgs=args=>['--import',poison,...args];
+    const offlineArgs=args=>['--import',pathToFileURL(poison).href,...args];
     const offline=await stage('offline-existing',offlineArgs([...options(destination),'--offline']),5*60_000);
     report.offline=await verifyRuntimeResult({stdout:offline.stdout,platform,destination,mode:'offline-verified'});await missing(audit);
     const planDest=join(runRoot,'Missing plan destination 文件');
