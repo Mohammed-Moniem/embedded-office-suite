@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "kind": "source3-public-reconstruction-data-byte-authority",
+  "status": "EXPECTED_PUBLIC_ASSETS_READBACK_PENDING",
+  "files": [
+    {
+      "name": "office-build-inputs-support-complete3.tar.gz",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/office-build-inputs-support-complete3.tar.gz",
+      "bytes": 87668350,
+      "sha256": "b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c"
+    },
+    {
+      "name": "office-wasm-integration-progress2-r1.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.2/office-wasm-integration-progress2-r1.zip",
+      "bytes": 81063249,
+      "sha256": "c9f910319af14cdc2c884caaaa20f49e7f6f1cc6b4d3c0520a05ba7468959146"
+    },
+    {
+      "name": "office-wasm-integration-progress2-r1.zip.sha256",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.2/office-wasm-integration-progress2-r1.zip.sha256",
+      "bytes": 107,
+      "sha256": "01108c27b08be7c1c2cda45b849f015951c8026304af1a1e58adb1117dfb8099"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-artifacts.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-artifacts.json",
+      "bytes": 13556,
+      "sha256": "04f863395a2f9870d0564217fda2110412d5773852f3d23c4d3c06e4fcbf7964"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-jobs.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-jobs.json",
+      "bytes": 17729,
+      "sha256": "ea583bbb7f68255bc934bd5a87b4fcda903449f08829e5a365f22c05e9885e9d"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-arm64-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-deckcraft.zip",
+      "bytes": 63914124,
+      "sha256": "e40c19ce415dbd5e0096dfa40614d1a8125a44dafdd235ff57c934fcb3f9861d"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-arm64-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-gridcraft.zip",
+      "bytes": 26599741,
+      "sha256": "afd227cce9886299cec7d95d97405fe627e3d6dd310513c9aca29bc95eb9dd0b"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-arm64-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-pdfcraft.zip",
+      "bytes": 80762886,
+      "sha256": "c6b6d9748ac54d76e5e3360658f335f102bf53f40dc8a2efea1f0498f8a8d7df"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-arm64-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-arm64-wordcraft.zip",
+      "bytes": 74935746,
+      "sha256": "675137d1553b50d9c89f634f339860a3f19e72315becf8dcc36ce5f1353fbaed"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-x64-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-deckcraft.zip",
+      "bytes": 64411823,
+      "sha256": "bd2e73658316c8d12062551294c96eb30f838d9f116852fb06f4508955dafaa0"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-x64-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-gridcraft.zip",
+      "bytes": 27138032,
+      "sha256": "f567685c6fa4e0ffa790e635029cb100f653dcee6aad0f5fc9a1307e2d14aee2"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-x64-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-pdfcraft.zip",
+      "bytes": 82180378,
+      "sha256": "197caed44d782965e9d14024ca77d40d9280314640f1923fda1eb1bcd0b86f51"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-macos-x64-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-macos-x64-wordcraft.zip",
+      "bytes": 75761651,
+      "sha256": "010c38a008b06079dbca419be3c081f62ad11750f248316658b7aa195c058532"
+    },
+    {
+      "name": "macos-source3-ci-42387136103-run.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-42387136103-run.json",
+      "bytes": 14247,
+      "sha256": "17f519cf117b452030f9f336c69cce11a6ef9747db356221109fcca7441b2641"
+    },
+    {
+      "name": "macos-source3-ci-restore-progress3.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/macos-source3-ci-restore-progress3.json",
+      "bytes": 16148,
+      "sha256": "551ab1d97a78f5b2710fec446f2066685b34e97c8c56eea0016d77786bd95a36"
+    },
+    {
+      "name": "office-ci-progress3-windows-x64-default-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-ci-progress3-windows-x64-default-deckcraft.zip",
+      "bytes": 63410102,
+      "sha256": "ef699b357c9b64997ee08b235c6ea9f62d8908f463f5404fc58baeb93ea4859c"
+    },
+    {
+      "name": "office-ci-progress3-windows-x64-default-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-ci-progress3-windows-x64-default-gridcraft.zip",
+      "bytes": 26333946,
+      "sha256": "c6fbede127b3ccd294a0eae5c72bb71b4c2be073e7b8985891ea5676a3469775"
+    },
+    {
+      "name": "office-ci-progress3-windows-x64-default-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-ci-progress3-windows-x64-default-pdfcraft.zip",
+      "bytes": 81159174,
+      "sha256": "5f6148bb9a22dac97d80294f1ef46212e5d1264af377850340afa17cf0971e19"
+    },
+    {
+      "name": "office-ci-progress3-windows-x64-default-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-ci-progress3-windows-x64-default-wordcraft.zip",
+      "bytes": 73891614,
+      "sha256": "e33ce9f76f2287c0781309adc6e09ead77dd4a9851eb0c9d221e6f2bdd9bf76f"
+    },
+    {
+      "name": "office-source-progress3-r1.tar.gz",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-source-progress3-r1.tar.gz",
+      "bytes": 39019135,
+      "sha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c"
+    },
+    {
+      "name": "office-wasm-integration-progress3-r1.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-wasm-integration-progress3-r1.zip",
+      "bytes": 81469742,
+      "sha256": "99c25048df8b3562b5cfbac86fc463ad9b0682d9fd2b5d8da5c06a1acbe0c5af"
+    },
+    {
+      "name": "public-download-source3.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/public-download-source3.json",
+      "bytes": 2658,
+      "sha256": "6d3042244086f7b8f37c854e6416283b9c964ca74b3253d84654a55655ab92cb"
+    },
+    {
+      "name": "public-engine-builds-progress3-windows-x64.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/public-engine-builds-progress3-windows-x64.json",
+      "bytes": 7118,
+      "sha256": "e6f0d19bf6f1d8f9178377a6a9bcdce7d87089b648f8707a48d4cfe07c4cc837"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-components.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-components.json",
+      "bytes": 15401,
+      "sha256": "e351c101a108742a17e5fa24d92a3b5f59fca9d9314057b04cf4ba7e6679c1db"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-deckcraft-verified.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-deckcraft-verified.json",
+      "bytes": 270,
+      "sha256": "e2664a91f767d27b62c832d9bccf68935d7d5f30a15483388e6b15b859fa4eee"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-gridcraft-verified.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-gridcraft-verified.json",
+      "bytes": 270,
+      "sha256": "175d857ca1de2186d6ee3daee0a4e5c6a01a2711a96bbbdcf7cb7b929ed92e2c"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-pdfcraft-verified.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-pdfcraft-verified.json",
+      "bytes": 269,
+      "sha256": "d576ddd802fb619e6f74d8ffab222032674502ee01bf0ca2e91913f4fcffa998"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-selected-browser.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-selected-browser.json",
+      "bytes": 18647,
+      "sha256": "4f460d94f84e74f5362e571c6a7ab9e2d28b14ba3a641461dbc5891f9026d906"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-selected-deck-guard.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-selected-deck-guard.json",
+      "bytes": 1031,
+      "sha256": "7ec89bcd1b394ffbd19e9f2f2950f9ae2bf37bd084fd9e1377fec94044c84f53"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-selected-node.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-selected-node.json",
+      "bytes": 2293,
+      "sha256": "d5ceeb76b64bb8b8378baf418000cd7723b628438c4c036537d25872e68aa5da"
+    },
+    {
+      "name": "wasm-source3-ci-42386885242-wordcraft-verified.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-ci-42386885242-wordcraft-verified.json",
+      "bytes": 270,
+      "sha256": "e9ae97f8a6bbfb6dfcef13002ca1e06e156edeafb389e92a84ca5bbd81030f91"
+    },
+    {
+      "name": "wasm-source3-preserved-progress2-archive-metadata.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/wasm-source3-preserved-progress2-archive-metadata.json",
+      "bytes": 560,
+      "sha256": "e7dd9487bbb620b25e19c870ea1f73338c0dfe80361dae7bfb08b660b19db116"
+    },
+    {
+      "name": "windows-default-source3-ci-42386885242-artifacts.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-default-source3-ci-42386885242-artifacts.json",
+      "bytes": 6766,
+      "sha256": "2077839ebeb890ddea15df96fd94ba080cde127391a156f262c7ce2fff18fcc6"
+    },
+    {
+      "name": "windows-default-source3-ci-42386885242-jobs.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-default-source3-ci-42386885242-jobs.json",
+      "bytes": 8822,
+      "sha256": "80d3b1f7a6479acb28c8805da4fb471d811d3c6f1ff5a4a854361c50ac0d9d49"
+    },
+    {
+      "name": "windows-default-source3-ci-42386885242-pins.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-default-source3-ci-42386885242-pins.json",
+      "bytes": 1895,
+      "sha256": "e608c6d71cb3fd69f14f8f33846760bf7d1a595a1e52342cffd5835cee7b571d"
+    },
+    {
+      "name": "windows-default-source3-ci-42386885242-run.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-default-source3-ci-42386885242-run.json",
+      "bytes": 14253,
+      "sha256": "c09e4617ddbb01cd30bceb8225f8bffe7c6ff4d31fa1cd392f9e5d33b0febe9d"
+    },
+    {
+      "name": "windows-source3-static-ci-restore-progress3.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-source3-static-ci-restore-progress3.json",
+      "bytes": 15867,
+      "sha256": "cd00a159c973e069ff6a4ee8406edb31d1a397016077af73b6088ccdd84d6764"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-artifacts.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-artifacts.json",
+      "bytes": 2945,
+      "sha256": "01bea5bdf0b2fe20869fdcba4dcb53777a663af4a7ab798e46adadb1fea07b36"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-deckcraft.zip",
+      "bytes": 46840521,
+      "sha256": "bf9d97f28c124e98490b0d6929c59ea6c4cb43e7a52f3d882e87a614c1f6976c"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-gridcraft.zip",
+      "bytes": 8061806,
+      "sha256": "735f64277e72efae197f2e4e986feabf8cb06ae7e4af0a1b5564c2fd4d4c1d9e"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-jobs.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-jobs.json",
+      "bytes": 10901,
+      "sha256": "22a7b9911f6b4221075b61c702a6c7cd8418e0c15e35e7fb81ff0f6672e8a747"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-pdfcraft.zip",
+      "bytes": 58145454,
+      "sha256": "b3716486775e935d24ae55095d13fcb13e12dac9e09441a2b9ebb433e0605993"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-run.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-run.json",
+      "bytes": 14265,
+      "sha256": "d8b1976a63906401778938a76acf8e05173dc53b190344de44753eaa7f910295"
+    },
+    {
+      "name": "windows-static-source3-ci-42391943016-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-wordcraft.zip",
+      "bytes": 50800926,
+      "sha256": "5d2bdb72188fb12aec783013d84a76176198d3e496d46b8244e7857885f97f21"
+    }
+  ],
+  "limits": [
+    "Complete runtime behavior and target operation are verified separately",
+    "Fixed expected identities; this manifest is not a publication receipt"
+  ]
+}
