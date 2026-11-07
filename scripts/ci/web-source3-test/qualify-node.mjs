@@ -20,7 +20,7 @@ try{
   ['deckcraft','pptx','insert.textBox',{text:'Node facade actual Deck marker'},'slide.inspect',{}],
   ['gridcraft','xlsx','cell.set',{cell:'A1',input:'Node facade actual Grid marker'},'cell.get',{cell:'A1'}],
  ]){
-  await page.goto(origin.origin+'/__qualification/host?app='+app);await page.waitForFunction(()=>window.conformance?.ready,{timeout:120000});
+  await page.goto(origin.origin+'/__qualification/host?app='+app);await page.waitForFunction(()=>window.conformance?.ready,null,{timeout:120000});
   let seed;
   if(app==='pdfcraft'||app==='gridcraft'){
    const code=await readFile(`test/fixtures/qualify-${app==='pdfcraft'?'pdf':'grid'}-page.mjs`,'utf8');const match=code.match(app==='pdfcraft'?/"(JVBER[^"\s]+)"/:/"(UEsDB[^"\s]+)"/);assert(match,'Synthetic fixture missing');seed=Buffer.from(match[1],'base64');
