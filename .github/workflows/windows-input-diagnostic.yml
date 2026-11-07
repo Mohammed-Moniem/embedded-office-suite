@@ -27,7 +27,7 @@ jobs:
           path: build/windows-input-diagnostic/evidence
           if-no-files-found: error
           retention-days: 14
-      - name: Restore and verify the exact frozen P1 source
+      - name: Restore and verify the exact frozen source3
         id: source
         if: always() && steps.environment.outcome == 'success'
         timeout-minutes: 10
