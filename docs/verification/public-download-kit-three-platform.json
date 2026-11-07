@@ -1,0 +1,162 @@
+{
+  "schemaVersion": 1,
+  "status": "ACTUAL_THREE_PLATFORM_TRANSFER_VERIFIED",
+  "passed": true,
+  "runId": 42406484290,
+  "head": "f4a02a1ab895361965c893cf32ad514b0a52367d",
+  "targetResults": [
+    {
+      "platform": "macos-arm64",
+      "totalBytes": 331846890,
+      "stageCount": 5,
+      "memberCount": 6,
+      "environment": {
+        "node": "24.18.0",
+        "platform": "darwin",
+        "arch": "arm64",
+        "osRelease": "24.6.0",
+        "githubActions": true,
+        "runId": "42406484290",
+        "head": "f4a02a1ab895361965c893cf32ad514b0a52367d",
+        "runnerOS": "macOS",
+        "runnerArch": "ARM64"
+      },
+      "downloadAndOfflineIdentities": [
+        {
+          "name": "office-native-source3-r1-macos-arm64.zip",
+          "bytes": 250377148,
+          "sha256": "335d5ab993c01a939feeda8dfd035b856a3281d1fc61f0952d366813638468d2"
+        },
+        {
+          "name": "office-wasm-integration-progress3-r1.zip",
+          "bytes": 81469742,
+          "sha256": "99c25048df8b3562b5cfbac86fc463ad9b0682d9fd2b5d8da5c06a1acbe0c5af"
+        }
+      ],
+      "stageSha256": [
+        "3bd5b183fe9621d49ab9bf659ed68fe70e4ea9f9c7ee4507f5996816de95b81b",
+        "e080d36501653cd3a6224880b2b4b52c0fa6ce86271244e81ac6a4e27b4fae30",
+        "9721b625994610ab10e05b23b8bcd794d697a202fadae587bbb6c6520cb555df",
+        "3ba8e680fca52ba854475945f9fc7d2c48111a15113f5feb24f56232f654969c",
+        "f7ce917c2e6741b72f47c38e51a05c5556d941ca3ae5152213bb59df23a20314"
+      ]
+    },
+    {
+      "platform": "macos-x64",
+      "totalBytes": 335860465,
+      "stageCount": 5,
+      "memberCount": 6,
+      "environment": {
+        "node": "24.18.0",
+        "platform": "darwin",
+        "arch": "x64",
+        "osRelease": "24.6.0",
+        "githubActions": true,
+        "runId": "42406484290",
+        "head": "f4a02a1ab895361965c893cf32ad514b0a52367d",
+        "runnerOS": "macOS",
+        "runnerArch": "X64"
+      },
+      "downloadAndOfflineIdentities": [
+        {
+          "name": "office-native-source3-r1-macos-x64.zip",
+          "bytes": 254390723,
+          "sha256": "a9ad54c1fe26324501e081c9541966771b76f3ed2a4fd35a42910f837ae0074e"
+        },
+        {
+          "name": "office-wasm-integration-progress3-r1.zip",
+          "bytes": 81469742,
+          "sha256": "99c25048df8b3562b5cfbac86fc463ad9b0682d9fd2b5d8da5c06a1acbe0c5af"
+        }
+      ],
+      "stageSha256": [
+        "dd88e87dde380bb759daa051d1e0800d48d655e69525465816116a9138bc1a10",
+        "6426f6b84234587a9a7d8a9fe936cae8d9d6cb03a464dc553335d4422ceda52e",
+        "1e6af2adb2ec9d1fd4025cf571ec6ed719a568e42dadc9deaa268675e6c81cbf",
+        "d2d93add2b93d09dcaf8c48af239da3e72af1691f120be6d633f5187090c77d8",
+        "587ed1182d789aa6414b12434eea3d3760c3b5f1e4999ce4deb57073a1198f64"
+      ]
+    },
+    {
+      "platform": "windows-x64",
+      "totalBytes": 330770684,
+      "stageCount": 5,
+      "memberCount": 6,
+      "environment": {
+        "node": "24.18.0",
+        "platform": "win32",
+        "arch": "x64",
+        "osRelease": "10.0.20348",
+        "githubActions": true,
+        "runId": "42406484290",
+        "head": "f4a02a1ab895361965c893cf32ad514b0a52367d",
+        "runnerOS": "Windows",
+        "runnerArch": "X64"
+      },
+      "downloadAndOfflineIdentities": [
+        {
+          "name": "office-native-windows-x64-progress3-r1.zip",
+          "bytes": 249300942,
+          "sha256": "055a27446f7aab4c6321f41c5a1be69a787384e9352555af964fe129b61f43c0"
+        },
+        {
+          "name": "office-wasm-integration-progress3-r1.zip",
+          "bytes": 81469742,
+          "sha256": "99c25048df8b3562b5cfbac86fc463ad9b0682d9fd2b5d8da5c06a1acbe0c5af"
+        }
+      ],
+      "stageSha256": [
+        "95140bade540ed8bdaf22825d68ee07fd4dd39766bf56708d970ba8ec1999c93",
+        "094ec05bf718753bf12a9e78bd64383ed640b5c0e1214086c450f9c407c3a1f4",
+        "a48c6b2ba3f225eb3749ffaffb9073ce8e8e82ae8f3b2bc7b331c67e5d153c74",
+        "cac047c477892a75e35c5215cd8c463c0c55dc44a300aef584f1932359aeb8c4",
+        "563d54c5a4a0576d3d6ffa852dad3ffe10886cb9890941c898f37259c7a97659"
+      ]
+    }
+  ],
+  "actualCliStages": 15,
+  "originalReportMembers": 18,
+  "independentNegativeControls": 49,
+  "originalFailures": [
+    {
+      "path": "build/kit-hosted-failure/42405822713/windows-x64.zip",
+      "bytes": 761,
+      "sha256": "002488ea1f980052a3650aaecc387d44e3f9eca90f244226fc8f3ce1ea2505fb",
+      "status": "FAIL",
+      "stage": "input-identity",
+      "members": 1
+    },
+    {
+      "path": "build/kit-hosted-failure/42406171170/windows-x64.zip",
+      "bytes": 3032,
+      "sha256": "978806e1bddd1bf26751595415a150d67f1d1c8d9322ca446bceb498dc9848a2",
+      "status": "FAIL",
+      "stage": "offline-existing",
+      "members": 3
+    }
+  ],
+  "parent": {
+    "schemaVersion": 1,
+    "passed": true,
+    "exactReturnedLedgerReverified": true,
+    "ledger": ".unlazy/review-kit-hosted/GATES.md",
+    "gates": [
+      "R1",
+      "R2",
+      "R3"
+    ],
+    "result": "ALL MET (3 met, reran: 3, previously met reverified: 3)",
+    "reviewFreezeSha256": "0ae574e9af099ce5bb60273929696e74beb72edca972666f043946d7a3c0c15b"
+  },
+  "bundle": {
+    "name": "download-kit-three-platform-42406484290-evidence.tar.gz",
+    "bytes": 87672,
+    "sha256": "dcbc0e6f3f3adc77efef5388f8c40a8896e271ded4f355c7b60239c81762b9b3",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/download-kit-three-platform-42406484290-evidence.tar.gz",
+    "files": 42
+  },
+  "limits": [
+    "Standalone archive transfer/integrity and fetch-forbidden offline reuse on the three declared hosted targets only.",
+    "No archive execution, source rebuild, Windows11/private-host/Office parity or Windows signal semantics acceptance."
+  ]
+}
