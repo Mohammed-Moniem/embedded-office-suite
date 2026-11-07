@@ -1,6 +1,6 @@
 # Embedded Office Suite
 
-Current [progress2 release](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.2): complete source and reviewed four-editor WASM package are public and pass exact anonymous download plus all-four browser/Node operation checks on macOS ARM64. Native Mac r1 packages are public with exact target CI in progress; Windows and full product/private-host acceptance remain open. Follow the [component downloads](docs/DOWNLOADS.md).
+Current [progress2 release](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.2): complete source and reviewed four-editor WASM package are public and pass exact anonymous download plus all-four browser/Node operation checks on macOS ARM64. Exact public native Mac r1 packages pass all-four operations on Apple Silicon and Intel with OS network denial. All four source2 engines also rebuild native and WASM from fresh caches on macOS ARM64 without Cargo network access. Windows and full product/private-host acceptance remain open. Follow the [component downloads](docs/DOWNLOADS.md).
 
 Rust/WASM document engines and a Node integration layer for an **existing private desktop harness**. No standalone GUI, replacement harness, Electron dependency, or host-specific native WebView binding is included.
 
@@ -28,6 +28,6 @@ Use the [download guide](docs/DOWNLOADS.md), [host integration guide](docs/HOST-
 
 `node scripts/run-tests.mjs` runs the repository's test suites without installing packages. `node scripts/verify-engines.mjs` exercises actual acquired CLI workers; absent workers fail rather than skip. More expensive offline and OS qualification is recorded separately. Release notes must identify which exact source/archive and platforms were tested.
 
-The actual private harness and licensed Microsoft/Adobe reference applications are not available in this repository. Their required conformance/reference gates remain open until those tests run. No universal claim about historical macOS releases is made; publish the measured OS/WebView compatibility matrix for each release.
+The actual private harness remains outside this repository; its conformance gate requires sanitized owner-run results. Following the user's scope amendment, current feature coverage is being compared against official Microsoft/PDF documentation without requiring licensed reference applications. Documentation and repository evidence do not establish full application behavior or file fidelity. No universal claim about historical macOS releases is made; publish the measured OS/WebView compatibility matrix for each release.
 
 Source, runtime, and offline-rebuild bundles are distinct. A runtime-only archive is never presented as the complete offline build kit. Supporting assets and dependencies must be redistributed under their own licence terms; proprietary software, corporate documents, credentials, and restricted vendor SDKs are excluded.
