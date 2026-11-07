@@ -1,13 +1,33 @@
 # Embedded Office Suite
 
-**IN_PROGRESS. Full Word/Excel/PowerPoint/Acrobat equivalence has not been achieved.**
+Current [progress2 release](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.2): complete source and reviewed four-editor WASM package are public and pass exact anonymous download plus all-four browser/Node operation checks on macOS ARM64. Native Mac r1 packages are public with exact target CI in progress; Windows and full product/private-host acceptance remain open. Follow the [component downloads](docs/DOWNLOADS.md).
 
-Download the complete four-engine Rust source, Node/browser SDKs and offline build assets from the [progress prerelease](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.1). Start with the [download guide](docs/DOWNLOADS.md), [offline recipe](docs/engines/OFFLINE-BUILD.md), [integration contract](INTEGRATION-CONTRACT.md) and [acceptance matrix](docs/verification/ACCEPTANCE.md).
+Rust/WASM document engines and a Node integration layer for an **existing private desktop harness**. No standalone GUI, replacement harness, Electron dependency, or host-specific native WebView binding is included.
 
-This branch is the publication/CI bootstrap. The complete source is the explicit `office-source-progress1.tar.gz` release asset, frozen at local commit `60e8d44a769b998827f308ceb58f5cba5b6a0e17`; GitHub's automatic bootstrap source ZIP is not the four-engine source. Git Data tree import failed independent closure checks, so the checked source archive is used for delivery.
+**Status: IN_PROGRESS.** Full Microsoft 365 desktop and Acrobat Pro local-feature/file-behavior equivalence is the acceptance target. It has not been achieved or verified. The four upstream projects are alpha software. Integration tests, a successful build, or a published archive do not establish full parity.
 
-The components mount inside an existing Node/WebView desktop harness. No standalone app or launcher is included. The host provides approved Node/WebView, file grants and storage. Rebuilds use the bundled pinned Rust/WASM tools and vendored Cargo sources plus the approved native linker/OS SDK. Private corporate data, credentials and proprietary SDKs are excluded.
+The engines are based on [WordCraft](https://github.com/storytold/wordcraft), [PdfCraft](https://github.com/storytold/pdfcraft), [DeckCraft](https://github.com/storytold/deckcraft), and [GridCraft](https://github.com/storytold/gridcraft). Exact source commits are recorded in [config/upstreams.json](config/upstreams.json). This is an independent integration, not an official ArtCraft product.
 
-All ten published archives passed anonymous download, size and SHA-256 verification. The exact downloaded macOS ARM64 runtime passed all four native roundtrips with its packaged SDK, an empty PATH and OS network denial. SDK/helper suites also passed on Windows Server 2022, macOS ARM64 and Intel runners. See the [acceptance matrix](docs/verification/ACCEPTANCE.md) for linked reports and current limits.
+## Contents
 
-Four native/WASM offline builds and the reviewed Word page bridge are measured on macOS ARM64. Native/WASM CI for other targets is running. New PDF, Deck and Sheets page bridges remain separate candidates until accepted and released. Optional features, private-host conformance and full product/file parity remain open. CI verifies the exact published archives rather than treating this bootstrap as complete source.
+- `packages/node`: dependency-free Node adapter, native stdio/MCP transport, session management, and namespaced tool integration.
+- `packages/browser`: dependency-free module for mounting WASM editors inside the existing WebView and handling the versioned page bridge.
+- `engines`: pinned Rust engine source snapshots, with upstream licences and notices.
+- `scripts/engines`: source/runtime acquisition, qualification and offline build tooling.
+- `scripts`: distribution verification, host probing and archive assembly.
+
+The host supplies Node, WebView, document access grants, storage, and effect permissions. Runtime assets and native workers are selected explicitly; modules never download a compiler, dependency, font, model, or editor at first launch. Rebuilding may use the approved installed native linker and OS SDK. Rust >=1.95 is required by the pinned engines; exact qualified compiler/tool versions belong in the build manifest.
+
+Read [INTEGRATION-CONTRACT.md](INTEGRATION-CONTRACT.md), [the run record](GAUNTLET-UNLAZY-RUN.md), and the package documentation before integration. Run `node scripts/probe-host.mjs` on a candidate host to record its Node/OS/CPU capabilities without reading corporate documents or credentials. The browser package exposes a complementary WebView probe.
+
+Reviewed Word, PDF, Deck and Sheets page bridges are applied; [APPLIED-PATCHES.json](docs/engines/APPLIED-PATCHES.json) records exact derivative source/patch/review identities separately from upstream pins. All four current pages negotiate bounded real commands, authoritative revisions, confirmed opening and host-acknowledged saves. Actual browser and Node facade checks pass DOCX/PDF/PPTX/XLSX edit/save/reopen on macOS ARM64. Grid native workers support explicit automation roots; these checks are not an OS sandbox. Progress release1 retains three legacy pages, so select each archive by its own provenance rather than assuming later source behavior applies to older bytes.
+
+Use the [download guide](docs/DOWNLOADS.md), [host integration guide](docs/HOST-INTEGRATION.md) and [offline recipe](docs/engines/OFFLINE-BUILD.md). The complete explicit source archive is the distribution authority while GitHub Git Data import remains unresolved; bootstrap main alone does not contain all engine code. Keep the published notice companion with the original progress1 runtime. New repaired packages include original font/icon notices internally. Progress artifacts are not the finished parity suite.
+
+## Verification and limits
+
+`node scripts/run-tests.mjs` runs the repository's test suites without installing packages. `node scripts/verify-engines.mjs` exercises actual acquired CLI workers; absent workers fail rather than skip. More expensive offline and OS qualification is recorded separately. Release notes must identify which exact source/archive and platforms were tested.
+
+The actual private harness and licensed Microsoft/Adobe reference applications are not available in this repository. Their required conformance/reference gates remain open until those tests run. No universal claim about historical macOS releases is made; publish the measured OS/WebView compatibility matrix for each release.
+
+Source, runtime, and offline-rebuild bundles are distinct. A runtime-only archive is never presented as the complete offline build kit. Supporting assets and dependencies must be redistributed under their own licence terms; proprietary software, corporate documents, credentials, and restricted vendor SDKs are excluded.
