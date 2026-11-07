@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "status": "EXACT_PUBLIC_DOWNLOAD_HELPER_VERIFIED",
+  "passed": true,
+  "package": {
+    "schemaVersion": 1,
+    "kind": "office-download-kit",
+    "status": "IN_PROGRESS",
+    "name": "office-kit-downloader-progress3-r2.zip",
+    "bytes": 13966,
+    "sha256": "483613519eb407b3c13a1c209e324c95cfb5b7cbb785322e6c4e8e0148c23c61",
+    "manifestSha256": "5698fb0a393a30ead66df94f2343c5d13be83238b926ba0dad89bb89e267e5fa",
+    "manifestFiles": 5,
+    "pins": {
+      "scripts/download-office-kit.mjs": "e420a223958141ca2fd518f4ba6d5883012df9a1b278e6d6fd7ffef892e7e641",
+      "config/office-kit-downloads-progress3.json": "2ba769bd1e1d70e68f63d9b7b88e187409f0d739d2dfc59ccd6337383aaef2b5",
+      "docs/DOWNLOAD-KIT.md": "5980e68a44ae522fef8f7b30ff9f961c1fd22e9e44a4895e8c417e8c885d5595"
+    },
+    "reviewVerdictSha256": "9b70d6d02508ab3f1a7b277b0dd74d4b2d117f5c3c1fdbe02729bfd24c64d5c6",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-kit-downloader-progress3-r2.zip"
+  },
+  "anonymousPublicFetch": true,
+  "exactExtractedManifestFiles": 5,
+  "windowsAllProfilePlanAssets": 9,
+  "actualOfflineBytesVerified": 331846890,
+  "offlineFetchForbidden": true,
+  "environment": {
+    "platform": "darwin",
+    "arch": "arm64",
+    "node": "24.18.0"
+  },
+  "limits": [
+    "Public helper extraction/plan/offline existing-byte verification on macOS ARM64 only",
+    "No new native/WASM execution or Windows11/privatehost/product acceptance",
+    "Three-platform online helper qualification is recorded separately"
+  ]
+}
