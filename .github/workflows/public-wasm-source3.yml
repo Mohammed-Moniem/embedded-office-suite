@@ -7,8 +7,6 @@ jobs:
   qualify:
     runs-on: macos-15
     timeout-minutes: 25
-    env:
-      PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/office-web-browsers
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
@@ -17,10 +15,14 @@ jobs:
         with:
           node-version: 24.18.0
       - name: Install exact test-only Playwright and Chromium dependencies
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/office-web-browsers
         run: |
           npm install --prefix "$RUNNER_TEMP/office-web-test" --no-package-lock --ignore-scripts playwright@1.64.0-alpha-1790635538000
           node "$RUNNER_TEMP/office-web-test/node_modules/playwright/cli.js" install chromium
       - name: Download exact public archive and exercise its own browser and Node SDKs
+        env:
+          PLAYWRIGHT_BROWSERS_PATH: ${{ runner.temp }}/office-web-browsers
         timeout-minutes: 15
         run: node scripts/ci/web-source3-test/qualify-public.mjs --output-root build/web-source3-public-ci --playwright-module "$RUNNER_TEMP/office-web-test/node_modules/playwright/index.mjs"
       - name: Retain exact public archive identity and actual operation receipts
