@@ -1,0 +1,377 @@
+{
+  "schemaVersion": 1,
+  "status": "FOUR_STATIC_RETRY_ARTIFACTS_AND_API_AUTHORITY_ADMITTED",
+  "repository": "Mohammed-Moniem/embedded-office-suite",
+  "profile": "separate-native-only-static-crt",
+  "source": {
+    "asset": "office-source-progress3-r1.tar.gz",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-source-progress3-r1.tar.gz",
+    "bytes": 39019135,
+    "sha256": "ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c",
+    "manifestSha256": "566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa",
+    "destination": "build/public-qualification/progress3/source",
+    "archiveDestination": "build/progress3-release/office-source-progress3-r1.tar.gz"
+  },
+  "authorityCaptureDestinations": [
+    {
+      "name": "run",
+      "bytes": 14265,
+      "sha256": "d8b1976a63906401778938a76acf8e05173dc53b190344de44753eaa7f910295",
+      "asset": "windows-static-source3-ci-42391943016-run.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-run.json",
+      "destination": "build/windows-native-progress/static-authority/run.json"
+    },
+    {
+      "name": "jobs",
+      "bytes": 10901,
+      "sha256": "22a7b9911f6b4221075b61c702a6c7cd8418e0c15e35e7fb81ff0f6672e8a747",
+      "asset": "windows-static-source3-ci-42391943016-jobs.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-jobs.json",
+      "destination": "build/windows-native-progress/static-authority/jobs.json"
+    },
+    {
+      "name": "artifacts",
+      "bytes": 2945,
+      "sha256": "01bea5bdf0b2fe20869fdcba4dcb53777a663af4a7ab798e46adadb1fea07b36",
+      "asset": "windows-static-source3-ci-42391943016-artifacts.json",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-artifacts.json",
+      "destination": "build/windows-native-progress/static-authority/artifacts.json"
+    }
+  ],
+  "artifacts": [
+    {
+      "app": "wordcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582525857,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 50800926,
+      "sha256": "5d2bdb72188fb12aec783013d84a76176198d3e496d46b8244e7857885f97f21",
+      "asset": "windows-static-source3-ci-42391943016-wordcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-wordcraft.zip",
+      "downloadDestination": "build/windows-native-progress/downloads/ci/windows-x64/wordcraft.zip",
+      "restoredDestination": "build/windows-native-progress/ci-engine-results/windows-x64/wordcraft"
+    },
+    {
+      "app": "pdfcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582497297,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 58145454,
+      "sha256": "b3716486775e935d24ae55095d13fcb13e12dac9e09441a2b9ebb433e0605993",
+      "asset": "windows-static-source3-ci-42391943016-pdfcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-pdfcraft.zip",
+      "downloadDestination": "build/windows-native-progress/downloads/ci/windows-x64/pdfcraft.zip",
+      "restoredDestination": "build/windows-native-progress/ci-engine-results/windows-x64/pdfcraft"
+    },
+    {
+      "app": "deckcraft",
+      "platform": "windows-x64",
+      "artifactId": 13582013585,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 46840521,
+      "sha256": "bf9d97f28c124e98490b0d6929c59ea6c4cb43e7a52f3d882e87a614c1f6976c",
+      "asset": "windows-static-source3-ci-42391943016-deckcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-deckcraft.zip",
+      "downloadDestination": "build/windows-native-progress/downloads/ci/windows-x64/deckcraft.zip",
+      "restoredDestination": "build/windows-native-progress/ci-engine-results/windows-x64/deckcraft"
+    },
+    {
+      "app": "gridcraft",
+      "platform": "windows-x64",
+      "artifactId": 13581612670,
+      "runId": 42391943016,
+      "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+      "bytes": 8061806,
+      "sha256": "735f64277e72efae197f2e4e986feabf8cb06ae7e4af0a1b5564c2fd4d4c1d9e",
+      "asset": "windows-static-source3-ci-42391943016-gridcraft.zip",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/windows-static-source3-ci-42391943016-gridcraft.zip",
+      "downloadDestination": "build/windows-native-progress/downloads/ci/windows-x64/gridcraft.zip",
+      "restoredDestination": "build/windows-native-progress/ci-engine-results/windows-x64/gridcraft"
+    }
+  ],
+  "code": [
+    {
+      "path": "scripts/ci/verify-windows-static-results.mjs",
+      "bytes": 40012,
+      "sha256": "19fc1fc58a0f02623ad9d7e7815e44c7f18a4e6d7ef4a58b1664297ec1c855f5"
+    },
+    {
+      "path": "scripts/package-native-windows.mjs",
+      "bytes": 42357,
+      "sha256": "1bcbf356e6cb8f96d46ae530eeca0fcca9c76975b6cd0cdbbaa800dca939a140"
+    },
+    {
+      "path": "scripts/lib/artifacts.mjs",
+      "bytes": 8842,
+      "sha256": "652f1d5d5fa68cd96bd5850e4cb5e62a75ed2e68b7b7c4e91359374168c6505a"
+    },
+    {
+      "path": "scripts/lib/component-legal.mjs",
+      "bytes": 1225,
+      "sha256": "534fdcf3cdd590b91e66f44df3ffaa008591fb48f2d4fb78c3eb5e8c1460e4ca"
+    }
+  ],
+  "dataPaths": {
+    "pins": "config/ci-engine-pins-windows-progress3.json",
+    "transfers": "build/windows-native-progress/ci-artifact-provenance.json",
+    "aggregate": "build/windows-native-progress/public-static-native-builds-progress3-windows-x64.json",
+    "support": "build/engines/support-inputs",
+    "sdk": "packages/node",
+    "sdkAuthority": "config/web-component-pins-progress2.json",
+    "sdkRestoreSource": "build/public-qualification/progress3/source/packages/node",
+    "sdkAuthorityRestoreSource": "build/public-qualification/progress3/source/config/web-component-pins-progress2.json",
+    "supportArchive": {
+      "asset": "office-build-inputs-support-complete3.tar.gz",
+      "sha256": "b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c",
+      "destination": "build/engines/support-inputs",
+      "manifestSha256": "9a213c32fde8cfbe505364a0f5381587b79e34c2ee9648d1d22e4cd9c518e269"
+    }
+  },
+  "commandsAfterAllRequiredInputsRestored": [
+    [
+      "node",
+      "scripts/ci/verify-windows-static-results.mjs"
+    ],
+    [
+      "node",
+      "scripts/package-native-windows.mjs",
+      "--platform",
+      "windows-x64",
+      "--source",
+      "build/public-qualification/progress3/source",
+      "--report",
+      "build/windows-native-progress/public-static-native-builds-progress3-windows-x64.json",
+      "--output",
+      "build/windows-native-progress/releases/office-native-windows-x64-progress3-r1.zip"
+    ]
+  ],
+  "limits": [
+    "Actual four-app retry authority is admitted locally; durable upload/readback and target/archive qualification remain separate",
+    "Installed verifier must be the exact reviewed public scripts/ci file; no excluded build code dependency",
+    "Restore developer build data from durable release assets and hash-check before extraction; no expiring Actions URL is required",
+    "Default full native plus WASM ZIPs cannot substitute for this profile",
+    "Target execution/network isolation/public-download acceptance remains separate"
+  ],
+  "historicalFailedRun": {
+    "runId": 42389812705,
+    "workflowHead": "2af387ec19aa38f88edc07ed76bbad1972bfc60e",
+    "history": "build/windows-native-progress/history/failed-static-first-run",
+    "admitted": false
+  },
+  "runId": 42391943016,
+  "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+  "authority": {
+    "pinsPath": "config/ci-engine-pins-windows-progress3.json",
+    "pinsSha256": "23812a0d8ccebc377e6d18c4d68e928cf41873e266ae313b3f341811da78b12e",
+    "runId": 42391943016,
+    "workflowHead": "f8b0c730972cf533289646ee29841494446785b7",
+    "singleSuccessfulRun": true
+  },
+  "codeSourceRequirement": "Install the exact reviewed public repository code paths/hashes below. The older assembler in the immutable source3 archive is not this consumer. All build paths here are restored data, never imported build code.",
+  "package": {
+    "asset": "office-native-windows-x64-progress3-r1.zip",
+    "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/office-native-windows-x64-progress3-r1.zip",
+    "path": "build/windows-native-progress/releases/office-native-windows-x64-progress3-r1.zip",
+    "bytes": 249300942,
+    "sha256": "055a27446f7aab4c6321f41c5a1be69a787384e9352555af964fe129b61f43c0",
+    "manifestSha256": "b7d033564f8b0e52959b007d144b6d22b371a5df3eaa15bd43668d656ff123de",
+    "manifestEntries": 400,
+    "archiveFiles": 401,
+    "targetExecutionQualified": false,
+    "publicDownloadQualified": false
+  },
+  "bootstrapReadbacks": {
+    "workflow": {
+      "path": ".github/workflows/windows-static-native.yml",
+      "sha256": "9f93777a40449fa1d6da9d7f9b6de1bc126777d191b6700f59fb4f2ba192a86e",
+      "exactWindowsCheckoutSha256": "708a11915c3853b543585ae7145406271e2393b943ef5057fc9156e0a9af313f",
+      "head": "f8b0c730972cf533289646ee29841494446785b7"
+    },
+    "canonical": [
+      {
+        "path": "scripts/ci/windows-static-native.mjs",
+        "size": 10370,
+        "sha256": "8a548d6824f4fd9a1cd878e8dfa20e808c084c2020e738eeaf03b4070a5ce62e"
+      },
+      {
+        "path": "scripts/ci/windows-static-pe.mjs",
+        "size": 4713,
+        "sha256": "324fae139448fe6b60a8e52764da831d33149999d0d0fc29adca5e7a73c055a3"
+      },
+      {
+        "path": "scripts/ci/progress.mjs",
+        "size": 8202,
+        "sha256": "a7c0717a835d4ea816291ffdd127c6c680611ff2931463d310c7fd5eb4fd0416"
+      },
+      {
+        "path": "scripts/ci/progress-supervisor.mjs",
+        "size": 3508,
+        "sha256": "82a0fc9045ad46d1416259a5ddc44696eadb384c38529256a07a43409c9b16d3"
+      },
+      {
+        "path": "scripts/ci/verify-frozen-source.mjs",
+        "size": 2889,
+        "sha256": "7383d88ecd0d84b4b9080bbdb4bcefe687fe3c52d34f77cdae5a8445722ba106"
+      },
+      {
+        "path": "scripts/lib/artifacts.mjs",
+        "size": 8842,
+        "sha256": "652f1d5d5fa68cd96bd5850e4cb5e62a75ed2e68b7b7c4e91359374168c6505a"
+      },
+      {
+        "path": "build/progress-ci/source/scripts/engines/offline-build.mjs",
+        "size": 14945,
+        "sha256": "ab8969ddd0ed69732c021dd8861845fba36e52c27f95b6149b7e18b83651ce73"
+      },
+      {
+        "path": "build/progress-ci/source/scripts/verify-engines.mjs",
+        "size": 6499,
+        "sha256": "e41b1c1913b62cb303b2e58069eeb6e1050068a4b96fc40c03f36beaa6e4e46b"
+      }
+    ],
+    "exactWindowsCheckout": [
+      {
+        "path": "scripts/ci/windows-static-native.mjs",
+        "size": 10478,
+        "sha256": "e5bb07efc021a4bf0d6d2d46904f58d67c7a696aa0793a5cb654481758ee392f"
+      },
+      {
+        "path": "scripts/ci/windows-static-pe.mjs",
+        "size": 4787,
+        "sha256": "609e7cf26b7dfbeca87bbbf25ebe94d6696010e181b3fd6cefcfbc89061e1b70"
+      },
+      {
+        "path": "scripts/ci/progress.mjs",
+        "size": 8297,
+        "sha256": "77bfb2b986a8de9162c563d0bd662d318f2f2d327660c1c26c2fbbe96b73159d"
+      },
+      {
+        "path": "scripts/ci/progress-supervisor.mjs",
+        "size": 3564,
+        "sha256": "01011ea7a29a3a876c6f57f4fe9634211709d2ee07c64422eb66974041682dee"
+      },
+      {
+        "path": "scripts/ci/verify-frozen-source.mjs",
+        "size": 2933,
+        "sha256": "b6b2cfeb547e0b641e0ff3027c390c7408b326a325dfb48bffe0dac26d045a6f"
+      },
+      {
+        "path": "scripts/lib/artifacts.mjs",
+        "size": 8977,
+        "sha256": "ae919ff293659ef78e368762b1e4525e74b30b345650479dc3e1c48ee7d0af12"
+      },
+      {
+        "path": "build/progress-ci/source/scripts/engines/offline-build.mjs",
+        "size": 14945,
+        "sha256": "ab8969ddd0ed69732c021dd8861845fba36e52c27f95b6149b7e18b83651ce73"
+      },
+      {
+        "path": "build/progress-ci/source/scripts/verify-engines.mjs",
+        "size": 6499,
+        "sha256": "e41b1c1913b62cb303b2e58069eeb6e1050068a4b96fc40c03f36beaa6e4e46b"
+      }
+    ],
+    "conversion": "Exact reviewed LF to CRLF for six checked-out root helpers; two immutable extracted source helpers remain LF",
+    "restoreNote": "Restore the workflow and six root helper canonical LF blobs from this exact fixed public Git head. The verifier accepts only each separately pinned canonical LF or exact checkout CRLF identity. The two build/progress-ci/source entries document producer profile inputs and are not locally imported or executed."
+  },
+  "inputRecords": [
+    {
+      "path": "config/ci-engine-pins-windows-progress3.json",
+      "bytes": 1939,
+      "sha256": "23812a0d8ccebc377e6d18c4d68e928cf41873e266ae313b3f341811da78b12e",
+      "restoreSource": "Install the exact reviewed public record; the package also carries byte-identical evidence copies"
+    },
+    {
+      "path": "build/windows-native-progress/ci-artifact-provenance.json",
+      "bytes": 1157,
+      "sha256": "3f78b9bc4ff162e46b852d669767302d4819cd9995a9ba8ffb75ad209229ad9f",
+      "restoreSource": "Exact seven identity fields from artifacts[] in this map, serialized in its order with two-space JSON indentation and final newline"
+    },
+    {
+      "path": "docs/verification/public-download-source3.json",
+      "bytes": 2658,
+      "sha256": "6d3042244086f7b8f37c854e6416283b9c964ca74b3253d84654a55655ab92cb",
+      "restoreSource": "Install the exact reviewed public record; the package also carries byte-identical evidence copies"
+    },
+    {
+      "path": "docs/verification/source3-checks-macos-arm64.json",
+      "bytes": 1963,
+      "sha256": "1ab0a131f67364f010556746483eb54bcc885aeef115ec4e6da035ece44427ad",
+      "restoreSource": "Install the exact reviewed public record; the package also carries byte-identical evidence copies"
+    },
+    {
+      "path": "config/web-component-pins-progress2.json",
+      "bytes": 9899,
+      "sha256": "1342d1848bf4134be21b5daf4b18f12167731ba2018a5a8afde5718bda47392f",
+      "restoreSource": "build/public-qualification/progress3/source/config/web-component-pins-progress2.json"
+    },
+    {
+      "path": "LICENSE",
+      "bytes": 1303,
+      "sha256": "ae65b978795767d611b372be6d8cf9f3fb674ba16c4b84645cc51a2ef539cfa9",
+      "restoreSource": "build/public-qualification/progress3/source/LICENSE"
+    }
+  ],
+  "generatedAggregate": {
+    "path": "build/windows-native-progress/public-static-native-builds-progress3-windows-x64.json",
+    "sha256": "8879f4c320e952a026744d24b128fac4cfc161d6aea710d19756f74e31beeec0",
+    "bytes": 25194,
+    "regenerate": "node scripts/ci/verify-windows-static-results.mjs",
+    "outputMustInitiallyBeAbsent": true
+  },
+  "extractionContract": "Hash-check complete CI ZIP bytes against artifacts[] before safe extraction into each restoredDestination. Preserve member names and bytes; reject symlinks/unsafe Windows names/case aliases and duplicate entries. The installed public verifier rechecks every relevant member identity. The assembler enforces canonical0644 on only the28 new stage copies listed in canonicalWindowsCiPermissions, regardless of original0666 or normalized0644 restored input modes; do not mutate source/SDK/support modes. The extraction helper in build is optional developer tooling and is not a production code import.",
+  "measuredContents": {
+    "supportManifestEntries": 303,
+    "supportPayloadFiles": 300,
+    "pdfModelCopies": 6,
+    "sdkFiles": 12,
+    "originalAssetNotices": 11,
+    "workerCount": 4,
+    "wasmFiles": 0
+  },
+  "canonicalWindowsCiPermissions": {
+    "schemaVersion": 1,
+    "mode": 420,
+    "octal": "0644",
+    "enforcedBy": "scripts/package-native-windows.mjs",
+    "scope": "Only new stage copies of four admitted Windows CI workers and six CI evidence files per engine;28 files total",
+    "workerDestinations": [
+      "runtime/bin/wordcraft-cli.exe",
+      "runtime/bin/pdfcraft-cli.exe",
+      "runtime/bin/deckcraft-cli.exe",
+      "runtime/bin/gridcraft-cli.exe"
+    ],
+    "evidenceDestinations": [
+      "evidence/wordcraft/PUBLIC-INPUTS.json",
+      "evidence/wordcraft/offline-build.json",
+      "evidence/wordcraft/native-qualification.json",
+      "evidence/wordcraft/STATIC-CRT-PROFILE.json",
+      "evidence/wordcraft/RESTORED-INPUTS.json",
+      "evidence/wordcraft/native-build.log",
+      "evidence/pdfcraft/PUBLIC-INPUTS.json",
+      "evidence/pdfcraft/offline-build.json",
+      "evidence/pdfcraft/native-qualification.json",
+      "evidence/pdfcraft/STATIC-CRT-PROFILE.json",
+      "evidence/pdfcraft/RESTORED-INPUTS.json",
+      "evidence/pdfcraft/native-build.log",
+      "evidence/deckcraft/PUBLIC-INPUTS.json",
+      "evidence/deckcraft/offline-build.json",
+      "evidence/deckcraft/native-qualification.json",
+      "evidence/deckcraft/STATIC-CRT-PROFILE.json",
+      "evidence/deckcraft/RESTORED-INPUTS.json",
+      "evidence/deckcraft/native-build.log",
+      "evidence/gridcraft/PUBLIC-INPUTS.json",
+      "evidence/gridcraft/offline-build.json",
+      "evidence/gridcraft/native-qualification.json",
+      "evidence/gridcraft/STATIC-CRT-PROFILE.json",
+      "evidence/gridcraft/RESTORED-INPUTS.json",
+      "evidence/gridcraft/native-build.log"
+    ],
+    "inputContract": "Verify original complete ZIP bytes and member content identities first. Original CI regular-file mode0666 and normalized extraction mode0644 are both supported inputs. The assembler copies into fresh stage files, sets and verifies0644 at those destinations, and never chmods restored input files.",
+    "unchangedAuthorities": "Source, SDK, support and legal file modes retain their exact independent authority checks; no blanket tree permission normalization",
+    "expectedArchiveSha256": "055a27446f7aab4c6321f41c5a1be69a787384e9352555af964fe129b61f43c0"
+  }
+}
