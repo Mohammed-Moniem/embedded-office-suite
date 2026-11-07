@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "status": "PUBLIC_RECONSTRUCTION_EVIDENCE_REPLAYED",
+  "passed": true,
+  "runId": 42404965866,
+  "head": "a7012610da0e226b35f39b8ed17b5ef982e46da6",
+  "assets": [
+    {
+      "name": "source3-native-reconstruction-42404965866-evidence.tar.gz",
+      "bytes": 221782,
+      "sha256": "2fce02404743b98e0b84510d33d4f8baa07ed2fb26567a23d2a49d2b6b309760",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/source3-native-reconstruction-42404965866-evidence.tar.gz",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "source3-native-reconstruction-42404965866-evidence.tar.gz.sha256",
+      "bytes": 124,
+      "sha256": "173f0ee614ca7b5887518748d1de2406288e54332a6eda8e23b03f64d69e1f04",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/source3-native-reconstruction-42404965866-evidence.tar.gz.sha256",
+      "anonymousFullReadback": true
+    },
+    {
+      "name": "public-source3-native-reconstruction.json",
+      "bytes": 2166,
+      "sha256": "29bca501ad09c5b24f9830aff9c01363be697b37a379fd0a15eab5e9aad06f81",
+      "url": "https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/public-source3-native-reconstruction.json",
+      "anonymousFullReadback": true
+    }
+  ],
+  "exactPublicBundleFiles": 57,
+  "exactPublicReplayChecks": [
+    "identity",
+    "controls",
+    "verdict"
+  ],
+  "limits": [
+    "Evidence and disposable control replay only; no new reconstruction, source compile or runtime execution",
+    "No Windows11/private-host/product parity acceptance"
+  ]
+}
