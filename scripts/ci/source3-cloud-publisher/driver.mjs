@@ -62,7 +62,7 @@ async function response(url, {token, method = 'GET', body, accept = 'application
   try { return await fetch(url, {method, headers, body, redirect: 'manual', signal: AbortSignal.timeout(timeout), ...(body ? {duplex: 'half'} : {})}); }
   catch { throw Error('GitHub transport failed'); }
 }
-async function bodyResponse(url, options) {
+async function bodyResponse(url, options, assetName) {
   let r = await response(url, options);
   for (let n = 0; [301, 302, 303, 307, 308].includes(r.status); n++) {
     assert(n < 5, 'Redirect limit'); const location = r.headers.get('location'); assert(location, 'Missing redirect');
@@ -70,15 +70,20 @@ async function bodyResponse(url, options) {
     const target = new URL(location, url).href; requestUrl(target); await r.body?.cancel(); url = target;
     r = await response(target, {accept: 'application/octet-stream'});
   }
-  assert.equal(r.status, 200, 'Download HTTP status ' + r.status); return r;
+  assert.equal(r.status, 200, 'Download HTTP status ' + r.status + ' for ' + assetName); return r;
 }
 async function jsonResponse(url, options = {}) {
   const r = await response(url, options); assert.equal(r.status, 200, 'GitHub API status ' + r.status);
   const b = await r.text(); assert(Buffer.byteLength(b) <= 8 * 1024 * 1024, 'API response bound'); return JSON.parse(b);
 }
+export function downloadMedia(url) {
+  const u = new URL(url);
+  return u.hostname === 'api.github.com' && /^\/repos\/Mohammed-Moniem\/embedded-office-suite\/actions\/artifacts\/[0-9]+\/zip$/.test(u.pathname) ? 'application/vnd.github+json' : 'application/octet-stream';
+}
 export async function download(url, file, row, token) {
   await absent(file); await mkdir(dirname(file), {recursive: true}); await safeAncestors(dirname(file));
-  const temp = file + '.partial'; await absent(temp); const r = await bodyResponse(url, {token, accept: 'application/octet-stream'});
+  const assetName = typeof row.name === 'string' && /^[A-Za-z0-9_.-]+$/.test(row.name) ? row.name : 'unnamed-asset';
+  const temp = file + '.partial'; await absent(temp); const r = await bodyResponse(url, {token, accept: downloadMedia(url)}, assetName);
   const declared = r.headers.get('content-length'); if (declared) assert.equal(Number(declared), row.bytes, 'Download content length mismatch');
   const out = await open(temp, 'wx'); const h = createHash('sha256'); let bytes = 0;
   try {
