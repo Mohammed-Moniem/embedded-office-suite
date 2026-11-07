@@ -1,0 +1,5 @@
+# This CI authority is hashed as exact published bytes on every target.
+config/native-progress3.json text eol=lf
+config/public-source3-data-progress3.json text eol=lf
+scripts/ci/windows-runtime-network-source3.ps1 text eol=lf
+scripts/ci/test-windows-runtime-network-source3.ps1 text eol=lf
