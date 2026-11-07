@@ -1,4 +1,4 @@
-import {mkdir,writeFile,readFile} from 'node:fs/promises';
+import {mkdir,writeFile,readdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {join,resolve} from 'node:path';
 import {spawn} from 'node:child_process';
@@ -12,5 +12,9 @@ async function run(command,args){const child=spawn(command,args,{cwd:source,stdi
 await run('tar',['-xf',archive,'-C',source]);
 const {verifyManifest}=await import(pathToFileURL(join(source,'scripts/lib/artifacts.mjs')));const manifest=await verifyManifest(source,{expectedKind:'office-source-progress'});
 if(manifest.sourceCommit!=='60e8d44a769b998827f308ceb58f5cba5b6a0e17')throw Error('Unexpected public source freeze');
-await run(process.execPath,[join(source,'scripts/run-tests.mjs')]);await run(process.execPath,['--test',join(source,'scripts/engines/ranged-download.test.mjs')]);
+// Hosted Intel runners exposed contention between independent test-file child
+// processes. Preserve all assertions/deadline cases; run those files serially.
+async function testsAt(directory){const paths=[];for(const entry of await readdir(directory,{withFileTypes:true})){const path=join(directory,entry.name);if(entry.isDirectory())paths.push(...await testsAt(path));else if(entry.isFile()&&entry.name.endsWith('.test.mjs'))paths.push(path);}return paths;}
+const tests=(await Promise.all(['test','packages/node/test','packages/browser/test'].map(path=>testsAt(join(source,path))))).flat().sort();if(!tests.length)throw Error('No SDK tests discovered');
+await run(process.execPath,['--test','--test-concurrency=1',...tests]);await run(process.execPath,['--test',join(source,'scripts/engines/ranged-download.test.mjs')]);
 await writeFile(join(base,'RESULT.json'),JSON.stringify({schemaVersion:1,sourceCommit:manifest.sourceCommit,sourceArchiveSha256:sourceSha,platform:process.platform,architecture:process.arch,node:process.versions.node,sdkAndArchiveTestsPassed:true,rangedDownloadTestsPassed:true,scope:'SDK/helper regressions only; no private harness, engine, Office/Adobe or OS-client acceptance'},null,2)+'\n');
