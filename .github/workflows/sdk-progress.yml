@@ -1,6 +1,12 @@
 name: Exact public SDK progress qualification
 on:
   workflow_dispatch:
+    inputs:
+      runner:
+        description: Requested qualification runner
+        type: choice
+        default: all
+        options: [all, macos-15, macos-15-intel, windows-2022]
 permissions:
   contents: read
 jobs:
@@ -8,7 +14,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-15, macos-15-intel, windows-2022]
+        os: ${{ fromJSON(inputs.runner == 'all' && '["macos-15","macos-15-intel","windows-2022"]' || format('["{0}"]', inputs.runner)) }}
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
