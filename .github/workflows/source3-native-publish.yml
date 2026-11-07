@@ -28,7 +28,7 @@ jobs:
       - name: Verify the reviewed publisher files before exposing the job token
         run: |
           shasum -a 256 -c <<'SOURCE3_SHA256'
-          73ffa3670f847a2f73f84ab933e997cdaf0a8d495c9ed80fbba1944d0b320f0e  scripts/ci/source3-cloud-publisher/driver.mjs
+          54e88d72ef080f39e0b033bac467fb15c5616700ed443cd6a01ea7f203e24b6b  scripts/ci/source3-cloud-publisher/driver.mjs
           3a538dd44e269c91e50494d13cf48fd3e83439b6698b90bbae1de72f511e32c4  scripts/ci/source3-cloud-publisher/safe-extract.py
           ed02d3ae3917947965e3b1824f97379f1d4e62bf56bf276f63dcc0ad6532fa2e  scripts/ci/source3-cloud-publisher/inputs.json
           SOURCE3_SHA256
