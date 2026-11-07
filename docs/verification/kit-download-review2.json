@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "scope": "repaired-standalone-download-helper-config-and-guide",
+  "evidenceAdequate": "YES",
+  "objectiveGates": "PASS",
+  "thresholdResult": "PASS",
+  "repairFreezeSha256": "06b68ccaf64b12674bb3921d67e0c36eca8c5f42893e6f342c0f31a3d496e2d1",
+  "candidate": {
+    "repair": "06b68ccaf64b12674bb3921d67e0c36eca8c5f42893e6f342c0f31a3d496e2d1",
+    "script": "e420a223958141ca2fd518f4ba6d5883012df9a1b278e6d6fd7ffef892e7e641",
+    "config": "2ba769bd1e1d70e68f63d9b7b88e187409f0d739d2dfc59ccd6337383aaef2b5",
+    "guide": "5980e68a44ae522fef8f7b30ff9f961c1fd22e9e44a4895e8c417e8c885d5595",
+    "old": "b3990a461effd5b1b0e6a0bc373ed23bbc67ba68c6bd16e5bf71bb0637f109ec",
+    "adoption": "69b0b7acf5f87d5dd49634d6982f78093b57a0964ddb048a9340ee7f887a962e"
+  },
+  "identityReceiptSha256": "c27570a7e7b87c50e3318380afba5643c2f555219e0a26d290ac494c11b3d302",
+  "controlsReceiptSha256": "e7f4e1c7e96f306ffc3f2dc63356d52bc8beedaf686129186273893c9adb585d",
+  "originalRejectionPreserved": true,
+  "findings": [
+    {
+      "id": "F1-CLOSED",
+      "blocking": false,
+      "severity": "resolved",
+      "title": "First-signal owned-part cleanup independently passes",
+      "evidence": "Exact copied repaired production CLI: blocked fetch and unresolved body x SIGINT/SIGTERM; no fixture keepalive; owned part observed before signal and absent after exit130/143; unrelated file retained. Exact old candidate fails actual SIGINT fetch/body controls with one part retained."
+    }
+  ],
+  "decisiveEvidence": [
+    "All 25 repair closure files and all 16 original rejected-review files match their frozen bytes. Config remains byte-identical with 13 unique assets; runtime/build/all select2/7/9 for all three targets.",
+    "Four first-signal real CLI cases use no fixture timer/server/IPC/network/file keeper. A parent80ms delay proves the production event-loop keeper handles an otherwise unreferenced pending promise.",
+    "Four historical controls discriminate: two no-handle stalls exit13 before signal, two fixture-kept actual SIGINT cases exit by SIGINT; all retain one part. These are separate results.",
+    "A repaired forced-second-signal case exits143 and retains a part as disclosed; forced termination is not ordinary cancellation.",
+    "26 independent admission/transport/path regressions pass, including complete331846890-byte native/WASM streaming publication and standalone API+CLI offline verification. Original archive bytes are rehashed afterward.",
+    "Guide separates download verification from build configuration, extraction, host integration, native/public qualification and product parity."
+  ],
+  "highestLeverageRemainingGap": "No blocking gap within this downloader repair threshold. Validate Windows console semantics separately before making a Windows signal-cleanup claim.",
+  "fourPasses": [
+    "Inspected gates/security, exact production pair, guide,25-file repair closure, adoption receipt and preserved old rejection.",
+    "Reread first-signal lifecycle, credential-free redirect handling, no-execution boundary, selection counts and documented platform limits.",
+    "Independently exercised signal paths without fixture keeper, actual SIGINT negative controls, forced-second-signal behavior, exact bytes and path/transport controls.",
+    "Checked receipt stability, preserved rejected evidence and scoped wording; sealed this review and reran all three leaf gates."
+  ],
+  "limitations": [
+    "Execution is macOS ARM64 Node24.18.0; Windows console/process termination and macOS x64 downloader execution were not exercised.",
+    "Controlled local responses exercise transport; no public assets are redownloaded and this review grants no public native or WASM runtime qualification.",
+    "No private host, Windows11 acceptance, Microsoft Office/Adobe parity or whole-product completion is granted.",
+    "Stable operator-controlled directories are required; hostile concurrent directory mutation and forced termination can leave parts as documented.",
+    "The review received repair summaries and original rejection context; behavioral fixtures and verdict were authored independently of the builder."
+  ],
+  "confidence": "HIGH for the scoped repair threshold; no broader product acceptance."
+}
