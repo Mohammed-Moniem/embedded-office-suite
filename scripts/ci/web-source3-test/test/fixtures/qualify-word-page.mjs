@@ -5,7 +5,7 @@ async (page) => {
   try{
     const origin=new URL(page.url()).origin==='http://127.0.0.1:8921'?'http://127.0.0.1:8921':'http://127.0.0.1:8920';
     await page.goto(origin+'/__qualification/host?app=wordcraft');
-    await page.waitForFunction(()=>window.conformance?.ready,{timeout:30000});
+    await page.waitForFunction(()=>window.conformance?.ready,null,{timeout:30000});
     const report=await page.evaluate(async()=>{
       const assert=(condition,message)=>{if(!condition)throw Error(message);};
       const e=window.conformance.editor,marker='Word real WASM qualification 2026';
