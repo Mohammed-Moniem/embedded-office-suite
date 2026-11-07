@@ -1,4 +1,4 @@
-// Diagnostic only: restore exact public P1 inputs using their frozen helpers.
+// Diagnostic only: restore exact public source3-r1 and pinned P1 inputs using frozen helpers.
 // No engine compilation, runtime acceptance, dependency install, or security changes.
 import {createReadStream,createWriteStream,appendFileSync,writeFileSync,renameSync,mkdirSync,existsSync} from 'node:fs';
 import {mkdir,readFile,rename,writeFile,mkdtemp,lstat} from 'node:fs/promises';
@@ -17,10 +17,11 @@ const BASE=join(ROOT,'build/windows-input-diagnostic');
 const EVIDENCE=join(BASE,'evidence');
 const SOURCE=join(BASE,'source');
 const RELEASE='https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/';
-const SOURCE_COMMIT='60e8d44a769b998827f308ceb58f5cba5b6a0e17';
-const SOURCE_MANIFEST='a5272fd9b84e920567e3817fbe545c84acbc077538346bdfbed937d0cf2f1309';
+const SOURCE_RELEASE='https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.3/';
+const SOURCE_COMMIT='e8e4364c20018abb1222c69b7e50839abfe62644';
+const SOURCE_MANIFEST='566d2c34f202c0e33e2bd2049fab086642228e781ebc8585a4c431ea472b9daa';
 const INPUTS=Object.freeze({
-  source:{name:'office-source-progress1.tar.gz',sha256:'b069e1a87666791cbbfb2b34601b474d11cb7c465862bce013a9279aab0a5382'},
+  source:{name:'office-source-progress3-r1.tar.gz',sha256:'ee369702aa8cf550413d000f58ac88d297ede8da01fade5d4ac3c89a1ddc2e6c'},
   vendor:{name:'office-build-inputs-vendor-gridcraft.tar.gz',sha256:'e3a5d7e800bdbe90529783db1381225d9c3f9eb1c42f96fcdbe6383c8997dab5'},
   support:{name:'office-build-inputs-support-complete3.tar.gz',sha256:'b044c20cfc2a8f470268065fd44a3f2ab2e0837c09a89856bfbc902377e9595c'},
   tools:{name:'office-build-inputs-tools-windows-x64-gzip-r1.tar.gz',sha256:'02a82e36f2c9df54908efa3a0aa431fde27e5c776e12cea8464c980217bc0ddd'}
@@ -132,7 +133,7 @@ async function download(ctx,key){
   if(existsSync(file)||existsSync(file+'.partial'))throw Error('Fresh diagnostic downloads required');
   await ctx.stage('download',async()=>{
     const signal=AbortSignal.any([ctx.signal,AbortSignal.timeout(180000)]);
-    const response=await fetch(RELEASE+asset.name,{signal});
+    const response=await fetch((key==='source'?SOURCE_RELEASE:RELEASE)+asset.name,{signal});
     if(!response.ok||!response.body)throw Error(`Cannot download ${asset.name}: ${response.status}`);
     await pipeline(Readable.fromWeb(response.body),createWriteStream(file+'.partial',{flags:'wx'}),{signal});
     return {asset:asset.name};
