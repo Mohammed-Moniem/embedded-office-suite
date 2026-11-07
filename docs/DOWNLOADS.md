@@ -1,4 +1,12 @@
-# Progress 1 downloads
+# Component downloads
+
+The [progress2 release](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.2) provides the [four-editor WASM component](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.2/office-wasm-integration-progress2-r1.zip), SHA-256 c9f910319af14cdc2c884caaaa20f49e7f6f1cc6b4d3c0520a05ba7468959146, and [complete derivative source](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.2/office-source-progress2.tar.gz), SHA-256 ba0ebb1cffc6781e1ac68ea4e3a13ab40dacf0c15ccb7ecaf9f99f0c1844673d. The WASM component contains acknowledged-save/revision bridges for all four editors, both SDKs, asset handler and original/support notices. Independent review2 passed. Both exact anonymous public downloads passed SHA/size and complete extracted manifests; all4,845 source files also match their committed Git blobs/modes. Exact public browser/Node operation reports are recorded separately.
+
+Use the existing host's approved Node runtime and WebView. The packaged WASM pages require no Cargo access at runtime. Follow [host integration](HOST-INTEGRATION.md) and keep each archive's source identity and MANIFEST.json. Native component workers use the earlier frozen source; the new page bridges are Rust/WASM derivatives with unchanged Cargo locks. Their source changes are included in the new full source archive.
+
+## Progress 1 offline inputs and original runtime
+
+Current native-only components: [Apple Silicon r1](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/office-native-progress1-macos-arm64-r1.zip), SHA-256 adbdc3603416075900b1f9a4aef973d23e12abd653339c182fc1f32ed0eb019c; [Intel Mac r1](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/download/v0.1.0-progress.1/office-native-progress1-macos-x64-r1.zip), SHA-256 43289a2740e603e293b631f92cf9be29e427dede854e983c7c654aa218ef8e3b. Both contain four native workers, the reviewed Node SDK, runtime support, all original asset notices and separate worker/SDK provenance. Their builder passed independent review6. ARM64 exact archive operations pass locally; exact public target CI for both Mac ZIPs is in progress. Windows native package remains pending. These native archives contain no WASM pages; select the progress2 WASM component separately.
 
 The [prerelease](https://github.com/Mohammed-Moniem/embedded-office-suite/releases/tag/v0.1.0-progress.1) is a measured development milestone, status IN_PROGRESS. Full Office/Acrobat equivalence, private-harness acceptance and all-target exact-release qualification remain incomplete. A draft is not public delivery.
 
