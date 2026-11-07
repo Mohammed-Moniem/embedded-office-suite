@@ -4,7 +4,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 const authorityPath='config/public-source3-data-progress3.json';
 const bytes=await readFile(authorityPath);
-assert.equal(createHash('sha256').update(bytes).digest('hex'),'da435bbf6de28d963564997e7f18738fbc9f2c247587e7ceb7c5dbd8ba9e3a8b','Public reconstruction authority changed');
+assert.equal(createHash('sha256').update(bytes).digest('hex'),'7e9dcc40bb869bdd3db366dee860a849ca7e17ef25993e9e121da39516a80b9b','Public reconstruction authority changed');
 const authority=JSON.parse(bytes);
 assert.equal(authority.schemaVersion,1);assert.equal(authority.kind,'source3-public-reconstruction-data-byte-authority');
 assert(authority.files.length>0&&authority.files.length<=128);
