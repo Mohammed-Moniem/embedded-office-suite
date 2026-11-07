@@ -31,16 +31,27 @@ jobs:
           54e88d72ef080f39e0b033bac467fb15c5616700ed443cd6a01ea7f203e24b6b  scripts/ci/source3-cloud-publisher/driver.mjs
           3a538dd44e269c91e50494d13cf48fd3e83439b6698b90bbae1de72f511e32c4  scripts/ci/source3-cloud-publisher/safe-extract.py
           ed02d3ae3917947965e3b1824f97379f1d4e62bf56bf276f63dcc0ad6532fa2e  scripts/ci/source3-cloud-publisher/inputs.json
+          6954863e2f85f18dc817650fd1a85ccac9a4ef5f0a2215d4bd3551fbb5a8b213  scripts/ci/source3-cloud-publisher/system-zlib.py
+          78889e84f887f692ac67086d3417197d8300829f1a2fb5c9fc851b5fe6108ece  scripts/ci/source3-cloud-publisher/profile.mjs
+          fa196f5faa055b63084465a1c76c9e8b0d61f4092407c8acf8b91d912f8b9bce  scripts/ci/source3-cloud-publisher/bridge.mjs
+          b92958d86e455adefb3a7e5e840942a45b6331265dbbb58140b59621657f6112  scripts/ci/source3-cloud-publisher/prelude.mjs
+          8b1b82860b99a260f0f0ada55158a4bf7f02b58cae06307a0ce060b92b9853d0  scripts/ci/source3-cloud-publisher/preflight.mjs
+          4be882ad36c4bfd6e49ce92b2daf08cc925e11f75e306e4d402fd4cb0d0d1cbe  scripts/ci/source3-cloud-publisher/launch.mjs
           SOURCE3_SHA256
+      - name: Admit the measured explicit system compressor before restoration or token exposure
+        env:
+          NODE_OPTIONS: ''
+        run: node scripts/ci/source3-cloud-publisher/preflight.mjs
       - name: Restore original CI data and reconstruct all three exact native ZIPs
         env:
           GITHUB_TOKEN: ${{ github.token }}
           PUBLISH_NATIVE: ${{ inputs.publish }}
+          NODE_OPTIONS: ''
         run: |
           if [ "$PUBLISH_NATIVE" = true ]; then
-            node scripts/ci/source3-cloud-publisher/driver.mjs --publish
+            node scripts/ci/source3-cloud-publisher/launch.mjs --publish
           else
-            node scripts/ci/source3-cloud-publisher/driver.mjs
+            node scripts/ci/source3-cloud-publisher/launch.mjs
           fi
       - name: Preserve bounded success or failure evidence
         if: always()
